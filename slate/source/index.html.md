@@ -19,7 +19,7 @@ search: false
 
 Welcome to [Blockchain Web Services](https://bweb.services) API documentation! An API you can use to call Blockchain Smart Contracts.
 
-## Required Funds (Credits)
+## Required Funds
 
 To call Smart Contracts ...
 ## API Call Results
