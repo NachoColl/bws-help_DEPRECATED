@@ -21,7 +21,7 @@ Welcome to [Blockchain Web Services](https://bweb.services) API documentation! A
 
 ## Required Funds
 
-To call Smart Contracts ...
+To call Smart Contracts...
 ## API Call Results
 
 > "Hello world!" small contract call example.
