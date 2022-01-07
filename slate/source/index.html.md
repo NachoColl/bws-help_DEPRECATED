@@ -6,68 +6,69 @@ language_tabs:
 
 
 toc_footers:
-  - <a href='https://bweb.services'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/NachoColl/bws-help/issues' target="_blank">Need help? click here</a>
+  - <a href='https://bweb.services'>Sign Up</a>
+  - <a href='https://github.com/NachoColl/blockchain-web-services/issues' target="_blank">Need help? click here</a>
 
 includes:
-  - errors
+
 
 search: false
 ---
 
 # Introduction
 
-Welcome to [Blockchain Web Services](https://bweb.services) API documentation! An API you can use to call Blockchain Smart Contracts.
+Welcome to [Blockchain Web Services](https://bweb.services) documentation!
+
+# How To Start
+
+To start using [Blockchain Web Services](https://bweb.services) go to [bweb.services](https://bweb.services) and sign-up. It's free.
+
+## How It Works
+
+[Blockchain Web Services](https://bweb.services) is a set of services made to **simplify the use of Smart Contracts** without the need to get blockchain accounts (e.g. Ethereum or Cardano) or having to go through heavy learning curves.
+
+<aside class="notice">
+You don't need to create any Blockchain account to use Blockchain Web Services.
+</aside>
+
+"*A smart contract is a computer program or a transaction protocol which is intended to automatically execute, control or document legally relevant events and actions according to the terms of a contract or an agreement.*" The [Wikipedia](https://en.wikipedia.org/wiki/Smart_contract).
 
 ## Required Funds
 
-To call Smart Contracts...
-## API Call Results
-
-> "Hello world!" small contract call example.
-
-```javascript
-var parameters = {
-  "...": {
-    "...": "..."
-  }
-};
-
-```
-
-When you call [Blockchain Web Services](https://bweb.services) API to ...
-
-<aside class="warning">
-....
-</aside>
-
-We recommend that you start testing the API by using [Postman](https://www.getpostman.com/). Check Javascript code examples included on this page.
-
-## Account Dashboard
-
-As part of [Blockchain Web Services](https://bweb.services)  you also get ...
+[Blockchain Web Services](https://bweb.services) is free, but calling Smart Contracts requires funds: "It is the fuel that allows it to operate" (you can check how Gas and Fuel works for Ethereum [here](https://ethereum.org/en/developers/docs/gas/)).
 
 <aside class="notice">
-....
+We use Stripe as the Payment gateway for buying credits.
 </aside>
 
+To get your account funded go to `My Account > Credits` and complete your credits purchase.
 
-# API Endpoints
+<br/>
+![BWS Credits](images/BlockchainWebServices-Credits.jpg)
 
-[Blockchain Web Services](https://bweb.services) API uses the next endpoint:
+Remember **[Blockchain Web Services](https://bweb.services) is free** and funds are spent when calling smart contracts.
 
-`https://api.bweb.services/`
-
-<aside class="notice">
-...
-</aside>
-
-# Authentication
+## API Endpoint
 
 ```javascript
 $.ajax({
     method: 'POST',
-  	...
+    url: 'https://api.bweb.services/v1/call',
+   ...
+  });
+```
+
+Blockchain Web Services API baseline endpoint is **api.bweb.services** and current version is **v1**.
+
+As an example, API operation **call** to execute a smart contract will use the following URL:
+
+`https://api.bweb.services/v1/call`
+
+## Authentication
+
+```javascript
+$.ajax({
+   	...
     headers: {
       'Content-Type': 'application/json',
       'X-Api-Key': 'my-api-key'
@@ -76,9 +77,12 @@ $.ajax({
   });
 ```
 
-[Blockchain Web Services](https://bweb.services) API requires a personal **API Key** to authenticate your calls (to get such key, just sign in at [bweb.services](https://bweb.services).
+Calling [Blockchain Web Services](https://bweb.services) smart contracts requires a personal **API Key** to authenticate. To get your key, sign in at [bweb.services](https://bweb.services) and go to `My Account > API Key`.
 
-Once you get your API Key, you must include it in all of your API calls as a header attribute:
+<br/>
+![BWS Credits](images/BlockchainWebServices-API_Key.jpg)
+
+You must include your Key in all of your API calls as a header attribute:
 
 `'X-Api-Key': 'my-api-key'`
 
@@ -86,34 +90,36 @@ Once you get your API Key, you must include it in all of your API calls as a hea
 You must replace <code>my-api-key</code> with your personal API key.
 </aside>
 
-# Passing parameters
+## Passing parameters
 
-Method call parameters must be passed in the Body part of the request message using [JSON](https://en.wikipedia.org/wiki/JSON) format.
+Method call parameters must be passed in the Body part of the POST request message using [JSON](https://en.wikipedia.org/wiki/JSON) format and the `Content-Type` header attribute must be set to `application/json`.
 
-The `Content-Type` header attribute must be set to `application/json`.
+> API call example.
 
 ```javascript
+var parameters = {
+  "contractId": "eth.rapten.database.immutable",
+  "parameters": {
+    ...
+  }  
+};
 
-// How to set API Call parameters
+$.ajax({
+  ...
+  dataType: 'json',
+  data: JSON.stringify(sellerJson),
+  headers: {
+    'Content-Type': 'application/json',
+    'X-Api-Key': 'ExV0d92KzQ8QgsTVnevddpbB8cUaAfPs7ntVF8g0'
+  }, 
+  ...
+  });
 
-{
-	
-	...
-	
-	"date" : "1482932562"
-	
-	...
-	
-	"total" : 19.99
-	
-	...
-	
-}
 ```
 
-# API Calls Response
+## API Calls Response
 
-> API call `seller/get` response example
+> API call response example
 
 
 ```
@@ -132,30 +138,55 @@ The `Content-Type` header attribute must be set to `application/json`.
 ```
 {
  "statusCode":404,
- "statusMessage":"incorrect parameters",
- "info":  ""
+ "statusMessage":"incorrect parameters"
 }
 ```
 
-
-When calling the API, you can get an [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) layer transport error, that is, an error that has ocurried before the related API code is executed (e.g. 503, Service Unavailable), or a *controlled error*, meaning an error that is related to the parameters values you send (e.g. 404, not found - when no data is found for your query). By using this strategy, you will be able to catch and differentiate all kind of API call errors easily.
+When calling the API, you can get an [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) layer [transport error](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes), that is, an error that has ocurried before the related API code is executed (e.g. 503, Service Unavailable), or a *controlled error*, meaning an error that is related to the parameters values you send (e.g. 404, not found - when no data is found for your query). By using this strategy, you will be able to catch and differentiate all kind of API call errors easily.
 
 <br/>
 When no transport layer error is detected, all the API calls will include the next message in the BODY part of the response:
 
-
-Parameter | Type | Description 
---------- | -------  | ----------- 
-statusCode | number | The api call result code, using [HTTP status codes values](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) (e.g. 200 indicates no error).
+Parameter | Type | Description
+--------- | -------  | -----------
+statusCode | number | The api call result code (e.g. 200 indicates no error).
 statusMessage | string | The status code related message.
-info | string* | The related requested information.
-<br/><br/>
-Please take note that the info result parameter may be just a simple text or a more complex json schema (check the examples on the right).
+info | string | The requested information.
 
+### Error Status Codes
 
-# Smart Contracts API
+The Blockchain Web Services API uses the following error Status Codes:
 
-## <span style="color:green">call</span>
+Status Code | Meaning
+---------- | -------
+400 | Bad Request -- Check your request parameters.
+401 | Unauthorized -- Check your API key
+403 | Forbidden / Too Many Requests -- Slow down!
+404 | Not Found -- Your API key is valid but there is no related user on our servers.
+405 | Method Not Allowed -- You tried to access with an invalid method
+406 | Not Acceptable -- You requested a format that isn't json
+410 | Gone -- The requested object has been removed
+418 | I'm a teapot
+429 | Too Many Requests -- Slow down!
+500 | Internal Server Error -- We had a problem with our server. Try again later.
+503 | Service Unavailable -- We're temporarially offline for maintanance. Please try again later.
+
+# Smart Contracts
+
+## Ethereum.Database.Immutable
+
+This contract is used for database [immutable](https://en.wikipedia.org/wiki/Immutable_object) operations.
+
+### Contract Address
+
+Network | Address
+--| --
+ethereum |  
+ropsten | 
+
+### Operations
+
+The following operations are used to save data into Ethereum [blockchain](https://en.wikipedia.org/wiki/Blockchain) [distributed ledger](https://en.wikipedia.org/wiki/Distributed_ledger) database.
 
 > Call a Smart Contract.
 
