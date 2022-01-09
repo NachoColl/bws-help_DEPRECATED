@@ -1,0 +1,242 @@
+<h1 id="introduction">Introduction</h1>
+
+<h2 id="registration">Registration</h2>
+
+<p>To start using <a href="https://bweb.services">Blockchain Web Services</a> go to <a href="https://bweb.services">bweb.services</a> and sign-up. It&rsquo;s free.</p>
+
+<h2 id="how-it-works">How It Works</h2>
+
+<p><a href="https://bweb.services">Blockchain Web Services</a> is a set of services made to <strong>simplify the use of Smart Contracts</strong> without the need to get blockchain accounts (e.g. Ethereum or Cardano) or having to go through hard learning curves.</p>
+
+<aside class="notice">
+You don&rsquo;t need to create any Blockchain account to use Blockchain Web Services.
+</aside>
+
+<p>&ldquo;<em>A smart contract is a computer program or a transaction protocol which is intended to automatically execute, control or document legally relevant events and actions according to the terms of a contract or an agreement.</em>&rdquo; The <a href="https://en.wikipedia.org/wiki/Smart_contract">Wikipedia</a>.</p>
+
+<h2 id="required-funds">Required Funds</h2>
+
+<p><a href="https://bweb.services">Blockchain Web Services</a> is free, but calling Smart Contracts requires funds: &ldquo;It is the fuel that allows it to operate&rdquo; (you can check how Gas and Fuel works for Ethereum <a href="https://ethereum.org/en/developers/docs/gas/">here</a>).</p>
+
+<aside class="notice">
+We use Stripe as the Payment gateway for buying credits.
+</aside>
+
+<p>To get your account funded go to <code class="prettyprint">My Account &gt; Credits</code> and complete your credits purchase.</p>
+
+<p><br/>
+<img src="/images/BlockchainWebServices-Credits.jpg" alt="BWS Credits" /></p>
+
+<p>Remember <strong><a href="https://bweb.services">Blockchain Web Services</a> is free</strong> and funds are spent when calling smart contracts.</p>
+
+<h2 id="api-endpoint">API Endpoint</h2>
+<pre class="highlight javascript"><code><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="na">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s1">'https://api.bweb.services/v1/call'</span><span class="p">,</span>
+   <span class="p">...</span>
+  <span class="p">});</span>
+</code></pre>
+<p>Blockchain Web Services API baseline endpoint is <strong>api.bweb.services</strong> and current version is <strong>v1</strong>.</p>
+
+<p>As an example, API operation <strong>call</strong> to execute a smart contract will use the following URL:</p>
+
+<p><code class="prettyprint">https://api.bweb.services/v1/call</code></p>
+
+<h2 id="authentication">Authentication</h2>
+<pre class="highlight javascript"><code><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="p">...</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
+      <span class="s1">'X-Api-Key'</span><span class="p">:</span> <span class="s1">'my-api-key'</span>
+    <span class="p">},</span>
+    <span class="p">...</span>
+  <span class="p">});</span>
+</code></pre>
+<p>Calling <a href="https://bweb.services">Blockchain Web Services</a> smart contracts requires a personal <strong>API Key</strong> to authenticate. To get your key, sign in at <a href="https://bweb.services">bweb.services</a> and go to <code class="prettyprint">My Account &gt; API Key</code>.</p>
+
+<p><br/>
+<img src="/images/BlockchainWebServices-API_Key.jpg" alt="BWS Credits" /></p>
+
+<p>You must include your Key in all of your API calls as a header attribute:</p>
+
+<p><code class="prettyprint">&#39;X-Api-Key&#39;: &#39;my-api-key&#39;</code></p>
+
+<aside class="notice">
+You must replace <code>my-api-key</code> with your personal API key.
+</aside>
+
+<h2 id="passing-parameters">Passing parameters</h2>
+
+<blockquote>
+<p>API call example.</p>
+</blockquote>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">parameters</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"contractId"</span><span class="p">:</span> <span class="s2">"eth.rapten.database.immutable"</span><span class="p">,</span>
+  <span class="s2">"parameters"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">...</span>
+  <span class="p">}</span>  
+<span class="p">};</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+  <span class="p">...</span>
+  <span class="na">dataType</span><span class="p">:</span> <span class="s1">'json'</span><span class="p">,</span>
+  <span class="na">data</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">parameters</span><span class="p">),</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
+    <span class="s1">'X-Api-Key'</span><span class="p">:</span> <span class="s1">'ExV0d92KzQ8QgsTVnevddpbB8cUaAfPs7ntVF8g0'</span>
+  <span class="p">},</span> 
+  <span class="p">...</span>
+  <span class="p">});</span>
+
+</code></pre>
+<p>Method call parameters must be passed in the Body part of the POST request message using <a href="https://en.wikipedia.org/wiki/JSON">JSON</a> format and the <code class="prettyprint">Content-Type</code> header attribute must be set to <code class="prettyprint">application/json</code>.</p>
+
+<p>In general, all the API operations use the same parameters structure:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Value(s)</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contract</td>
+<td>string</td>
+<td>[the contract id to use]</td>
+<td>The contract id.</td>
+</tr>
+<tr>
+<td>version</td>
+<td>number</td>
+<td>1,2,3 ..</td>
+<td>The contract version to use.</td>
+</tr>
+<tr>
+<td>network</td>
+<td>string</td>
+<td>ropsten, ethereum</td>
+<td>The network id to save data to.</td>
+</tr>
+<tr>
+<td>operation</td>
+<td>string</td>
+<td>[the operation to call]</td>
+<td>The operation id.</td>
+</tr>
+<tr>
+<td>parameters</td>
+<td>json</td>
+<td>[the operation parameters]</td>
+<td>List operation parameters.</td>
+</tr>
+</tbody></table>
+
+<p><br/>
+By using <code class="prettyprint">contract</code>, <code class="prettyprint">operation</code> and <code class="prettyprint">parameters</code> you will be able to call any of the Blockchain Web Services available smart contracts.</p>
+
+<h2 id="api-calls-response">API Calls Response</h2>
+
+<blockquote>
+<p>API call response example</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+ "statusCode":200,
+ "info":  "{
+    \"jobId\":\"543433243\"
+  }"
+}
+</code></pre>
+<blockquote>
+<p>API call error response example</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+ "statusCode":404,
+ "statusMessage":"incorrect parameters"
+}
+</code></pre>
+<p>When calling the API, you can get an <a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">HTTP</a> layer <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">transport error</a>, that is, an error that has ocurried before the related API code is executed (e.g. 503, Service Unavailable), or a <em>controlled error</em>, meaning an error that is related to the parameters values you send (e.g. 404, not found - when no data is found for your query). By using this strategy, you will be able to catch and differentiate all kind of API call errors easily.</p>
+
+<p><br/>
+When no transport layer error is detected, all the API calls will include the next message in the BODY part of the response:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>statusCode</td>
+<td>number</td>
+<td>The api call result code (e.g. 200 indicates no error).</td>
+</tr>
+<tr>
+<td>statusMessage</td>
+<td>string</td>
+<td>The status code related message.</td>
+</tr>
+<tr>
+<td>info</td>
+<td>string</td>
+<td>The requested information.</td>
+</tr>
+</tbody></table>
+
+<h3 id="error-status-codes">Error Status Codes</h3>
+
+<p>The Blockchain Web Services API uses the following error Status Codes:</p>
+
+<table><thead>
+<tr>
+<th>Status Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request &ndash; Check your request parameters.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized &ndash; Check your API key</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden / Too Many Requests &ndash; Slow down!</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found &ndash; Your API key is valid but there is no related user on our servers.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed &ndash; You tried to access with an invalid method</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable &ndash; You requested a format that isn&rsquo;t json</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Gone &ndash; The requested object has been removed</td>
+</tr>
+<tr>
+<td>418</td>
+<td>I&rsquo;m a teapot</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests &ndash; Slow down!</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error &ndash; We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable &ndash; We&rsquo;re temporarially offline for maintanance. Please try again later.</td>
+</tr>
+</tbody></table>

@@ -383,8 +383,18 @@ body {
 	h4,
 	h5,
 	h6 {
-		font-size: 10px;
+		font-size: 14px;
 	}
+  h4{
+    color:#C0392B;
+  }
+  h5{
+    color:#5abaf0;
+  }
+  h6{
+    color:#5abaf0;
+    font-weight: normal !important;
+  }
 	hr {
 		margin: 2em 0;
 		border-top: 2px solid $examples-bg;

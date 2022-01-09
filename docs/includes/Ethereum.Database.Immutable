@@ -1,0 +1,200 @@
+<h2 id="ethereum-database-immutable">Ethereum.Database.Immutable</h2>
+
+<p>This contract is used for <a href="https://en.wikipedia.org/wiki/Immutable_object">immutable</a> Ethereum database operations.</p>
+
+<p>&ldquo;<em>An immutable object is an object whose state cannot be modified after it is created</em>&rdquo;</p>
+
+<h3 id="contract-address">Contract Address</h3>
+
+<p>You can check Blockchain Web Services contract at the following addresses (to verify click on the contract address link).</p>
+
+<table><thead>
+<tr>
+<th>Network Id</th>
+<th>Contract Address</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ethereum</td>
+<td></td>
+</tr>
+<tr>
+<td>ropsten</td>
+<td><a href="https://ropsten.etherscan.io/address/0x2dB6Bbb6ff06D1fdC3c04705E1284dF99981D205#code">0x2dB6Bbb6ff06D1fdC3c04705E1284dF99981D205</a></td>
+</tr>
+</tbody></table>
+
+<h3 id="operations">Operations</h3>
+
+<p>Use the following operations to save (and get) data to Ethereum <a href="https://en.wikipedia.org/wiki/Blockchain">blockchain</a> <a href="https://en.wikipedia.org/wiki/Distributed_ledger">distributed ledger</a> database.</p>
+
+<aside class="notice">
+Data you save using those operations will stay on Ethereum database &ldquo;for ever&rdquo; :).
+</aside>
+
+<h4 id="insertbytes32">:: insertBytes32</h4>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">parameters</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"contract"</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Immutable"</span><span class="p">,</span>
+    <span class="s2">"version"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">"network"</span><span class="p">:</span> <span class="s2">"ropsten"</span><span class="p">,</span>
+    <span class="s2">"operation"</span><span class="p">:</span> <span class="s2">"insertBytes32"</span><span class="p">,</span>
+    <span class="s2">"parameters"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">"key"</span><span class="p">:</span> <span class="s2">"a-key"</span><span class="p">,</span>
+      <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"Hello World!"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="na">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s1">'https://api.bweb.services/v1/call'</span><span class="p">,</span>
+    <span class="na">data</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">parameters</span><span class="p">),</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
+      <span class="s1">'X-Api-Key'</span><span class="p">:</span> <span class="s1">'ExV0d92KzQ8QgsTVnevddpbB8cUaAfPs7ntVF8g0'</span>
+    <span class="p">},</span>
+    <span class="na">dataType</span><span class="p">:</span> <span class="s1">'json'</span><span class="p">,</span>
+    <span class="na">success</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span> 
+    <span class="p">},</span>
+    <span class="na">error</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">xhr</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">errorThrown</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">xhr</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>If successfull, the call will return the related Job Id to fetch for results.</p>
+</blockquote>
+
+<p>Saves up to 32 characters string value in Ethereum database.</p>
+
+<h5 id="request-parameters">Request Parameters</h5>
+
+<p>Use the following parameters to call <code class="prettyprint">insertBytes32</code> operation:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contract</td>
+<td>Ethereum.Database.Immutable</td>
+</tr>
+<tr>
+<td>operation</td>
+<td>insertBytes32</td>
+</tr>
+</tbody></table>
+
+<p>Check <a href="#passing-parameters">Passing Parameters</a> for other required parameters.</p>
+
+<h6 id="operation-parameters">Operation Parameters</h6>
+
+<p>The following operation parameters can be used to save a string you can later query by using the <code class="prettyprint">key</code>value.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Value(s)</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>key</td>
+<td>string</td>
+<td>32 characters string</td>
+<td>The key for data to save.</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>32 characters string</td>
+<td>The value to save on database.</td>
+</tr>
+</tbody></table>
+
+<h5 id="response">Response</h5>
+
+<p>The operation call will return the <code class="prettyprint">jobId</code> of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).</p>
+
+<h4 id="selectbytes32">:: selectBytes32</h4>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">parameters</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"contract"</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Immutable"</span><span class="p">,</span>
+    <span class="s2">"version"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">"network"</span><span class="p">:</span> <span class="s2">"ropsten"</span><span class="p">,</span>
+    <span class="s2">"operation"</span><span class="p">:</span> <span class="s2">"selectBytes32"</span><span class="p">,</span>
+    <span class="s2">"parameters"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">"key"</span><span class="p">:</span> <span class="s2">"a-key"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="na">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s1">'https://api.bweb.services/v1/call'</span><span class="p">,</span>
+    <span class="na">data</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">parameters</span><span class="p">),</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
+      <span class="s1">'X-Api-Key'</span><span class="p">:</span> <span class="s1">'ExV0d92KzQ8QgsTVnevddpbB8cUaAfPs7ntVF8g0'</span>
+    <span class="p">},</span>
+    <span class="na">dataType</span><span class="p">:</span> <span class="s1">'json'</span><span class="p">,</span>
+    <span class="na">success</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span> 
+    <span class="p">},</span>
+    <span class="na">error</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">xhr</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">errorThrown</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">xhr</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>If successfull, the call will return the related Job Id to fetch for results.</p>
+</blockquote>
+
+<p>Gets a string value you previously stored on Ethereum database by calling <code class="prettyprint">insertBytes32</code>.</p>
+
+<h5 id="request-parameters">Request Parameters</h5>
+
+<p>Use the following parameters to call <code class="prettyprint">selectBytes32</code> operation:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contract</td>
+<td>Ethereum.Database.Immutable</td>
+</tr>
+<tr>
+<td>operation</td>
+<td>selectBytes32</td>
+</tr>
+</tbody></table>
+
+<p>Check <a href="#passing-parameters">Passing Parameters</a> for other required parameters.</p>
+
+<h6 id="operation-parameters">Operation Parameters</h6>
+
+<p>Set the <code class="prettyprint">key</code> value to get the data you previously saved.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Value(s)</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>key</td>
+<td>string</td>
+<td>32 characters string</td>
+<td>The key for data to save.</td>
+</tr>
+</tbody></table>
+
+<h5 id="response">Response</h5>
+
+<p>The operation call will return the <code class="prettyprint">jobId</code> of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).</p>
