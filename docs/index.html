@@ -160,21 +160,6 @@ You don&rsquo;t need to create any Blockchain account to use Blockchain Web Serv
 
 <p>&ldquo;<em>A smart contract is a computer program or a transaction protocol which is intended to automatically execute, control or document legally relevant events and actions according to the terms of a contract or an agreement.</em>&rdquo; The <a href="https://en.wikipedia.org/wiki/Smart_contract">Wikipedia</a>.</p>
 
-<h2 id="required-funds">Required Funds</h2>
-
-<p><a href="https://bweb.services">Blockchain Web Services</a> is free, but calling Smart Contracts requires funds: &ldquo;It is the fuel that allows it to operate&rdquo; (you can check how Gas and Fuel works for Ethereum <a href="https://ethereum.org/en/developers/docs/gas/">here</a>).</p>
-
-<aside class="notice">
-We use Stripe as the Payment gateway for buying credits.
-</aside>
-
-<p>To get your account funded go to <code class="prettyprint">My Account &gt; Credits</code> and complete your credits purchase.</p>
-
-<p><br/>
-<img src="images/BlockchainWebServices-Credits.jpg" alt="BWS Credits" /></p>
-
-<p>Remember <strong><a href="https://bweb.services">Blockchain Web Services</a> is free</strong> and funds are spent when calling smart contracts.</p>
-
 <h2 id="api-endpoint">API Endpoint</h2>
 <pre class="highlight javascript"><code><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
     <span class="na">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
@@ -387,6 +372,21 @@ When no transport layer error is detected, all the API calls will include the ne
 </tr>
 </tbody></table>
 
+<h2 id="required-funds">Required Funds</h2>
+
+<p><a href="https://bweb.services">Blockchain Web Services</a> is free, but calling Smart Contracts requires funds: &ldquo;It is the fuel that allows it to operate&rdquo; (you can check how Gas and Fuel works for Ethereum <a href="https://ethereum.org/en/developers/docs/gas/">here</a>).</p>
+
+<aside class="notice">
+We use Stripe as the Payment gateway for buying credits.
+</aside>
+
+<p>To get your account funded go to <code class="prettyprint">My Account &gt; Credits</code> and complete your credits purchase.</p>
+
+<p><br/>
+<img src="images/BlockchainWebServices-Credits.jpg" alt="BWS Credits" /></p>
+
+<p>Remember <strong><a href="https://bweb.services">Blockchain Web Services</a> is free</strong> and funds are spent when calling smart contracts.</p>
+
           <h1 id="smart-contracts">Smart Contracts</h1>
 
           <h2 id="ethereum-database-immutable">Ethereum.Database.Immutable</h2>
@@ -476,11 +476,15 @@ Data you save using those operations will stay on Ethereum database &ldquo;for e
 <td>operation</td>
 <td>insertBytes32</td>
 </tr>
+<tr>
+<td>parameters</td>
+<td><a href="#insertBytes32-operation-parameters">insertBytes32 Operation Parameters</a></td>
+</tr>
 </tbody></table>
 
 <p>Check <a href="#passing-parameters">Passing Parameters</a> for other required parameters.</p>
 
-<h6 id="operation-parameters">Operation Parameters</h6>
+<h6 id="insertbytes32-operation-parameters">insertBytes32 Operation Parameters</h6>
 
 <p>The following operation parameters can be used to save a string you can later query by using the <code class="prettyprint">key</code>value.</p>
 
@@ -542,7 +546,7 @@ Data you save using those operations will stay on Ethereum database &ldquo;for e
 <p>If successfull, the call will return the related Job Id to fetch for results.</p>
 </blockquote>
 
-<p>Gets a string value you previously stored on Ethereum database by calling <code class="prettyprint">insertBytes32</code>.</p>
+<p>Gets a value you previously stored on Ethereum database by calling <code class="prettyprint">insertBytes32</code>.</p>
 
 <h5 id="request-parameters">Request Parameters</h5>
 
@@ -562,11 +566,15 @@ Data you save using those operations will stay on Ethereum database &ldquo;for e
 <td>operation</td>
 <td>selectBytes32</td>
 </tr>
+<tr>
+<td>parameters</td>
+<td><a href="#selectBytes32-operation-parameters">selectBytes32 Operation Parameters</a></td>
+</tr>
 </tbody></table>
 
 <p>Check <a href="#passing-parameters">Passing Parameters</a> for other required parameters.</p>
 
-<h6 id="operation-parameters">Operation Parameters</h6>
+<h6 id="selectbytes32-operation-parameters">selectBytes32 Operation Parameters</h6>
 
 <p>Set the <code class="prettyprint">key</code> value to get the data you previously saved.</p>
 

@@ -85,11 +85,15 @@ Data you save using those operations will stay on Ethereum database &ldquo;for e
 <td>operation</td>
 <td>insertBytes32</td>
 </tr>
+<tr>
+<td>parameters</td>
+<td><a href="#insertBytes32-operation-parameters">insertBytes32 Operation Parameters</a></td>
+</tr>
 </tbody></table>
 
 <p>Check <a href="#passing-parameters">Passing Parameters</a> for other required parameters.</p>
 
-<h6 id="operation-parameters">Operation Parameters</h6>
+<h6 id="insertbytes32-operation-parameters">insertBytes32 Operation Parameters</h6>
 
 <p>The following operation parameters can be used to save a string you can later query by using the <code class="prettyprint">key</code>value.</p>
 
@@ -151,7 +155,7 @@ Data you save using those operations will stay on Ethereum database &ldquo;for e
 <p>If successfull, the call will return the related Job Id to fetch for results.</p>
 </blockquote>
 
-<p>Gets a string value you previously stored on Ethereum database by calling <code class="prettyprint">insertBytes32</code>.</p>
+<p>Gets a value you previously stored on Ethereum database by calling <code class="prettyprint">insertBytes32</code>.</p>
 
 <h5 id="request-parameters">Request Parameters</h5>
 
@@ -171,11 +175,15 @@ Data you save using those operations will stay on Ethereum database &ldquo;for e
 <td>operation</td>
 <td>selectBytes32</td>
 </tr>
+<tr>
+<td>parameters</td>
+<td><a href="#selectBytes32-operation-parameters">selectBytes32 Operation Parameters</a></td>
+</tr>
 </tbody></table>
 
 <p>Check <a href="#passing-parameters">Passing Parameters</a> for other required parameters.</p>
 
-<h6 id="operation-parameters">Operation Parameters</h6>
+<h6 id="selectbytes32-operation-parameters">selectBytes32 Operation Parameters</h6>
 
 <p>Set the <code class="prettyprint">key</code> value to get the data you previously saved.</p>
 

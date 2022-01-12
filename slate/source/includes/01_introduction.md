@@ -14,20 +14,7 @@ You don't need to create any Blockchain account to use Blockchain Web Services.
 
 "*A smart contract is a computer program or a transaction protocol which is intended to automatically execute, control or document legally relevant events and actions according to the terms of a contract or an agreement.*" The [Wikipedia](https://en.wikipedia.org/wiki/Smart_contract).
 
-## Required Funds
-
-[Blockchain Web Services](https://bweb.services) is free, but calling Smart Contracts requires funds: "It is the fuel that allows it to operate" (you can check how Gas and Fuel works for Ethereum [here](https://ethereum.org/en/developers/docs/gas/)).
-
-<aside class="notice">
-We use Stripe as the Payment gateway for buying credits.
-</aside>
-
-To get your account funded go to `My Account > Credits` and complete your credits purchase.
-
-<br/>
-![BWS Credits](images/BlockchainWebServices-Credits.jpg)
-
-Remember **[Blockchain Web Services](https://bweb.services) is free** and funds are spent when calling smart contracts.
+Once you get your [Blockchain Web Services](https://bweb.services) you can start consuming well-documented [smart contracts](#smart-contracts) using regular API calls. We use your private Blockchain Web Services keys (never shared with anyone, not even with you) to interact with blockchains like Ethereum or Cardano.
 
 ## API Endpoint
 
@@ -161,3 +148,18 @@ Status Code | Meaning
 429 | Too Many Requests -- Slow down!
 500 | Internal Server Error -- We had a problem with our server. Try again later.
 503 | Service Unavailable -- We're temporarially offline for maintanance. Please try again later.
+
+## Required Funds
+
+[Blockchain Web Services](https://bweb.services) is free, but calling Smart Contracts requires funds: "It is the fuel that allows it to operate" (you can check how Gas and Fuel works for Ethereum [here](https://ethereum.org/en/developers/docs/gas/)).
+
+<aside class="notice">
+We use Stripe as the Payment gateway for buying credits.
+</aside>
+
+To get your account funded go to `My Account > Credits` and complete your credits purchase.
+
+<br/>
+![BWS Credits](images/BlockchainWebServices-Credits.jpg)
+
+Remember **[Blockchain Web Services](https://bweb.services) is free** and funds are spent when calling smart contracts.

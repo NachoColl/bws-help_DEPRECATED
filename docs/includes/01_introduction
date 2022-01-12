@@ -14,21 +14,6 @@ You don&rsquo;t need to create any Blockchain account to use Blockchain Web Serv
 
 <p>&ldquo;<em>A smart contract is a computer program or a transaction protocol which is intended to automatically execute, control or document legally relevant events and actions according to the terms of a contract or an agreement.</em>&rdquo; The <a href="https://en.wikipedia.org/wiki/Smart_contract">Wikipedia</a>.</p>
 
-<h2 id="required-funds">Required Funds</h2>
-
-<p><a href="https://bweb.services">Blockchain Web Services</a> is free, but calling Smart Contracts requires funds: &ldquo;It is the fuel that allows it to operate&rdquo; (you can check how Gas and Fuel works for Ethereum <a href="https://ethereum.org/en/developers/docs/gas/">here</a>).</p>
-
-<aside class="notice">
-We use Stripe as the Payment gateway for buying credits.
-</aside>
-
-<p>To get your account funded go to <code class="prettyprint">My Account &gt; Credits</code> and complete your credits purchase.</p>
-
-<p><br/>
-<img src="/images/BlockchainWebServices-Credits.jpg" alt="BWS Credits" /></p>
-
-<p>Remember <strong><a href="https://bweb.services">Blockchain Web Services</a> is free</strong> and funds are spent when calling smart contracts.</p>
-
 <h2 id="api-endpoint">API Endpoint</h2>
 <pre class="highlight javascript"><code><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
     <span class="na">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
@@ -240,3 +225,18 @@ When no transport layer error is detected, all the API calls will include the ne
 <td>Service Unavailable &ndash; We&rsquo;re temporarially offline for maintanance. Please try again later.</td>
 </tr>
 </tbody></table>
+
+<h2 id="required-funds">Required Funds</h2>
+
+<p><a href="https://bweb.services">Blockchain Web Services</a> is free, but calling Smart Contracts requires funds: &ldquo;It is the fuel that allows it to operate&rdquo; (you can check how Gas and Fuel works for Ethereum <a href="https://ethereum.org/en/developers/docs/gas/">here</a>).</p>
+
+<aside class="notice">
+We use Stripe as the Payment gateway for buying credits.
+</aside>
+
+<p>To get your account funded go to <code class="prettyprint">My Account &gt; Credits</code> and complete your credits purchase.</p>
+
+<p><br/>
+<img src="/images/BlockchainWebServices-Credits.jpg" alt="BWS Credits" /></p>
+
+<p>Remember <strong><a href="https://bweb.services">Blockchain Web Services</a> is free</strong> and funds are spent when calling smart contracts.</p>

@@ -65,10 +65,11 @@ Parameter | Value
 --------- | -------  
 contract  | Ethereum.Database.Immutable
 operation | insertBytes32
+parameters | [insertBytes32 Operation Parameters](#insertBytes32-operation-parameters)
 
 Check [Passing Parameters](#passing-parameters) for other required parameters.
 
-###### Operation Parameters
+###### insertBytes32 Operation Parameters
 
 The following operation parameters can be used to save a string you can later query by using the ```key```value.
 
@@ -124,10 +125,11 @@ Parameter | Value
 --------- | -------  
 contract  | Ethereum.Database.Immutable
 operation | selectBytes32
+parameters | [selectBytes32 Operation Parameters](#selectBytes32-operation-parameters)
 
 Check [Passing Parameters](#passing-parameters) for other required parameters.
 
-###### Operation Parameters
+###### selectBytes32 Operation Parameters
 
 Set the ```key``` value to get the data you previously saved.
 
