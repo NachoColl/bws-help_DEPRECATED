@@ -31,7 +31,7 @@ var parameters = {
     "operation": "insertBytes32",
     "parameters": {
       "key": "a-key",
-      "data": "Hello World!"
+      "value": "Hello World!"
     }
 }
 
