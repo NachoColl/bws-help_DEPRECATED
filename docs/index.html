@@ -160,6 +160,8 @@ You don&rsquo;t need to create any Blockchain account to use Blockchain Web Serv
 
 <p>&ldquo;<em>A smart contract is a computer program or a transaction protocol which is intended to automatically execute, control or document legally relevant events and actions according to the terms of a contract or an agreement.</em>&rdquo; The <a href="https://en.wikipedia.org/wiki/Smart_contract">Wikipedia</a>.</p>
 
+<p>Once you get your <a href="https://bweb.services">Blockchain Web Services</a> you can start consuming well-documented <a href="#smart-contracts">smart contracts</a> using regular API calls. We use your private Blockchain Web Services keys (never shared with anyone, not even with you) to interact with blockchains like Ethereum or Cardano.</p>
+
 <h2 id="api-endpoint">API Endpoint</h2>
 <pre class="highlight javascript"><code><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
     <span class="na">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
@@ -169,7 +171,7 @@ You don&rsquo;t need to create any Blockchain account to use Blockchain Web Serv
 </code></pre>
 <p>Blockchain Web Services API baseline endpoint is <strong>api.bweb.services</strong> and current version is <strong>v1</strong>.</p>
 
-<p>As an example, API operation <strong>call</strong> to execute a smart contract will use the following URL:</p>
+<p>As an example, API operation <strong>call</strong> will use the following URL:</p>
 
 <p><code class="prettyprint">https://api.bweb.services/v1/call</code></p>
 
@@ -192,85 +194,10 @@ You don&rsquo;t need to create any Blockchain account to use Blockchain Web Serv
 
 <p><code class="prettyprint">&#39;X-Api-Key&#39;: &#39;my-api-key&#39;</code></p>
 
-<aside class="notice">
-You must replace <code>my-api-key</code> with your personal API key.
-</aside>
-
-<h2 id="passing-parameters">Passing parameters</h2>
-
-<blockquote>
-<p>API call example.</p>
-</blockquote>
-<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">parameters</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s2">"contractId"</span><span class="p">:</span> <span class="s2">"eth.rapten.database.immutable"</span><span class="p">,</span>
-  <span class="s2">"parameters"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="p">...</span>
-  <span class="p">}</span>  
-<span class="p">};</span>
-
-<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-  <span class="p">...</span>
-  <span class="na">dataType</span><span class="p">:</span> <span class="s1">'json'</span><span class="p">,</span>
-  <span class="na">data</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">parameters</span><span class="p">),</span>
-  <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
-    <span class="s1">'X-Api-Key'</span><span class="p">:</span> <span class="s1">'ExV0d92KzQ8QgsTVnevddpbB8cUaAfPs7ntVF8g0'</span>
-  <span class="p">},</span> 
-  <span class="p">...</span>
-  <span class="p">});</span>
-
-</code></pre>
-<p>Method call parameters must be passed in the Body part of the POST request message using <a href="https://en.wikipedia.org/wiki/JSON">JSON</a> format and the <code class="prettyprint">Content-Type</code> header attribute must be set to <code class="prettyprint">application/json</code>.</p>
-
-<p>In general, all the API operations use the same parameters structure:</p>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Value(s)</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>contract</td>
-<td>string</td>
-<td>[the contract id to use]</td>
-<td>The contract id.</td>
-</tr>
-<tr>
-<td>version</td>
-<td>number</td>
-<td>1,2,3 ..</td>
-<td>The contract version to use.</td>
-</tr>
-<tr>
-<td>network</td>
-<td>string</td>
-<td>ropsten, ethereum</td>
-<td>The network id to save data to.</td>
-</tr>
-<tr>
-<td>operation</td>
-<td>string</td>
-<td>[the operation to call]</td>
-<td>The operation id.</td>
-</tr>
-<tr>
-<td>parameters</td>
-<td>json</td>
-<td>[the operation parameters]</td>
-<td>List operation parameters.</td>
-</tr>
-</tbody></table>
-
-<p><br/>
-By using <code class="prettyprint">contract</code>, <code class="prettyprint">operation</code> and <code class="prettyprint">parameters</code> you will be able to call any of the Blockchain Web Services available smart contracts.</p>
-
 <h2 id="api-calls-response">API Calls Response</h2>
 
 <blockquote>
-<p>API call response example</p>
+<p>API success call response example</p>
 </blockquote>
 <pre class="highlight plaintext"><code>{
  "statusCode":200,
@@ -372,6 +299,188 @@ When no transport layer error is detected, all the API calls will include the ne
 </tr>
 </tbody></table>
 
+<h2 id="main-api-methods">Main API Methods</h2>
+
+<blockquote>
+<p>API call example.</p>
+</blockquote>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">parameters</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"contractId"</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Immutable"</span><span class="p">,</span>
+  <span class="s2">"parameters"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">...</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="s1">'https://api.bweb.services/v1/call'</span><span class="p">,</span>
+  <span class="na">dataType</span><span class="p">:</span> <span class="s1">'json'</span><span class="p">,</span>
+  <span class="na">data</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">parameters</span><span class="p">),</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
+    <span class="s1">'X-Api-Key'</span><span class="p">:</span> <span class="s1">'ExV0d92KzQ8QgsTVnevddpbB8cUaAfPs7ntVF8g0'</span>
+  <span class="p">},</span>
+  <span class="p">...</span>
+  <span class="p">});</span>
+
+</code></pre>
+<blockquote>
+<p>API call response example</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+ "statusCode":200,
+ "info":  "{
+    \"jobId\":\"543433243\"
+  }"
+}
+</code></pre>
+<p>We mainly use <a href="#call-operation">‘call’ API Method</a> to run a Smart Contracts and <a href="#fetch-operation">&lsquo;fetch’ API Method</a> to get Smart Contract results (Smart Contracts execution can take a while).</p>
+
+<h3 id="smart-contract-call-api-method"><a name="call-operation"></a> Smart Contract &#39;call&rsquo; API Method</h3>
+
+<p>Use <code class="prettyprint">https://api.bweb.services/v1/call</code> to run <a href="https://bweb.services">Blockchain Web Services</a> Smart Contracts passing the following parameters:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Value(s)</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contract</td>
+<td>string</td>
+<td>[the contract id to use]</td>
+<td>The contract id.</td>
+</tr>
+<tr>
+<td>version</td>
+<td>number</td>
+<td>1,2,3 ..</td>
+<td>The contract version to use.</td>
+</tr>
+<tr>
+<td>network</td>
+<td>string</td>
+<td>ropsten, ethereum</td>
+<td>The network id to save data to.</td>
+</tr>
+<tr>
+<td>operation</td>
+<td>string</td>
+<td>[the operation to call]</td>
+<td>The operation id.</td>
+</tr>
+<tr>
+<td>parameters</td>
+<td>json</td>
+<td>[the operation parameters]</td>
+<td>List operation parameters.</td>
+</tr>
+</tbody></table>
+
+<p>Please note:</p>
+
+<ul>
+<li><p>The <code class="prettyprint">contract</code>, <code class="prettyprint">operation</code> and <code class="prettyprint">parameters</code> attributes are used to call any of the Blockchain Web Services available smart contracts.</p></li>
+<li><p><code class="prettyprint">version</code> is used to call a specific Smart Contract implementation.</p></li>
+<li><p><code class="prettyprint">network</code> is the network you want to use (e.g. <code class="prettyprint">ropsten</code> network can be used to test without requiring any funds).</p></li>
+<li><p>Method parameters must be passed in the Body part of the POST request message using <a href="https://en.wikipedia.org/wiki/JSON">JSON</a> format (<code class="prettyprint">Content-Type</code> header attribute must be set to <code class="prettyprint">application/json</code>)</p></li>
+</ul>
+
+<h4 id="call-api-response">&lsquo;call&rsquo; API Response</h4>
+
+<p>API call response includes the &lsquo;jobId&rsquo; to use to get Smart Contract results.</p>
+
+<h3 id="smart-contract-fetch-api-method"><a name="fetch-operation"></a> Smart Contract &lsquo;fetch&rsquo; API Method</h3>
+
+<blockquote>
+<p>API call example.</p>
+</blockquote>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">parameters</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"jobId"</span><span class="p">:</span> <span class="s2">"b064cc6b-f394-4ca4-9c51-be506e4cc59d"</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="s1">'https://api.bweb.services/v1/fetch'</span><span class="p">,</span>
+  <span class="na">dataType</span><span class="p">:</span> <span class="s1">'json'</span><span class="p">,</span>
+  <span class="na">data</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">parameters</span><span class="p">),</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
+    <span class="s1">'X-Api-Key'</span><span class="p">:</span> <span class="s1">'ExV0d92KzQ8QgsTVnevddpbB8cUaAfPs7ntVF8g0'</span>
+  <span class="p">},</span>
+  <span class="p">...</span>
+  <span class="p">});</span>
+
+</code></pre>
+<blockquote>
+<p>Fetch API call response example</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"statusMessage"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"Status"</span><span class="p">:{</span><span class="w"> </span><span class="s2">"Value"</span><span class="p">:</span><span class="s2">"registered"</span><span class="p">},</span><span class="w">
+        </span><span class="s2">"TimestampInMillis"</span><span class="p">:</span><span class="mi">1674504952</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Request"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"contract"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ethereum.Database.Immutable "</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"network"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ropsten"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"operation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"insertBytes32"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"parameters"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a-key"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hello World!"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"Guid"</span><span class="p">:</span><span class="s2">"b064cc6b-f394-4ca4-9c51-be506e4cc59d"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Use <code class="prettyprint">https://api.bweb.services/v1/fetch</code> to get a previously started Smart Contract call, indicating the <code class="prettyprint">jobId</code> you get when running <a href="#call-operation">‘call’ API Method</a>:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Value(s)</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>jobId</td>
+<td>string</td>
+<td>The jobId you get when running a Smart Contract</td>
+</tr>
+</tbody></table>
+
+<h4 id="fetch-api-response">&lsquo;fetch&rsquo; API Response</h4>
+
+<p>The <strong>fetch</strong> API method will return the status of your Smart Contract call as part of the info parameter:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Status</td>
+<td>The current status of Smart Contract execution</td>
+</tr>
+<tr>
+<td>TimestampInMillis</td>
+<td>The status timestamp in milliseconds</td>
+</tr>
+<tr>
+<td>Request</td>
+<td>The original request you did to call the Smart Contract</td>
+</tr>
+<tr>
+<td>Result</td>
+<td>When Status is &lsquo;finished&rsquo; the smart contract results</td>
+</tr>
+</tbody></table>
+
 <h2 id="required-funds">Required Funds</h2>
 
 <p><a href="https://bweb.services">Blockchain Web Services</a> is free, but calling Smart Contracts requires funds: &ldquo;It is the fuel that allows it to operate&rdquo; (you can check how Gas and Fuel works for Ethereum <a href="https://ethereum.org/en/developers/docs/gas/">here</a>).</p>
@@ -431,7 +540,7 @@ Data you save using those operations will stay on Ethereum database &ldquo;for e
     <span class="s2">"operation"</span><span class="p">:</span> <span class="s2">"insertBytes32"</span><span class="p">,</span>
     <span class="s2">"parameters"</span><span class="p">:</span> <span class="p">{</span>
       <span class="s2">"key"</span><span class="p">:</span> <span class="s2">"a-key"</span><span class="p">,</span>
-      <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"Hello World!"</span>
+      <span class="s2">"value"</span><span class="p">:</span> <span class="s2">"Hello World!"</span>
     <span class="p">}</span>
 <span class="p">}</span>
 

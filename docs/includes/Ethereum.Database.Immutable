@@ -40,7 +40,7 @@ Data you save using those operations will stay on Ethereum database &ldquo;for e
     <span class="s2">"operation"</span><span class="p">:</span> <span class="s2">"insertBytes32"</span><span class="p">,</span>
     <span class="s2">"parameters"</span><span class="p">:</span> <span class="p">{</span>
       <span class="s2">"key"</span><span class="p">:</span> <span class="s2">"a-key"</span><span class="p">,</span>
-      <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"Hello World!"</span>
+      <span class="s2">"value"</span><span class="p">:</span> <span class="s2">"Hello World!"</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
