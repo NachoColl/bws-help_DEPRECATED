@@ -188,7 +188,7 @@ When no transport layer error is detected, all the API calls will include the ne
   }"
 }
 </code></pre>
-<p>We mainly use <a href="#call-operation">‘call’ API Method</a> to run a Smart Contracts and <a href="#fetch-operation">&lsquo;fetch’ API Method</a> to get Smart Contract results (Smart Contracts execution can take a while).</p>
+<p>We mainly use <a href="#call-operation">‘call’ API Method</a> to run a Smart Contract and <a href="#fetch-operation">&lsquo;fetch’ API Method</a> to get Smart Contract results (Smart Contracts execution can take a while).</p>
 
 <h3 id="smart-contract-call-api-method"><a name="call-operation"></a> Smart Contract &#39;call&rsquo; API Method</h3>
 
@@ -205,13 +205,13 @@ When no transport layer error is detected, all the API calls will include the ne
 <tr>
 <td>contract</td>
 <td>string</td>
-<td>[the contract id to use]</td>
+<td>check <a href="#smart-contracts">Smart Contracts</a></td>
 <td>The contract id.</td>
 </tr>
 <tr>
 <td>version</td>
 <td>number</td>
-<td>1,2,3 ..</td>
+<td>1,2,3,&hellip;</td>
 <td>The contract version to use.</td>
 </tr>
 <tr>
@@ -223,21 +223,21 @@ When no transport layer error is detected, all the API calls will include the ne
 <tr>
 <td>operation</td>
 <td>string</td>
-<td>[the operation to call]</td>
-<td>The operation id.</td>
+<td>check <a href="#smart-contracts">Smart Contracts</a></td>
+<td>The operation id to call.</td>
 </tr>
 <tr>
 <td>parameters</td>
 <td>json</td>
-<td>[the operation parameters]</td>
-<td>List operation parameters.</td>
+<td>check <a href="#smart-contracts">Smart Contracts</a></td>
+<td>The operation required parameters.</td>
 </tr>
 </tbody></table>
 
 <p>Please note:</p>
 
 <ul>
-<li><p>The <code class="prettyprint">contract</code>, <code class="prettyprint">operation</code> and <code class="prettyprint">parameters</code> attributes are used to call any of the Blockchain Web Services available smart contracts.</p></li>
+<li><p>The <code class="prettyprint">contract</code>, <code class="prettyprint">operation</code> and <code class="prettyprint">parameters</code> attributes are used to call any of the Blockchain Web Services available check <a href="#smart-contracts">Smart Contracts</a>.</p></li>
 <li><p><code class="prettyprint">version</code> is used to call a specific Smart Contract implementation.</p></li>
 <li><p><code class="prettyprint">network</code> is the network you want to use (e.g. <code class="prettyprint">ropsten</code> network can be used to test without requiring any funds).</p></li>
 <li><p>Method parameters must be passed in the Body part of the POST request message using <a href="https://en.wikipedia.org/wiki/JSON">JSON</a> format (<code class="prettyprint">Content-Type</code> header attribute must be set to <code class="prettyprint">application/json</code>)</p></li>
@@ -246,6 +246,10 @@ When no transport layer error is detected, all the API calls will include the ne
 <h4 id="call-api-response">&lsquo;call&rsquo; API Response</h4>
 
 <p>API call response includes the &lsquo;jobId&rsquo; to use to get Smart Contract results.</p>
+
+<p><code class="prettyprint">{ &quot;jobId&quot;: &quot;aacee908-3a85-4966-945c-ab8f09ebabf9&quot; }</code></p>
+
+<p>Check the <a href="#api-calls-response">response</a> object you get when calling Blockchain Web Services API.</p>
 
 <h3 id="smart-contract-fetch-api-method"><a name="fetch-operation"></a> Smart Contract &lsquo;fetch&rsquo; API Method</h3>
 

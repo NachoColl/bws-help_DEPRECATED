@@ -142,23 +142,23 @@ $.ajax({
 }
 ```
 
-We mainly use [‘call’ API Method](#call-operation) to run a Smart Contracts and ['fetch’ API Method](#fetch-operation) to get Smart Contract results (Smart Contracts execution can take a while).
+We mainly use [‘call’ API Method](#call-operation) to run a Smart Contract and ['fetch’ API Method](#fetch-operation) to get Smart Contract results (Smart Contracts execution can take a while).
 
 ### <a name="call-operation"></a> Smart Contract 'call' API Method
 
 Use `https://api.bweb.services/v1/call` to run [Blockchain Web Services](https://bweb.services) Smart Contracts passing the following parameters:
 
-| Parameter  | Type   | Value(s)                   | Description                     |
-| ---------- | ------ | -------------------------- | ------------------------------- |
-| contract   | string | [the contract id to use]   | The contract id.                |
-| version    | number | 1,2,3 ..                   | The contract version to use.    |
-| network    | string | ropsten, ethereum          | The network id to save data to. |
-| operation  | string | [the operation to call]    | The operation id.               |
-| parameters | json   | [the operation parameters] | List operation parameters.      |
+| Parameter  | Type   | Value(s)                                  | Description                        |
+| ---------- | ------ | ----------------------------------------- | ---------------------------------- |
+| contract   | string | check [Smart Contracts](#smart-contracts) | The contract id.                   |
+| version    | number | 1,2,3,...                                 | The contract version to use.       |
+| network    | string | ropsten, ethereum                         | The network id to save data to.    |
+| operation  | string | check [Smart Contracts](#smart-contracts) | The operation id to call.          |
+| parameters | json   | check [Smart Contracts](#smart-contracts) | The operation required parameters. |
 
 Please note:
 
-- The `contract`, `operation` and `parameters` attributes are used to call any of the Blockchain Web Services available smart contracts.
+- The `contract`, `operation` and `parameters` attributes are used to call any of the Blockchain Web Services available check [Smart Contracts](#smart-contracts).
 
 - `version` is used to call a specific Smart Contract implementation.
 
@@ -169,6 +169,10 @@ Please note:
 #### 'call' API Response
 
 API call response includes the 'jobId' to use to get Smart Contract results.
+
+`{ "jobId": "aacee908-3a85-4966-945c-ab8f09ebabf9" }`
+
+Check the [response](#api-calls-response) object you get when calling Blockchain Web Services API.
 
 ### <a name="fetch-operation"></a> Smart Contract 'fetch' API Method
 
