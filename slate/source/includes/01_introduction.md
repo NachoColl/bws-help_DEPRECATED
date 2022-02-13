@@ -4,6 +4,10 @@
 
 To start using [Blockchain Web Services](https://bweb.services) go to [bweb.services](https://bweb.services) and sign-up. It's free.
 
+<aside class="notice">
+Check Blockchain Web Services roadmap at <a href="https://blockchain-web-services.org/#roadmap" target="_blank">Product Roadmap</a>.
+</aside>
+
 ## How It Works
 
 [Blockchain Web Services](https://bweb.services) is a set of services made to **simplify the use of Smart Contracts** without the need to get blockchain accounts (e.g. Ethereum or Cardano) or having to go through hard learning curves.
@@ -58,21 +62,21 @@ You must include your Key in all of your API calls as a header attribute:
 
 > API success call response example
 
-```
+```json
 {
- "statusCode":200,
- "info":  "{
-    \"jobId\":\"543433243\"
-  }"
+  "statusCode": 200,
+  "info": {
+    "jobId": "543433243"
+  }
 }
 ```
 
 > API call error response example
 
-```
+```json
 {
- "statusCode":404,
- "statusMessage":"incorrect parameters"
+  "statusCode": 404,
+  "statusMessage": "incorrect parameters"
 }
 ```
 
@@ -85,7 +89,11 @@ When no transport layer error is detected, all the API calls will include the ne
 | ------------- | ------ | ------------------------------------------------------- |
 | statusCode    | number | The api call result code (e.g. 200 indicates no error). |
 | statusMessage | string | The status code related message.                        |
-| info          | string | The requested information.                              |
+| info          | object | The requested information                               |
+
+<aside class="notice">
+"info" can return a string or a JSON object.
+</aside>
 
 ### Error Status Codes
 
@@ -133,12 +141,12 @@ $.ajax({
 
 > API call response example
 
-```
+```json
 {
- "statusCode":200,
- "info":  "{
-    \"jobId\":\"543433243\"
-  }"
+  "statusCode": 200,
+  "info": {
+    "jobId": "543433243"
+  }
 }
 ```
 
@@ -235,7 +243,19 @@ The **fetch** API method will return the status of your Smart Contract call as p
 | Status            | The current status of Smart Contract execution          |
 | TimestampInMillis | The status timestamp in milliseconds                    |
 | Request           | The original request you did to call the Smart Contract |
-| Result            | When Status is 'finished' the smart contract results    |
+| Result            | When Status is 'completed' the smart contract results   |
+| Receipt           | The outcome of interaction with Ethereum Blockchain     |
+
+##### 'fetch' Status List
+
+A Blockchain Web Services Smart Contract call status can be:
+
+| Status     | Description                                         |
+| ---------- | --------------------------------------------------- |
+| registered | The job has correctly been registered for execution |
+| running    | The transaction is running on Blockchain Network    |
+| completed  | Smart Contract call has completed                   |
+| failed     | Smart Contract execution has failed                 |
 
 ## Required Funds
 
