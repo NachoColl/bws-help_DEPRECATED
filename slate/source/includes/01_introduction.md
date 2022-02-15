@@ -4,10 +4,6 @@
 
 To start using [Blockchain Web Services](https://bweb.services) go to [bweb.services](https://bweb.services) and sign-up. It's free.
 
-<aside class="notice">
-Check Blockchain Web Services roadmap at <a href="https://blockchain-web-services.org/#roadmap" target="_blank">Product Roadmap</a>.
-</aside>
-
 ## How It Works
 
 [Blockchain Web Services](https://bweb.services) is a set of services made to **simplify the use of Smart Contracts** without the need to get blockchain accounts (e.g. Ethereum or Cardano) or having to go through hard learning curves.
