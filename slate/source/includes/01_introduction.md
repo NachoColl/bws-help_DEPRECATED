@@ -14,7 +14,7 @@ You don't need to create any Blockchain account to use Blockchain Web Services.
 
 "_A smart contract is a computer program or a transaction protocol which is intended to automatically execute, control or document legally relevant events and actions according to the terms of a contract or an agreement._" The [Wikipedia](https://en.wikipedia.org/wiki/Smart_contract).
 
-Once you get your [Blockchain Web Services](https://bweb.services) you can start consuming well-documented [smart contracts](#smart-contracts) using regular API calls. We use your private Blockchain Web Services keys (never shared with anyone, not even with you) to interact with blockchains like Ethereum or Cardano.
+Once you get your [Blockchain Web Services](https://bweb.services) you can start consuming well-documented [smart contracts](#smart-contracts) using regular API calls. We use your private Blockchain Web Services keys (never shared with anyone) to interact with blockchains like Ethereum or Cardano.
 
 ## API Endpoint
 
