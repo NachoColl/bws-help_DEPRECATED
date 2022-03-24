@@ -146,7 +146,7 @@ $.ajax({
 }
 ```
 
-We mainly use [‘call’ API Method](#call-operation) to run a Smart Contract and ['fetch’ API Method](#fetch-operation) to get Smart Contract results (Smart Contracts execution can take a while).
+We mainly use [‘call’ API Method](#call-operation) to run a Smart Contract and ['fetch’ API Method](#fetch-operation) to get Smart Contract status (Smart Contracts execution can take a while).
 
 ### <a name="call-operation"></a> Smart Contract 'call' API Method
 

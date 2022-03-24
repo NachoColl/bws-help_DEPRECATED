@@ -342,7 +342,7 @@ When no transport layer error is detected, all the API calls will include the ne
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>We mainly use <a href="#call-operation">‘call’ API Method</a> to run a Smart Contract and <a href="#fetch-operation">&lsquo;fetch’ API Method</a> to get Smart Contract results (Smart Contracts execution can take a while).</p>
+<p>We mainly use <a href="#call-operation">‘call’ API Method</a> to run a Smart Contract and <a href="#fetch-operation">&lsquo;fetch’ API Method</a> to get Smart Contract status (Smart Contracts execution can take a while).</p>
 
 <h3 id="smart-contract-call-api-method"><a name="call-operation"></a> Smart Contract &#39;call&rsquo; API Method</h3>
 
@@ -564,7 +564,7 @@ We use Stripe as the Payment gateway for buying credits.
 </tr>
 <tr>
 <td>ropsten</td>
-<td><a href="https://ropsten.etherscan.io/address/0x2dB6Bbb6ff06D1fdC3c04705E1284dF99981D205#code">0x2dB6Bbb6ff06D1fdC3c04705E1284dF99981D205</a></td>
+<td><a href="https://ropsten.etherscan.io/address/0x81D575b53239BcB4332bb1608a21F1A17035deeA">0x81D575b53239BcB4332bb1608a21F1A17035deeA</a></td>
 </tr>
 </tbody></table>
 
@@ -579,7 +579,7 @@ Data you save using those operations will stay on Ethereum database &ldquo;for e
 <h4 id="insertbytes32">:: insertBytes32</h4>
 <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">parameters</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">contract</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Immutable"</span><span class="p">,</span>
-  <span class="na">version</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="na">version</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
   <span class="na">network</span><span class="p">:</span> <span class="s2">"ropsten"</span><span class="p">,</span>
   <span class="na">operation</span><span class="p">:</span> <span class="s2">"insertBytes32"</span><span class="p">,</span>
   <span class="na">parameters</span><span class="p">:</span> <span class="p">{</span>
@@ -617,7 +617,7 @@ Data you save using those operations will stay on Ethereum database &ldquo;for e
 </span></code></pre>
 <p>Saves up to 32 characters string value in Ethereum database.</p>
 
-<h5 id="request-parameters">Request Parameters</h5>
+<h5 id="insertbytes32-request-parameters">insertBytes32 Request Parameters</h5>
 
 <p>Use the following parameters to call <code class="prettyprint">insertBytes32</code> operation:</p>
 
@@ -669,14 +669,14 @@ Data you save using those operations will stay on Ethereum database &ldquo;for e
 </tr>
 </tbody></table>
 
-<h5 id="response">Response</h5>
+<h5 id="insertbytes32-response">insertBytes32 Response</h5>
 
 <p>The operation call will return the <code class="prettyprint">jobId</code> of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).</p>
 
 <h4 id="selectbytes32">:: selectBytes32</h4>
 <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">parameters</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">contract</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Immutable"</span><span class="p">,</span>
-  <span class="na">version</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="na">version</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
   <span class="na">network</span><span class="p">:</span> <span class="s2">"ropsten"</span><span class="p">,</span>
   <span class="na">operation</span><span class="p">:</span> <span class="s2">"selectBytes32"</span><span class="p">,</span>
   <span class="na">parameters</span><span class="p">:</span> <span class="p">{</span>
@@ -713,7 +713,7 @@ Data you save using those operations will stay on Ethereum database &ldquo;for e
 </span></code></pre>
 <p>Gets a value you previously stored on Ethereum database by calling <code class="prettyprint">insertBytes32</code>.</p>
 
-<h5 id="request-parameters">Request Parameters</h5>
+<h5 id="selectbytes32-request-parameters">selectBytes32 Request Parameters</h5>
 
 <p>Use the following parameters to call <code class="prettyprint">selectBytes32</code> operation:</p>
 
@@ -759,7 +759,189 @@ Data you save using those operations will stay on Ethereum database &ldquo;for e
 </tr>
 </tbody></table>
 
-<h5 id="response">Response</h5>
+<h5 id="selectbytes32-response">selectBytes32 Response</h5>
+
+<p>The operation call will return the <code class="prettyprint">jobId</code> of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).</p>
+
+<h4 id="insertstring">:: insertString</h4>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">parameters</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">contract</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Immutable"</span><span class="p">,</span>
+  <span class="na">version</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="na">network</span><span class="p">:</span> <span class="s2">"ropsten"</span><span class="p">,</span>
+  <span class="na">operation</span><span class="p">:</span> <span class="s2">"insertString"</span><span class="p">,</span>
+  <span class="na">parameters</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">key</span><span class="p">:</span> <span class="s2">"a-key"</span><span class="p">,</span>
+    <span class="na">value</span><span class="p">:</span> <span class="s2">"Hello World!"</span><span class="p">,</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="s2">"https://api.bweb.services/v1/call"</span><span class="p">,</span>
+  <span class="na">data</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">parameters</span><span class="p">),</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
+    <span class="s2">"X-Api-Key"</span><span class="p">:</span> <span class="s2">"ExV0d92KzQ8QgsTVnevddpbB8cUaAfPs7ntVF8g0"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="na">dataType</span><span class="p">:</span> <span class="s2">"json"</span><span class="p">,</span>
+  <span class="na">success</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="na">error</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">xhr</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">errorThrown</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">xhr</span><span class="p">);</span>
+  <span class="p">},</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>If successfull, the call will return the related Job Id to fetch for results.</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jobId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"543433243"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Saves a string value in Ethereum database.</p>
+
+<h5 id="insertstring-request-parameters">insertString Request Parameters</h5>
+
+<p>Use the following parameters to call <code class="prettyprint">insertString</code> operation:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contract</td>
+<td>Ethereum.Database.Immutable</td>
+</tr>
+<tr>
+<td>operation</td>
+<td>insertBytes32</td>
+</tr>
+<tr>
+<td>parameters</td>
+<td><a href="#insertString-operation-parameters">insertString Operation Parameters</a></td>
+</tr>
+</tbody></table>
+
+<p>Check <a href="#passing-parameters">Passing Parameters</a> for other required parameters.</p>
+
+<h6 id="insertstring-operation-parameters">insertString Operation Parameters</h6>
+
+<p>The following operation parameters can be used to save a string you can later query by using the <code class="prettyprint">key</code>value.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>key</td>
+<td>string</td>
+<td>The key for data to save.</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>The value to save on database.</td>
+</tr>
+</tbody></table>
+
+<h5 id="insertstring-response">insertString Response</h5>
+
+<p>The operation call will return the <code class="prettyprint">jobId</code> of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).</p>
+
+<h4 id="selectstring">:: selectString</h4>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">parameters</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">contract</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Immutable"</span><span class="p">,</span>
+  <span class="na">version</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="na">network</span><span class="p">:</span> <span class="s2">"ropsten"</span><span class="p">,</span>
+  <span class="na">operation</span><span class="p">:</span> <span class="s2">"selectString"</span><span class="p">,</span>
+  <span class="na">parameters</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">key</span><span class="p">:</span> <span class="s2">"a-key"</span><span class="p">,</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="s2">"https://api.bweb.services/v1/call"</span><span class="p">,</span>
+  <span class="na">data</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">parameters</span><span class="p">),</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
+    <span class="s2">"X-Api-Key"</span><span class="p">:</span> <span class="s2">"ExV0d92KzQ8QgsTVnevddpbB8cUaAfPs7ntVF8g0"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="na">dataType</span><span class="p">:</span> <span class="s2">"json"</span><span class="p">,</span>
+  <span class="na">success</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="na">error</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">xhr</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">errorThrown</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">xhr</span><span class="p">);</span>
+  <span class="p">},</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>If successfull, the call will return the related Job Id to fetch for results.</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jobId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"543433243"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Gets a value you previously stored on Ethereum database by calling <code class="prettyprint">insertString</code>.</p>
+
+<h5 id="selectstring-request-parameters">selectString Request Parameters</h5>
+
+<p>Use the following parameters to call <code class="prettyprint">selectString</code> operation:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contract</td>
+<td>Ethereum.Database.Immutable</td>
+</tr>
+<tr>
+<td>operation</td>
+<td>selectString</td>
+</tr>
+<tr>
+<td>parameters</td>
+<td><a href="#selectString-operation-parameters">selectString Operation Parameters</a></td>
+</tr>
+</tbody></table>
+
+<p>Check <a href="#passing-parameters">Passing Parameters</a> for other required parameters.</p>
+
+<h6 id="selectstring-operation-parameters">selectString Operation Parameters</h6>
+
+<p>Set the <code class="prettyprint">key</code> value to get the data you previously saved.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>key</td>
+<td>string</td>
+<td>The key for data to save.</td>
+</tr>
+</tbody></table>
+
+<h5 id="selectstring-response">selectString Response</h5>
 
 <p>The operation call will return the <code class="prettyprint">jobId</code> of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).</p>
 
