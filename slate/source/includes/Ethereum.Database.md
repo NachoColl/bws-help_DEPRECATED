@@ -1,19 +1,17 @@
-## Ethereum.Database.Immutable
+## Ethereum.Database
 
-This contract is used for [immutable](https://en.wikipedia.org/wiki/Immutable_object) Ethereum database operations.
+Blockchain is essentially a decentralized database that runs on a peer-to-peer network. Ethereum.Database.[Immutable](https://en.wikipedia.org/wiki/Immutable_object) and Ethereum.Database.Mutable contracts offer operations to save and get data from such database.
+
+### Ethereum.Database.Immutable
 
 "_An immutable object is an object whose state cannot be modified after it is created_"
 
-### Contract Address
-
-You can check Blockchain Web Services contract at the following addresses (to verify click on the contract address link).
+#### Contract Address
 
 | Network Id | Contract Address                                                                                                              |
 | ---------- | ----------------------------------------------------------------------------------------------------------------------------- |
 | ethereum   |
 | ropsten    | [0x81D575b53239BcB4332bb1608a21F1A17035deeA](https://ropsten.etherscan.io/address/0x81D575b53239BcB4332bb1608a21F1A17035deeA) |
-
-### Operations
 
 Use the following operations to save (and get) data to Ethereum [blockchain](https://en.wikipedia.org/wiki/Blockchain) [distributed ledger](https://en.wikipedia.org/wiki/Distributed_ledger) database.
 
@@ -21,7 +19,7 @@ Use the following operations to save (and get) data to Ethereum [blockchain](htt
 Data you save using those operations will stay on Ethereum database "for ever" :).
 </aside>
 
-#### :: insertBytes32
+##### insertBytes32
 
 ```javascript
 var parameters = {

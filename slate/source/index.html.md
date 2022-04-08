@@ -2,8 +2,7 @@
 title: Blockchain Web Services Help
 
 language_tabs:
- - javascript
-
+  - javascript
 
 toc_footers:
   - <a href='https://bweb.services'>Sign Up</a>
@@ -13,7 +12,7 @@ includes:
   - 00_welcome.md
   - 01_introduction.md
   - 02_smartcontracts.md
-  - Ethereum.Database.Immutable.md
+  - Ethereum.Database.md
 
 search: false
 ---

@@ -1,18 +1,10 @@
-<h1 id="introduction">Introduction</h1>
-
-<h2 id="registration">Registration</h2>
+<h1 id="how-it-works">How It Works</h1>
 
 <p>To start using <a href="https://bweb.services">Blockchain Web Services</a> go to <a href="https://bweb.services">bweb.services</a> and sign-up. It&rsquo;s free.</p>
-
-<h2 id="how-it-works">How It Works</h2>
-
-<p><a href="https://bweb.services">Blockchain Web Services</a> is a set of services made to <strong>simplify the use of Smart Contracts</strong> without the need to get blockchain accounts (e.g. Ethereum or Cardano) or having to go through hard learning curves.</p>
 
 <aside class="notice">
 You don&rsquo;t need to create any Blockchain account to use Blockchain Web Services.
 </aside>
-
-<p>&ldquo;<em>A smart contract is a computer program or a transaction protocol which is intended to automatically execute, control or document legally relevant events and actions according to the terms of a contract or an agreement.</em>&rdquo; The <a href="https://en.wikipedia.org/wiki/Smart_contract">Wikipedia</a>.</p>
 
 <p>Once you get your <a href="https://bweb.services">Blockchain Web Services</a> you can start consuming well-documented <a href="#smart-contracts">smart contracts</a> using regular API calls. We use your private Blockchain Web Services keys (never shared with anyone) to interact with blockchains like Ethereum or Cardano.</p>
 

@@ -142,27 +142,17 @@
         
           <h1 id="welcome">Welcome</h1>
 
-<p>Welcome to <a href="https://bweb.services">Blockchain Web Services</a> documentation!</p>
+<p><a href="https://bweb.services">Blockchain Web Services</a> is a set of services made to simplify the use of Smart Contracts and build the <strong>Internet of Trust</strong>.</p>
 
-<aside class="notice">
-Check Blockchain Web Services <a href="https://blockchain-web-services.org/#roadmap" target="_blank">Product Roadmap</a>.
-</aside>
+<p>&ldquo;<em>A smart contract is a computer program or a transaction protocol which is intended to automatically execute, control or document legally relevant events and actions according to the terms of a contract or an agreement.</em>&rdquo; The <a href="https://en.wikipedia.org/wiki/Smart_contract">Wikipedia</a>.</p>
 
-          <h1 id="introduction">Introduction</h1>
-
-<h2 id="registration">Registration</h2>
+          <h1 id="how-it-works">How It Works</h1>
 
 <p>To start using <a href="https://bweb.services">Blockchain Web Services</a> go to <a href="https://bweb.services">bweb.services</a> and sign-up. It&rsquo;s free.</p>
-
-<h2 id="how-it-works">How It Works</h2>
-
-<p><a href="https://bweb.services">Blockchain Web Services</a> is a set of services made to <strong>simplify the use of Smart Contracts</strong> without the need to get blockchain accounts (e.g. Ethereum or Cardano) or having to go through hard learning curves.</p>
 
 <aside class="notice">
 You don&rsquo;t need to create any Blockchain account to use Blockchain Web Services.
 </aside>
-
-<p>&ldquo;<em>A smart contract is a computer program or a transaction protocol which is intended to automatically execute, control or document legally relevant events and actions according to the terms of a contract or an agreement.</em>&rdquo; The <a href="https://en.wikipedia.org/wiki/Smart_contract">Wikipedia</a>.</p>
 
 <p>Once you get your <a href="https://bweb.services">Blockchain Web Services</a> you can start consuming well-documented <a href="#smart-contracts">smart contracts</a> using regular API calls. We use your private Blockchain Web Services keys (never shared with anyone) to interact with blockchains like Ethereum or Cardano.</p>
 
@@ -542,15 +532,15 @@ We use Stripe as the Payment gateway for buying credits.
 
           <h1 id="smart-contracts">Smart Contracts</h1>
 
-          <h2 id="ethereum-database-immutable">Ethereum.Database.Immutable</h2>
+          <h2 id="ethereum-database">Ethereum.Database</h2>
 
-<p>This contract is used for <a href="https://en.wikipedia.org/wiki/Immutable_object">immutable</a> Ethereum database operations.</p>
+<p>Blockchain is essentially decentralized database that runs on a peer-to-peer network. Ethereum.Database.<a href="https://en.wikipedia.org/wiki/Immutable_object">Immutable</a> and Ethereum.Database.Mutable contracts offer operations to save and get data from such database.</p>
+
+<h3 id="ethereum-database-immutable">Ethereum.Database.Immutable</h3>
 
 <p>&ldquo;<em>An immutable object is an object whose state cannot be modified after it is created</em>&rdquo;</p>
 
-<h3 id="contract-address">Contract Address</h3>
-
-<p>You can check Blockchain Web Services contract at the following addresses (to verify click on the contract address link).</p>
+<h4 id="contract-address">Contract Address</h4>
 
 <table><thead>
 <tr>
@@ -568,15 +558,13 @@ We use Stripe as the Payment gateway for buying credits.
 </tr>
 </tbody></table>
 
-<h3 id="operations">Operations</h3>
-
 <p>Use the following operations to save (and get) data to Ethereum <a href="https://en.wikipedia.org/wiki/Blockchain">blockchain</a> <a href="https://en.wikipedia.org/wiki/Distributed_ledger">distributed ledger</a> database.</p>
 
 <aside class="notice">
 Data you save using those operations will stay on Ethereum database &ldquo;for ever&rdquo; :).
 </aside>
 
-<h4 id="insertbytes32">:: insertBytes32</h4>
+<h5 id="insertbytes32">insertBytes32</h5>
 <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">parameters</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">contract</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Immutable"</span><span class="p">,</span>
   <span class="na">version</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>

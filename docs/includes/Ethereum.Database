@@ -1,12 +1,12 @@
-<h2 id="ethereum-database-immutable">Ethereum.Database.Immutable</h2>
+<h2 id="ethereum-database">Ethereum.Database</h2>
 
-<p>This contract is used for <a href="https://en.wikipedia.org/wiki/Immutable_object">immutable</a> Ethereum database operations.</p>
+<p>Blockchain is essentially decentralized database that runs on a peer-to-peer network. Ethereum.Database.<a href="https://en.wikipedia.org/wiki/Immutable_object">Immutable</a> and Ethereum.Database.Mutable contracts offer operations to save and get data from such database.</p>
+
+<h3 id="ethereum-database-immutable">Ethereum.Database.Immutable</h3>
 
 <p>&ldquo;<em>An immutable object is an object whose state cannot be modified after it is created</em>&rdquo;</p>
 
-<h3 id="contract-address">Contract Address</h3>
-
-<p>You can check Blockchain Web Services contract at the following addresses (to verify click on the contract address link).</p>
+<h4 id="contract-address">Contract Address</h4>
 
 <table><thead>
 <tr>
@@ -24,15 +24,13 @@
 </tr>
 </tbody></table>
 
-<h3 id="operations">Operations</h3>
-
 <p>Use the following operations to save (and get) data to Ethereum <a href="https://en.wikipedia.org/wiki/Blockchain">blockchain</a> <a href="https://en.wikipedia.org/wiki/Distributed_ledger">distributed ledger</a> database.</p>
 
 <aside class="notice">
 Data you save using those operations will stay on Ethereum database &ldquo;for ever&rdquo; :).
 </aside>
 
-<h4 id="insertbytes32">:: insertBytes32</h4>
+<h5 id="insertbytes32">insertBytes32</h5>
 <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">parameters</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">contract</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Immutable"</span><span class="p">,</span>
   <span class="na">version</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
