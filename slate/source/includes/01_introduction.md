@@ -1,6 +1,6 @@
 # How It Works
 
-To start using [Blockchain Web Services](https://bweb.services) go to [bweb.services](https://bweb.services) and sign-up. It's free.
+To start using Blockchain Web Services go to [bweb.services](https://bweb.services) and sign-up. It's free.
 
 <aside class="notice">
 You don't need to create any Blockchain account to use Blockchain Web Services.
@@ -11,6 +11,7 @@ Once you get your [Blockchain Web Services](https://bweb.services) account you c
 <aside class="warning">
 Every operation call ownership is certified.
 </aside>
+
 ## API Endpoint
 
 ```javascript
@@ -88,9 +89,11 @@ $.ajax({
 
 Use [‘call’](#call-operation) to run a Smart Contract operation and ['fetch’](#fetch-operation) to get Smart Contract call status (Smart Contracts execution can take a while to get confirmed from the Blockchain).
 
-### <a name="call-operation"></a> 'call' API Method
+<a name="call-operation"></a>
 
-`https://api.bweb.services/v1/call` runs a [Blockchain Web Services](https://bweb.services) Smart Contract and must contain the following parameters as part of the call:
+### 'call' API Method
+
+`https://api.bweb.services/v1/call` runs a [Blockchain Web Services](https://bweb.services) Smart Contract and must contain the following parameters:
 
 | Parameter  | Type   | Value(s)                                  | Description                        |
 | ---------- | ------ | ----------------------------------------- | ---------------------------------- |
@@ -102,7 +105,7 @@ Use [‘call’](#call-operation) to run a Smart Contract operation and ['fetch�
 
 Please note:
 
-- The `contract`, `operation` and `parameters` attributes are used to call any of the Blockchain Web Services available check [Smart Contracts](#smart-contracts).
+- The `contract`, `operation` and `parameters` attributes are used to call any of the Blockchain Web Services available [Smart Contracts](#smart-contracts).
 
 - `version` is used to call a specific Smart Contract implementation.
 
@@ -118,7 +121,9 @@ API call response includes the 'jobId' to use to get Smart Contract results.
 
 Check the [response](#api-calls-response) object you get when calling Blockchain Web Services API.
 
-### <a name="fetch-operation"></a> 'fetch' API Method
+<a name="fetch-operation"></a>
+
+### 'fetch' API Method
 
 > API call example.
 
