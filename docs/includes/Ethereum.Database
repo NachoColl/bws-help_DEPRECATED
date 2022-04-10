@@ -1,6 +1,6 @@
 <h2 id="ethereum-database">Ethereum.Database</h2>
 
-<p>Blockchain is essentially decentralized database that runs on a peer-to-peer network. Ethereum.Database.<a href="https://en.wikipedia.org/wiki/Immutable_object">Immutable</a> and Ethereum.Database.Mutable contracts offer operations to save and get data from such database.</p>
+<p>A Blockchain is essentially a decentralized database that runs on a peer-to-peer network. You can use <a href="https://bweb.services">Blockchain Web Services</a> Ethereum.Database.<a href="https://en.wikipedia.org/wiki/Immutable_object">Immutable</a> and Ethereum.Database.Mutable contracts to save and get data from such database.</p>
 
 <h3 id="ethereum-database-immutable">Ethereum.Database.Immutable</h3>
 
@@ -24,11 +24,7 @@
 </tr>
 </tbody></table>
 
-<p>Use the following operations to save (and get) data to Ethereum <a href="https://en.wikipedia.org/wiki/Blockchain">blockchain</a> <a href="https://en.wikipedia.org/wiki/Distributed_ledger">distributed ledger</a> database.</p>
-
-<aside class="notice">
-Data you save using those operations will stay on Ethereum database &ldquo;for ever&rdquo; :).
-</aside>
+<p>Use the following operations to save (and get) data to Ethereum <a href="https://en.wikipedia.org/wiki/Blockchain">blockchain</a> - data you save using those operations will stay on Ethereum database &ldquo;for ever&rdquo;!</p>
 
 <h5 id="insertbytes32">insertBytes32</h5>
 <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">parameters</span> <span class="o">=</span> <span class="p">{</span>
@@ -70,10 +66,6 @@ Data you save using those operations will stay on Ethereum database &ldquo;for e
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Saves up to 32 characters string value in Ethereum database.</p>
-
-<h5 id="insertbytes32-request-parameters">insertBytes32 Request Parameters</h5>
-
-<p>Use the following parameters to call <code class="prettyprint">insertBytes32</code> operation:</p>
 
 <table><thead>
 <tr>
@@ -123,11 +115,11 @@ Data you save using those operations will stay on Ethereum database &ldquo;for e
 </tr>
 </tbody></table>
 
-<h5 id="insertbytes32-response">insertBytes32 Response</h5>
+<h6 id="insertbytes32-response">insertBytes32 Response</h6>
 
 <p>The operation call will return the <code class="prettyprint">jobId</code> of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).</p>
 
-<h4 id="selectbytes32">:: selectBytes32</h4>
+<h5 id="selectbytes32">selectBytes32</h5>
 <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">parameters</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">contract</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Immutable"</span><span class="p">,</span>
   <span class="na">version</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -165,11 +157,7 @@ Data you save using those operations will stay on Ethereum database &ldquo;for e
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Gets a value you previously stored on Ethereum database by calling <code class="prettyprint">insertBytes32</code>.</p>
-
-<h5 id="selectbytes32-request-parameters">selectBytes32 Request Parameters</h5>
-
-<p>Use the following parameters to call <code class="prettyprint">selectBytes32</code> operation:</p>
+<p>Gets a value you previously stored on Ethereum using <code class="prettyprint">insertBytes32</code>.</p>
 
 <table><thead>
 <tr>
@@ -213,11 +201,11 @@ Data you save using those operations will stay on Ethereum database &ldquo;for e
 </tr>
 </tbody></table>
 
-<h5 id="selectbytes32-response">selectBytes32 Response</h5>
+<h6 id="selectbytes32-response">selectBytes32 Response</h6>
 
 <p>The operation call will return the <code class="prettyprint">jobId</code> of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).</p>
 
-<h4 id="insertstring">:: insertString</h4>
+<h5 id="insertstring">insertString</h5>
 <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">parameters</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">contract</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Immutable"</span><span class="p">,</span>
   <span class="na">version</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -257,10 +245,6 @@ Data you save using those operations will stay on Ethereum database &ldquo;for e
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Saves a string value in Ethereum database.</p>
-
-<h5 id="insertstring-request-parameters">insertString Request Parameters</h5>
-
-<p>Use the following parameters to call <code class="prettyprint">insertString</code> operation:</p>
 
 <table><thead>
 <tr>
@@ -307,11 +291,11 @@ Data you save using those operations will stay on Ethereum database &ldquo;for e
 </tr>
 </tbody></table>
 
-<h5 id="insertstring-response">insertString Response</h5>
+<h6 id="insertstring-response">insertString Response</h6>
 
 <p>The operation call will return the <code class="prettyprint">jobId</code> of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).</p>
 
-<h4 id="selectstring">:: selectString</h4>
+<h5 id="selectstring">selectString</h5>
 <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">parameters</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">contract</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Immutable"</span><span class="p">,</span>
   <span class="na">version</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -349,11 +333,7 @@ Data you save using those operations will stay on Ethereum database &ldquo;for e
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Gets a value you previously stored on Ethereum database by calling <code class="prettyprint">insertString</code>.</p>
-
-<h5 id="selectstring-request-parameters">selectString Request Parameters</h5>
-
-<p>Use the following parameters to call <code class="prettyprint">selectString</code> operation:</p>
+<p>Gets a value you previously stored on Ethereum using <code class="prettyprint">insertString</code>.</p>
 
 <table><thead>
 <tr>
@@ -395,6 +375,6 @@ Data you save using those operations will stay on Ethereum database &ldquo;for e
 </tr>
 </tbody></table>
 
-<h5 id="selectstring-response">selectString Response</h5>
+<h6 id="selectstring-response">selectString Response</h6>
 
 <p>The operation call will return the <code class="prettyprint">jobId</code> of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).</p>

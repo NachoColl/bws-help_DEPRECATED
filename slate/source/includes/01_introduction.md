@@ -6,8 +6,11 @@ To start using [Blockchain Web Services](https://bweb.services) go to [bweb.serv
 You don't need to create any Blockchain account to use Blockchain Web Services.
 </aside>
 
-Once you get your [Blockchain Web Services](https://bweb.services) you can start consuming well-documented [smart contracts](#smart-contracts) using regular API calls. We use your private Blockchain Web Services keys (never shared with anyone) to interact with blockchains like Ethereum or Cardano.
+Once you get your [Blockchain Web Services](https://bweb.services) account you can build your solution by calling well-documented [smart contracts](#smart-contracts) using regular API calls. Blockchain Web Services generates your private keys and hash them so every call to Blockchain is unique and linked to you.
 
+<aside class="warning">
+Every operation call ownership is certified.
+</aside>
 ## API Endpoint
 
 ```javascript
@@ -46,61 +49,6 @@ You must include your Key in all of your API calls as a header attribute:
 
 `'X-Api-Key': 'my-api-key'`
 
-## API Calls Response
-
-> API success call response example
-
-```json
-{
-  "statusCode": 200,
-  "info": {
-    "jobId": "543433243"
-  }
-}
-```
-
-> API call error response example
-
-```json
-{
-  "statusCode": 404,
-  "statusMessage": "incorrect parameters"
-}
-```
-
-When calling the API, you can get an [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) layer [transport error](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes), that is, an error that has ocurried before the related API code is executed (e.g. 503, Service Unavailable), or a _controlled error_, meaning an error that is related to the parameters values you send (e.g. 404, not found - when no data is found for your query). By using this strategy, you will be able to catch and differentiate all kind of API call errors easily.
-
-<br/>
-When no transport layer error is detected, all the API calls will include the next message in the BODY part of the response:
-
-| Parameter     | Type   | Description                                             |
-| ------------- | ------ | ------------------------------------------------------- |
-| statusCode    | number | The api call result code (e.g. 200 indicates no error). |
-| statusMessage | string | The status code related message.                        |
-| info          | object | The requested information                               |
-
-<aside class="notice">
-"info" can return a string or a JSON object.
-</aside>
-
-### Error Status Codes
-
-The Blockchain Web Services API uses the following error Status Codes:
-
-| Status Code | Meaning                                                                                     |
-| ----------- | ------------------------------------------------------------------------------------------- |
-| 400         | Bad Request -- Check your request parameters.                                               |
-| 401         | Unauthorized -- Check your API key                                                          |
-| 403         | Forbidden / Too Many Requests -- Slow down!                                                 |
-| 404         | Not Found -- Your API key is valid but there is no related user on our servers.             |
-| 405         | Method Not Allowed -- You tried to access with an invalid method                            |
-| 406         | Not Acceptable -- You requested a format that isn't json                                    |
-| 410         | Gone -- The requested object has been removed                                               |
-| 418         | I'm a teapot                                                                                |
-| 429         | Too Many Requests -- Slow down!                                                             |
-| 500         | Internal Server Error -- We had a problem with our server. Try again later.                 |
-| 503         | Service Unavailable -- We're temporarially offline for maintanance. Please try again later. |
-
 ## Main API Methods
 
 > API call example.
@@ -138,11 +86,11 @@ $.ajax({
 }
 ```
 
-We mainly use [‘call’ API Method](#call-operation) to run a Smart Contract and ['fetch’ API Method](#fetch-operation) to get Smart Contract status (Smart Contracts execution can take a while).
+Use [‘call’](#call-operation) to run a Smart Contract operation and ['fetch’](#fetch-operation) to get Smart Contract call status (Smart Contracts execution can take a while to get confirmed from the Blockchain).
 
-### <a name="call-operation"></a> Smart Contract 'call' API Method
+### <a name="call-operation"></a> 'call' API Method
 
-Use `https://api.bweb.services/v1/call` to run [Blockchain Web Services](https://bweb.services) Smart Contracts passing the following parameters:
+`https://api.bweb.services/v1/call` runs a [Blockchain Web Services](https://bweb.services) Smart Contract and must contain the following parameters as part of the call:
 
 | Parameter  | Type   | Value(s)                                  | Description                        |
 | ---------- | ------ | ----------------------------------------- | ---------------------------------- |
@@ -162,7 +110,7 @@ Please note:
 
 - Method parameters must be passed in the Body part of the POST request message using [JSON](https://en.wikipedia.org/wiki/JSON) format (`Content-Type` header attribute must be set to `application/json`)
 
-#### 'call' API Response
+#### 'call' Response
 
 API call response includes the 'jobId' to use to get Smart Contract results.
 
@@ -170,7 +118,7 @@ API call response includes the 'jobId' to use to get Smart Contract results.
 
 Check the [response](#api-calls-response) object you get when calling Blockchain Web Services API.
 
-### <a name="fetch-operation"></a> Smart Contract 'fetch' API Method
+### <a name="fetch-operation"></a> 'fetch' API Method
 
 > API call example.
 
@@ -216,13 +164,13 @@ $.ajax({
 }
 ```
 
-Use `https://api.bweb.services/v1/fetch` to get a previously started Smart Contract call, indicating the `jobId` you get when running [‘call’ API Method](#call-operation):
+Use `https://api.bweb.services/v1/fetch` to get a previously started Smart Contract call, indicating the `jobId` you get when running the [‘call’](#call-operation):
 
 | Parameter | Type   | Value(s)                                        |
 | --------- | ------ | ----------------------------------------------- |
 | jobId     | string | The jobId you get when running a Smart Contract |
 
-#### 'fetch' API Response
+#### 'fetch' Results
 
 The **fetch** API method will return the status of your Smart Contract call as part of the info parameter:
 
@@ -244,6 +192,56 @@ A Blockchain Web Services Smart Contract call status can be:
 | running    | The transaction is running on Blockchain Network    |
 | completed  | Smart Contract call has completed                   |
 | failed     | Smart Contract execution has failed                 |
+
+## API Calls Response
+
+> API success call response example
+
+```json
+{
+  "statusCode": 200,
+  "info": {
+    "jobId": "543433243"
+  }
+}
+```
+
+> API call error response example
+
+```json
+{
+  "statusCode": 404,
+  "statusMessage": "incorrect parameters"
+}
+```
+
+When calling the API, you can get an [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) layer [transport error](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes), that is, an error that has ocurried before the related API code is executed (e.g. 503, Service Unavailable), or a _controlled error_, meaning an error that is related to the parameters values you send (e.g. 404, not found - when no data is found for your query).
+
+When no transport layer error is detected, all the API calls will include the next message in the BODY part of the response:
+
+| Parameter     | Type   | Description                                             |
+| ------------- | ------ | ------------------------------------------------------- |
+| statusCode    | number | The api call result code (e.g. 200 indicates no error). |
+| statusMessage | string | The status code related message.                        |
+| info          | object | The requested information                               |
+
+### Error Status Codes
+
+The Blockchain Web Services API uses the following error Status Codes:
+
+| Status Code | Meaning                                                                                     |
+| ----------- | ------------------------------------------------------------------------------------------- |
+| 400         | Bad Request -- Check your request parameters.                                               |
+| 401         | Unauthorized -- Check your API key                                                          |
+| 403         | Forbidden / Too Many Requests -- Slow down!                                                 |
+| 404         | Not Found -- Your API key is valid but there is no related user on our servers.             |
+| 405         | Method Not Allowed -- You tried to access with an invalid method                            |
+| 406         | Not Acceptable -- You requested a format that isn't json                                    |
+| 410         | Gone -- The requested object has been removed                                               |
+| 418         | I'm a teapot                                                                                |
+| 429         | Too Many Requests -- Slow down!                                                             |
+| 500         | Internal Server Error -- We had a problem with our server. Try again later.                 |
+| 503         | Service Unavailable -- We're temporarially offline for maintanance. Please try again later. |
 
 ## Required Funds
 

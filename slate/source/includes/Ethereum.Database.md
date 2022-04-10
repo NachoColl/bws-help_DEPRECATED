@@ -1,6 +1,6 @@
 ## Ethereum.Database
 
-Blockchain is essentially a decentralized database that runs on a peer-to-peer network. Ethereum.Database.[Immutable](https://en.wikipedia.org/wiki/Immutable_object) and Ethereum.Database.Mutable contracts offer operations to save and get data from such database.
+A Blockchain is essentially a decentralized database that runs on a peer-to-peer network. You can use [Blockchain Web Services](https://bweb.services) Ethereum.Database.[Immutable](https://en.wikipedia.org/wiki/Immutable_object) and Ethereum.Database.Mutable contracts to save and get data from such database.
 
 ### Ethereum.Database.Immutable
 
@@ -13,11 +13,7 @@ Blockchain is essentially a decentralized database that runs on a peer-to-peer n
 | ethereum   |
 | ropsten    | [0x81D575b53239BcB4332bb1608a21F1A17035deeA](https://ropsten.etherscan.io/address/0x81D575b53239BcB4332bb1608a21F1A17035deeA) |
 
-Use the following operations to save (and get) data to Ethereum [blockchain](https://en.wikipedia.org/wiki/Blockchain) [distributed ledger](https://en.wikipedia.org/wiki/Distributed_ledger) database.
-
-<aside class="notice">
-Data you save using those operations will stay on Ethereum database "for ever" :).
-</aside>
+Use the following operations to save (and get) data to Ethereum [blockchain](https://en.wikipedia.org/wiki/Blockchain) - data you save using those operations will stay on Ethereum database "for ever"!
 
 ##### insertBytes32
 
@@ -64,10 +60,6 @@ $.ajax({
 
 Saves up to 32 characters string value in Ethereum database.
 
-##### insertBytes32 Request Parameters
-
-Use the following parameters to call `insertBytes32` operation:
-
 | Parameter  | Value                                                                     |
 | ---------- | ------------------------------------------------------------------------- |
 | contract   | Ethereum.Database.Immutable                                               |
@@ -85,11 +77,11 @@ The following operation parameters can be used to save a string you can later qu
 | key       | string | 32 characters string | The key for data to save.      |
 | value     | string | 32 characters string | The value to save on database. |
 
-##### insertBytes32 Response
+###### insertBytes32 Response
 
 The operation call will return the `jobId` of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).
 
-#### :: selectBytes32
+##### selectBytes32
 
 ```javascript
 var parameters = {
@@ -131,11 +123,7 @@ $.ajax({
 }
 ```
 
-Gets a value you previously stored on Ethereum database by calling `insertBytes32`.
-
-##### selectBytes32 Request Parameters
-
-Use the following parameters to call `selectBytes32` operation:
+Gets a value you previously stored on Ethereum using `insertBytes32`.
 
 | Parameter  | Value                                                                     |
 | ---------- | ------------------------------------------------------------------------- |
@@ -153,11 +141,11 @@ Set the `key` value to get the data you previously saved.
 | --------- | ------ | -------------------- | ------------------------- |
 | key       | string | 32 characters string | The key for data to save. |
 
-##### selectBytes32 Response
+###### selectBytes32 Response
 
 The operation call will return the `jobId` of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).
 
-#### :: insertString
+##### insertString
 
 ```javascript
 var parameters = {
@@ -202,10 +190,6 @@ $.ajax({
 
 Saves a string value in Ethereum database.
 
-##### insertString Request Parameters
-
-Use the following parameters to call `insertString` operation:
-
 | Parameter  | Value                                                                   |
 | ---------- | ----------------------------------------------------------------------- |
 | contract   | Ethereum.Database.Immutable                                             |
@@ -223,11 +207,11 @@ The following operation parameters can be used to save a string you can later qu
 | key       | string | The key for data to save.      |
 | value     | string | The value to save on database. |
 
-##### insertString Response
+###### insertString Response
 
 The operation call will return the `jobId` of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).
 
-#### :: selectString
+##### selectString
 
 ```javascript
 var parameters = {
@@ -269,11 +253,7 @@ $.ajax({
 }
 ```
 
-Gets a value you previously stored on Ethereum database by calling `insertString`.
-
-##### selectString Request Parameters
-
-Use the following parameters to call `selectString` operation:
+Gets a value you previously stored on Ethereum using `insertString`.
 
 | Parameter  | Value                                                                   |
 | ---------- | ----------------------------------------------------------------------- |
@@ -291,6 +271,6 @@ Set the `key` value to get the data you previously saved.
 | --------- | ------ | ------------------------- |
 | key       | string | The key for data to save. |
 
-##### selectString Response
+###### selectString Response
 
 The operation call will return the `jobId` of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).

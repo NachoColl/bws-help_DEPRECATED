@@ -154,7 +154,11 @@
 You don&rsquo;t need to create any Blockchain account to use Blockchain Web Services.
 </aside>
 
-<p>Once you get your <a href="https://bweb.services">Blockchain Web Services</a> you can start consuming well-documented <a href="#smart-contracts">smart contracts</a> using regular API calls. We use your private Blockchain Web Services keys (never shared with anyone) to interact with blockchains like Ethereum or Cardano.</p>
+<p>Once you get your <a href="https://bweb.services">Blockchain Web Services</a> account you can build your solution by calling well-documented <a href="#smart-contracts">smart contracts</a> using regular API calls. Blockchain Web Services generates your private keys and hash them so every call to Blockchain is unique and linked to you.</p>
+
+<aside class="warning">
+Every operation call ownership is certified.
+</aside>
 
 <h2 id="api-endpoint">API Endpoint</h2>
 <pre class="highlight javascript"><code><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
@@ -187,115 +191,6 @@ You don&rsquo;t need to create any Blockchain account to use Blockchain Web Serv
 <p>You must include your Key in all of your API calls as a header attribute:</p>
 
 <p><code class="prettyprint">&#39;X-Api-Key&#39;: &#39;my-api-key&#39;</code></p>
-
-<h2 id="api-calls-response">API Calls Response</h2>
-
-<blockquote>
-<p>API success call response example</p>
-</blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"jobId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"543433243"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<blockquote>
-<p>API call error response example</p>
-</blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">404</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"statusMessage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"incorrect parameters"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>When calling the API, you can get an <a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">HTTP</a> layer <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">transport error</a>, that is, an error that has ocurried before the related API code is executed (e.g. 503, Service Unavailable), or a <em>controlled error</em>, meaning an error that is related to the parameters values you send (e.g. 404, not found - when no data is found for your query). By using this strategy, you will be able to catch and differentiate all kind of API call errors easily.</p>
-
-<p><br/>
-When no transport layer error is detected, all the API calls will include the next message in the BODY part of the response:</p>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>statusCode</td>
-<td>number</td>
-<td>The api call result code (e.g. 200 indicates no error).</td>
-</tr>
-<tr>
-<td>statusMessage</td>
-<td>string</td>
-<td>The status code related message.</td>
-</tr>
-<tr>
-<td>info</td>
-<td>object</td>
-<td>The requested information</td>
-</tr>
-</tbody></table>
-
-<aside class="notice">
-&ldquo;info&rdquo; can return a string or a JSON object.
-</aside>
-
-<h3 id="error-status-codes">Error Status Codes</h3>
-
-<p>The Blockchain Web Services API uses the following error Status Codes:</p>
-
-<table><thead>
-<tr>
-<th>Status Code</th>
-<th>Meaning</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>400</td>
-<td>Bad Request &ndash; Check your request parameters.</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized &ndash; Check your API key</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden / Too Many Requests &ndash; Slow down!</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found &ndash; Your API key is valid but there is no related user on our servers.</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed &ndash; You tried to access with an invalid method</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable &ndash; You requested a format that isn&rsquo;t json</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone &ndash; The requested object has been removed</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&rsquo;m a teapot</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests &ndash; Slow down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error &ndash; We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable &ndash; We&rsquo;re temporarially offline for maintanance. Please try again later.</td>
-</tr>
-</tbody></table>
 
 <h2 id="main-api-methods">Main API Methods</h2>
 
@@ -332,11 +227,11 @@ When no transport layer error is detected, all the API calls will include the ne
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>We mainly use <a href="#call-operation">‘call’ API Method</a> to run a Smart Contract and <a href="#fetch-operation">&lsquo;fetch’ API Method</a> to get Smart Contract status (Smart Contracts execution can take a while).</p>
+<p>Use <a href="#call-operation">‘call’</a> to run a Smart Contract operation and <a href="#fetch-operation">&lsquo;fetch’</a> to get Smart Contract call status (Smart Contracts execution can take a while to get confirmed from the Blockchain).</p>
 
-<h3 id="smart-contract-call-api-method"><a name="call-operation"></a> Smart Contract &#39;call&rsquo; API Method</h3>
+<h3 id="call-api-method"><a name="call-operation"></a> &#39;call&rsquo; API Method</h3>
 
-<p>Use <code class="prettyprint">https://api.bweb.services/v1/call</code> to run <a href="https://bweb.services">Blockchain Web Services</a> Smart Contracts passing the following parameters:</p>
+<p><code class="prettyprint">https://api.bweb.services/v1/call</code> runs a <a href="https://bweb.services">Blockchain Web Services</a> Smart Contract and must contain the following parameters as part of the call:</p>
 
 <table><thead>
 <tr>
@@ -387,7 +282,7 @@ When no transport layer error is detected, all the API calls will include the ne
 <li><p>Method parameters must be passed in the Body part of the POST request message using <a href="https://en.wikipedia.org/wiki/JSON">JSON</a> format (<code class="prettyprint">Content-Type</code> header attribute must be set to <code class="prettyprint">application/json</code>)</p></li>
 </ul>
 
-<h4 id="call-api-response">&lsquo;call&rsquo; API Response</h4>
+<h4 id="call-response">&lsquo;call&rsquo; Response</h4>
 
 <p>API call response includes the &lsquo;jobId&rsquo; to use to get Smart Contract results.</p>
 
@@ -395,7 +290,7 @@ When no transport layer error is detected, all the API calls will include the ne
 
 <p>Check the <a href="#api-calls-response">response</a> object you get when calling Blockchain Web Services API.</p>
 
-<h3 id="smart-contract-fetch-api-method"><a name="fetch-operation"></a> Smart Contract &lsquo;fetch&rsquo; API Method</h3>
+<h3 id="fetch-api-method"><a name="fetch-operation"></a> &lsquo;fetch&rsquo; API Method</h3>
 
 <blockquote>
 <p>API call example.</p>
@@ -439,7 +334,7 @@ When no transport layer error is detected, all the API calls will include the ne
         </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Use <code class="prettyprint">https://api.bweb.services/v1/fetch</code> to get a previously started Smart Contract call, indicating the <code class="prettyprint">jobId</code> you get when running <a href="#call-operation">‘call’ API Method</a>:</p>
+<p>Use <code class="prettyprint">https://api.bweb.services/v1/fetch</code> to get a previously started Smart Contract call, indicating the <code class="prettyprint">jobId</code> you get when running the <a href="#call-operation">‘call’</a>:</p>
 
 <table><thead>
 <tr>
@@ -455,7 +350,7 @@ When no transport layer error is detected, all the API calls will include the ne
 </tr>
 </tbody></table>
 
-<h4 id="fetch-api-response">&lsquo;fetch&rsquo; API Response</h4>
+<h4 id="fetch-results">&lsquo;fetch&rsquo; Results</h4>
 
 <p>The <strong>fetch</strong> API method will return the status of your Smart Contract call as part of the info parameter:</p>
 
@@ -515,6 +410,110 @@ When no transport layer error is detected, all the API calls will include the ne
 </tr>
 </tbody></table>
 
+<h2 id="api-calls-response">API Calls Response</h2>
+
+<blockquote>
+<p>API success call response example</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jobId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"543433243"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>API call error response example</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">404</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"statusMessage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"incorrect parameters"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>When calling the API, you can get an <a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">HTTP</a> layer <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">transport error</a>, that is, an error that has ocurried before the related API code is executed (e.g. 503, Service Unavailable), or a <em>controlled error</em>, meaning an error that is related to the parameters values you send (e.g. 404, not found - when no data is found for your query).</p>
+
+<p>When no transport layer error is detected, all the API calls will include the next message in the BODY part of the response:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>statusCode</td>
+<td>number</td>
+<td>The api call result code (e.g. 200 indicates no error).</td>
+</tr>
+<tr>
+<td>statusMessage</td>
+<td>string</td>
+<td>The status code related message.</td>
+</tr>
+<tr>
+<td>info</td>
+<td>object</td>
+<td>The requested information</td>
+</tr>
+</tbody></table>
+
+<h3 id="error-status-codes">Error Status Codes</h3>
+
+<p>The Blockchain Web Services API uses the following error Status Codes:</p>
+
+<table><thead>
+<tr>
+<th>Status Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request &ndash; Check your request parameters.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized &ndash; Check your API key</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden / Too Many Requests &ndash; Slow down!</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found &ndash; Your API key is valid but there is no related user on our servers.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed &ndash; You tried to access with an invalid method</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable &ndash; You requested a format that isn&rsquo;t json</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Gone &ndash; The requested object has been removed</td>
+</tr>
+<tr>
+<td>418</td>
+<td>I&rsquo;m a teapot</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests &ndash; Slow down!</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error &ndash; We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable &ndash; We&rsquo;re temporarially offline for maintanance. Please try again later.</td>
+</tr>
+</tbody></table>
+
 <h2 id="required-funds">Required Funds</h2>
 
 <p><a href="https://bweb.services">Blockchain Web Services</a> is free, but calling Smart Contracts requires funds: &ldquo;It is the fuel that allows it to operate&rdquo; (you can check how Gas and Fuel works for Ethereum <a href="https://ethereum.org/en/developers/docs/gas/">here</a>).</p>
@@ -534,7 +533,7 @@ We use Stripe as the Payment gateway for buying credits.
 
           <h2 id="ethereum-database">Ethereum.Database</h2>
 
-<p>Blockchain is essentially decentralized database that runs on a peer-to-peer network. Ethereum.Database.<a href="https://en.wikipedia.org/wiki/Immutable_object">Immutable</a> and Ethereum.Database.Mutable contracts offer operations to save and get data from such database.</p>
+<p>A Blockchain is essentially a decentralized database that runs on a peer-to-peer network. You can use <a href="https://bweb.services">Blockchain Web Services</a> Ethereum.Database.<a href="https://en.wikipedia.org/wiki/Immutable_object">Immutable</a> and Ethereum.Database.Mutable contracts to save and get data from such database.</p>
 
 <h3 id="ethereum-database-immutable">Ethereum.Database.Immutable</h3>
 
@@ -558,11 +557,7 @@ We use Stripe as the Payment gateway for buying credits.
 </tr>
 </tbody></table>
 
-<p>Use the following operations to save (and get) data to Ethereum <a href="https://en.wikipedia.org/wiki/Blockchain">blockchain</a> <a href="https://en.wikipedia.org/wiki/Distributed_ledger">distributed ledger</a> database.</p>
-
-<aside class="notice">
-Data you save using those operations will stay on Ethereum database &ldquo;for ever&rdquo; :).
-</aside>
+<p>Use the following operations to save (and get) data to Ethereum <a href="https://en.wikipedia.org/wiki/Blockchain">blockchain</a> - data you save using those operations will stay on Ethereum database &ldquo;for ever&rdquo;!</p>
 
 <h5 id="insertbytes32">insertBytes32</h5>
 <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">parameters</span> <span class="o">=</span> <span class="p">{</span>
@@ -604,10 +599,6 @@ Data you save using those operations will stay on Ethereum database &ldquo;for e
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Saves up to 32 characters string value in Ethereum database.</p>
-
-<h5 id="insertbytes32-request-parameters">insertBytes32 Request Parameters</h5>
-
-<p>Use the following parameters to call <code class="prettyprint">insertBytes32</code> operation:</p>
 
 <table><thead>
 <tr>
@@ -657,11 +648,11 @@ Data you save using those operations will stay on Ethereum database &ldquo;for e
 </tr>
 </tbody></table>
 
-<h5 id="insertbytes32-response">insertBytes32 Response</h5>
+<h6 id="insertbytes32-response">insertBytes32 Response</h6>
 
 <p>The operation call will return the <code class="prettyprint">jobId</code> of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).</p>
 
-<h4 id="selectbytes32">:: selectBytes32</h4>
+<h5 id="selectbytes32">selectBytes32</h5>
 <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">parameters</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">contract</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Immutable"</span><span class="p">,</span>
   <span class="na">version</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -699,11 +690,7 @@ Data you save using those operations will stay on Ethereum database &ldquo;for e
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Gets a value you previously stored on Ethereum database by calling <code class="prettyprint">insertBytes32</code>.</p>
-
-<h5 id="selectbytes32-request-parameters">selectBytes32 Request Parameters</h5>
-
-<p>Use the following parameters to call <code class="prettyprint">selectBytes32</code> operation:</p>
+<p>Gets a value you previously stored on Ethereum using <code class="prettyprint">insertBytes32</code>.</p>
 
 <table><thead>
 <tr>
@@ -747,11 +734,11 @@ Data you save using those operations will stay on Ethereum database &ldquo;for e
 </tr>
 </tbody></table>
 
-<h5 id="selectbytes32-response">selectBytes32 Response</h5>
+<h6 id="selectbytes32-response">selectBytes32 Response</h6>
 
 <p>The operation call will return the <code class="prettyprint">jobId</code> of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).</p>
 
-<h4 id="insertstring">:: insertString</h4>
+<h5 id="insertstring">insertString</h5>
 <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">parameters</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">contract</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Immutable"</span><span class="p">,</span>
   <span class="na">version</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -791,10 +778,6 @@ Data you save using those operations will stay on Ethereum database &ldquo;for e
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Saves a string value in Ethereum database.</p>
-
-<h5 id="insertstring-request-parameters">insertString Request Parameters</h5>
-
-<p>Use the following parameters to call <code class="prettyprint">insertString</code> operation:</p>
 
 <table><thead>
 <tr>
@@ -841,11 +824,11 @@ Data you save using those operations will stay on Ethereum database &ldquo;for e
 </tr>
 </tbody></table>
 
-<h5 id="insertstring-response">insertString Response</h5>
+<h6 id="insertstring-response">insertString Response</h6>
 
 <p>The operation call will return the <code class="prettyprint">jobId</code> of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).</p>
 
-<h4 id="selectstring">:: selectString</h4>
+<h5 id="selectstring">selectString</h5>
 <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">parameters</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">contract</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Immutable"</span><span class="p">,</span>
   <span class="na">version</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -883,11 +866,7 @@ Data you save using those operations will stay on Ethereum database &ldquo;for e
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Gets a value you previously stored on Ethereum database by calling <code class="prettyprint">insertString</code>.</p>
-
-<h5 id="selectstring-request-parameters">selectString Request Parameters</h5>
-
-<p>Use the following parameters to call <code class="prettyprint">selectString</code> operation:</p>
+<p>Gets a value you previously stored on Ethereum using <code class="prettyprint">insertString</code>.</p>
 
 <table><thead>
 <tr>
@@ -929,7 +908,7 @@ Data you save using those operations will stay on Ethereum database &ldquo;for e
 </tr>
 </tbody></table>
 
-<h5 id="selectstring-response">selectString Response</h5>
+<h6 id="selectstring-response">selectString Response</h6>
 
 <p>The operation call will return the <code class="prettyprint">jobId</code> of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).</p>
 
