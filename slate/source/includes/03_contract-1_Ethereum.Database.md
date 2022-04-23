@@ -141,6 +141,8 @@ The operation call will return the `jobId` of the job running on Blochchain Web 
 
 `{ "statusCode": 200, "info": { "jobId": "543433243" } }`
 
+<a name="insertString-operation"></a>
+
 ##### insertString
 
 > insertString operation parameters call example.
@@ -185,6 +187,8 @@ The following operation parameters can be used to save a string you can later qu
 The operation call will return the `jobId` of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).
 
 `{ "statusCode": 200, "info": { "jobId": "5434323243" } }`
+
+<a name="selectString-operation"></a>
 
 ##### selectString
 

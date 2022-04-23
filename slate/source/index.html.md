@@ -11,8 +11,10 @@ toc_footers:
 includes:
   - 00_welcome.md
   - 01_introduction.md
-  - 02_smartcontracts.md
-  - Ethereum.Database.md
+  - 03_contract-0.md
+  - 03_contract-1_Ethereum.Database.md
+  - 04_use-case-0.md
+  - 04_use-case-1_megalock.md
 
 search: false
 ---

@@ -1,0 +1,136 @@
+<h2 id="megalock-ninja">MegaLock.ninja</h2>
+
+<pre style="background-color: initial; padding: 0 0 20px 0">
+  <img src="images/megalock-snap-1.png" style="width:95%">
+</pre>
+
+<p><a href="https://megalock.ninja/">MegaLock.ninja</a> is a website anyone can use to securely save data in Ethereum Blockchain.</p>
+
+<aside class="notice">
+Data is encrypted and can only be accessed using linked email account.
+</aside>
+
+<p>The website only needs 3 calls to <strong>Blockchain Web Services</strong> API to save data into Ropsten Network with no need to create any Blockchain account:</p>
+
+<ul>
+<li><a href="#insertString-operation">insertString</a> to save data to Ethereum blockchain,</li>
+<li><a href="#selectString-operation">selectString</a> to get encrypted data from the blockchain, and</li>
+<li><a href="#fetch-operation">fetch</a> to fetch API calls status.</li>
+</ul>
+
+<p>Before data is sent to <strong>Blockchain Web Services</strong> <a href="https://megalock.ninja/">MegaLock.ninja</a> creates RSA key pairs for each user to encrypt and secure data at REST on Ethereum distributed database.</p>
+
+<p><code class="prettyprint">crypto.generateKeyPairSync(&quot;rsa&quot;, { modulusLength: 2048, });</code></p>
+
+<aside class="warning">
+User data, even encrypted will never be stored in BWS.
+</aside>
+
+<h3 id="saving-data-in-ethereum">Saving Data in Ethereum</h3>
+<pre class="highlight javascript"><code><span class="nx">async</span> <span class="kd">function</span> <span class="nx">callInsertStringBWSAPI</span><span class="p">(</span><span class="nx">endpoint</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">apiKey</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">body</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">contract</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Mutable"</span><span class="p">,</span>
+    <span class="na">version</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="na">network</span><span class="p">:</span> <span class="s2">"ropsten"</span><span class="p">,</span>
+    <span class="na">operation</span><span class="p">:</span> <span class="s2">"insertString"</span><span class="p">,</span>
+    <span class="na">parameters</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">key</span><span class="p">:</span> <span class="nx">key</span><span class="p">,</span>
+      <span class="na">value</span><span class="p">:</span> <span class="nx">value</span><span class="p">,</span>
+    <span class="p">},</span>
+  <span class="p">};</span>
+
+  <span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">endpoint</span> <span class="o">+</span> <span class="s2">"/call"</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
+    <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">body</span><span class="p">),</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
+      <span class="s2">"X-Api-Key"</span><span class="p">:</span> <span class="nx">apiKey</span><span class="p">,</span>
+    <span class="p">},</span>
+  <span class="p">});</span>
+  <span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">)</span> <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">statusMessage</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+<blockquote>
+<p>Fetch API call status and receipt</p>
+</blockquote>
+<pre class="highlight javascript"><code><span class="nx">async</span> <span class="kd">function</span> <span class="nx">callFetchJobBWSAPI</span><span class="p">(</span><span class="nx">endpoint</span><span class="p">,</span> <span class="nx">jobId</span><span class="p">,</span> <span class="nx">apiKey</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">body</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">jobId</span><span class="p">:</span> <span class="nx">jobId</span><span class="p">,</span>
+  <span class="p">};</span>
+
+  <span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">endpoint</span> <span class="o">+</span> <span class="s2">"/fetch"</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
+    <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">body</span><span class="p">),</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span> <span class="s2">"X-Api-Key"</span><span class="p">:</span> <span class="nx">apiKey</span> <span class="p">},</span>
+  <span class="p">});</span>
+  <span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">)</span> <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">statusMessage</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+<p>Once the website validates your email address,</p>
+
+<p><img src="/images/megalock-snap-2.png" alt="Megalock.ninja" /></p>
+
+<p>enter the data you want to secure in Ethereum database and just click SAVE button.</p>
+
+<p><img src="/images/megalock-snap-3.png" alt="Megalock.ninja" /></p>
+
+<aside class="warning">
+Saving data in Ethereum is an asynchronous operation and can take a while.
+</aside>
+
+<p><img src="/images/megalock-snap-4.png" alt="Megalock.ninja" /></p>
+
+<p>Once finished, you can check Blockchain transaction on Etherscan (an example for the transaction used for creating those snapshots: <a href="https://ropsten.etherscan.io/tx/0x6a3d336dd1792a786e0070cdd695fbc9526488258bfa5952579a60fde68323ce">https://ropsten.etherscan.io/tx/0x6a3d336dd1..</a>).</p>
+
+<p><img src="/images/megalock-snap-6.png" alt="Megalock.ninja" /></p>
+
+<p>Your data is now secured in Blockchain for ever ;)</p>
+
+<h3 id="get-your-password-from-ethereum">Get Your Password from Ethereum</h3>
+<pre class="highlight javascript"><code><span class="nx">async</span> <span class="kd">function</span> <span class="nx">callSelectStringBWSAPI</span><span class="p">(</span><span class="nx">endpoint</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">apiKey</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">body</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">contract</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Mutable"</span><span class="p">,</span>
+    <span class="na">version</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="na">network</span><span class="p">:</span> <span class="s2">"ropsten"</span><span class="p">,</span>
+    <span class="na">operation</span><span class="p">:</span> <span class="s2">"selectString"</span><span class="p">,</span>
+    <span class="na">parameters</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">key</span><span class="p">:</span> <span class="nx">key</span><span class="p">,</span>
+    <span class="p">},</span>
+  <span class="p">};</span>
+
+  <span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">endpoint</span> <span class="o">+</span> <span class="s2">"/call"</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
+    <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">body</span><span class="p">),</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
+      <span class="s2">"X-Api-Key"</span><span class="p">:</span> <span class="nx">apiKey</span><span class="p">,</span>
+    <span class="p">},</span>
+  <span class="p">});</span>
+  <span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">)</span> <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">statusMessage</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+<p>Getting you password from Ethereum blockchain is similar to saving. You validate the email you used to save and <a href="https://megalock.ninja/">MegaLock.ninja</a> will call Blockchain Web services to fetch your data.</p>
+
+<p><img src="/images/megalock-snap-8.png" alt="Megalock.ninja" /></p>
+
+<p>As for saving, fetching data can take a while, but for reading data from Blockchain it usually goes much faster.</p>
+
+<p><img src="/images/megalock-snap-9.png" alt="Megalock.ninja" /></p>
+
+<p>You will get the password or any saved data, copy it to the clipboard and use it as required.</p>
+
+<p><img src="/images/megalock-snap-10.png" alt="Megalock.ninja" /></p>
+
+<p>Feel free to contact <a href="https://www.linkedin.com/in/nacho-coll/">Nacho Coll</a> on LinkedIn for more details on this Blockchain Web Service demo example!</p>

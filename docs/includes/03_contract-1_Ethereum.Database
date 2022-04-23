@@ -226,6 +226,8 @@ Same operations are available for Immutable and Mutable behaviour.
 
 <p><code class="prettyprint">{ &quot;statusCode&quot;: 200, &quot;info&quot;: { &quot;jobId&quot;: &quot;543433243&quot; } }</code></p>
 
+<p><a name="insertString-operation"></a></p>
+
 <h5 id="insertstring">insertString</h5>
 
 <blockquote>
@@ -297,6 +299,8 @@ Same operations are available for Immutable and Mutable behaviour.
 <p>The operation call will return the <code class="prettyprint">jobId</code> of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).</p>
 
 <p><code class="prettyprint">{ &quot;statusCode&quot;: 200, &quot;info&quot;: { &quot;jobId&quot;: &quot;5434323243&quot; } }</code></p>
+
+<p><a name="selectString-operation"></a></p>
 
 <h5 id="selectstring">selectString</h5>
 
