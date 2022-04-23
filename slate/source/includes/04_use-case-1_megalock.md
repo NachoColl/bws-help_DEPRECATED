@@ -138,4 +138,12 @@ You will get the password or any saved data, copy it to the clipboard and use it
 
 ![Megalock.ninja](images/megalock-snap-10.png)
 
-Feel free to contact [Nacho Coll](https://www.linkedin.com/in/nacho-coll/) on LinkedIn for more details on this Blockchain Web Service demo example!
+## Transactions Overview
+
+<pre style="background-color: initial; padding: 0 0 20px 0">
+  <img src="images/megalock-snap-12.png" style="width:95%">
+</pre>
+
+All the transactions your product executes will be displayed on your [Blockchain Web Services](https://bweb.services) Management Console.
+
+![Megalock.ninja](images/megalock-snap-11.png)
