@@ -1,12 +1,12 @@
 <h1 id="how-it-works">How It Works</h1>
 
-<p>To start using Blockchain Web Services go to <a href="https://bweb.services">bweb.services</a> and sign-up. It&rsquo;s free.</p>
+<p>To start using Blockchain Web Services go to <a href="https://bws.ninja">bws.ninja</a> and sign-up. It&rsquo;s free.</p>
 
 <aside class="notice">
 You don&rsquo;t need to create any Blockchain account to use Blockchain Web Services.
 </aside>
 
-<p>Once you get your <a href="https://bweb.services">Blockchain Web Services</a> account you can build your solution by calling well-documented <a href="#smart-contracts">smart contracts</a> using regular API calls. Blockchain Web Services generates your private keys and hash them so every call to Blockchain is unique and linked to you.</p>
+<p>Once you get your <a href="https://bws.ninja">Blockchain Web Services</a> account you can build your solution by calling well-documented <a href="#smart-contracts">smart contracts</a> using regular API calls. Blockchain Web Services generates your private keys and hash them so every call to Blockchain is unique and linked to you.</p>
 
 <aside class="warning">
 Every operation call ownership is certified.
@@ -15,15 +15,15 @@ Every operation call ownership is certified.
 <h2 id="api-endpoint">API Endpoint</h2>
 <pre class="highlight javascript"><code><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
     <span class="na">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
-    <span class="na">url</span><span class="p">:</span> <span class="s1">'https://api.bweb.services/v1/call'</span><span class="p">,</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s1">'https://api.bws.ninja/v1/call'</span><span class="p">,</span>
    <span class="p">...</span>
   <span class="p">});</span>
 </code></pre>
-<p>Blockchain Web Services API baseline endpoint is <strong>api.bweb.services</strong> and current version is <strong>v1</strong>.</p>
+<p>Blockchain Web Services API baseline endpoint is <strong>api.bws.ninja</strong> and current version is <strong>v1</strong>.</p>
 
 <p>As an example, API operation <strong>call</strong> will use the following URL:</p>
 
-<p><code class="prettyprint">https://api.bweb.services/v1/call</code></p>
+<p><code class="prettyprint">https://api.bws.ninja/v1/call</code></p>
 
 <h2 id="authentication">Authentication</h2>
 <pre class="highlight javascript"><code><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
@@ -35,7 +35,7 @@ Every operation call ownership is certified.
     <span class="p">...</span>
   <span class="p">});</span>
 </code></pre>
-<p>Calling <a href="https://bweb.services">Blockchain Web Services</a> smart contracts requires a personal <strong>API Key</strong> to authenticate. To get your key, sign in at <a href="https://bweb.services">bweb.services</a> and go to <code class="prettyprint">My Account &gt; API Key</code>.</p>
+<p>Calling <a href="https://bws.ninja">Blockchain Web Services</a> smart contracts requires a personal <strong>API Key</strong> to authenticate. To get your key, sign in at <a href="https://bws.ninja">bws.ninja</a> and go to <code class="prettyprint">My Account &gt; API Key</code>.</p>
 
 <p><br/>
 <img src="/images/BlockchainWebServices-API_Key.jpg" alt="BWS Credits" /></p>
@@ -58,7 +58,7 @@ Every operation call ownership is certified.
 
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
   <span class="na">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
-  <span class="na">url</span><span class="p">:</span> <span class="s1">'https://api.bweb.services/v1/call'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="s1">'https://api.bws.ninja/v1/call'</span><span class="p">,</span>
   <span class="na">dataType</span><span class="p">:</span> <span class="s1">'json'</span><span class="p">,</span>
   <span class="na">data</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">parameters</span><span class="p">),</span>
   <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
@@ -85,7 +85,7 @@ Every operation call ownership is certified.
 
 <h3 id="call-api-method">&#39;call&rsquo; API Method</h3>
 
-<p><code class="prettyprint">https://api.bweb.services/v1/call</code> runs a <a href="https://bweb.services">Blockchain Web Services</a> Smart Contract and must contain the following parameters:</p>
+<p><code class="prettyprint">https://api.bws.ninja/v1/call</code> runs a <a href="https://bws.ninja">Blockchain Web Services</a> Smart Contract and must contain the following parameters:</p>
 
 <table><thead>
 <tr>
@@ -157,7 +157,7 @@ Every operation call ownership is certified.
 
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
   <span class="na">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
-  <span class="na">url</span><span class="p">:</span> <span class="s1">'https://api.bweb.services/v1/fetch'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="s1">'https://api.bws.ninja/v1/fetch'</span><span class="p">,</span>
   <span class="na">dataType</span><span class="p">:</span> <span class="s1">'json'</span><span class="p">,</span>
   <span class="na">data</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">parameters</span><span class="p">),</span>
   <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
@@ -190,7 +190,7 @@ Every operation call ownership is certified.
         </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Use <code class="prettyprint">https://api.bweb.services/v1/fetch</code> to get a previously started Smart Contract call, indicating the <code class="prettyprint">jobId</code> you get when running the <a href="#call-operation">‘call’</a>:</p>
+<p>Use <code class="prettyprint">https://api.bws.ninja/v1/fetch</code> to get a previously started Smart Contract call, indicating the <code class="prettyprint">jobId</code> you get when running the <a href="#call-operation">‘call’</a>:</p>
 
 <table><thead>
 <tr>
@@ -370,9 +370,19 @@ Every operation call ownership is certified.
 </tr>
 </tbody></table>
 
+<h2 id="transactions-overview">Transactions Overview</h2>
+
+<pre style="background-color: initial; padding: 0 0 20px 0">
+  <img src="images/megalock-snap-12.png" style="width:95%">
+</pre>
+
+<p>All the transactions your product executes will be displayed on your <a href="https://bws.ninja">Blockchain Web Services</a> Management Console.</p>
+
+<p><img src="/images/megalock-snap-11.png" alt="Megalock.ninja" /></p>
+
 <h2 id="required-funds">Required Funds</h2>
 
-<p><a href="https://bweb.services">Blockchain Web Services</a> is free, but calling Smart Contracts requires funds: &ldquo;It is the fuel that allows it to operate&rdquo; (you can check how Gas and Fuel works for Ethereum <a href="https://ethereum.org/en/developers/docs/gas/">here</a>).</p>
+<p><a href="https://bws.ninja">Blockchain Web Services</a> is free, but calling Smart Contracts requires funds: &ldquo;It is the fuel that allows it to operate&rdquo; (you can check how Gas and Fuel works for Ethereum <a href="https://ethereum.org/en/developers/docs/gas/">here</a>).</p>
 
 <aside class="notice">
 We use Stripe as the Payment gateway for buying credits.
@@ -383,4 +393,4 @@ We use Stripe as the Payment gateway for buying credits.
 <p><br/>
 <img src="/images/BlockchainWebServices-Credits.jpg" alt="BWS Credits" /></p>
 
-<p>Remember <strong><a href="https://bweb.services">Blockchain Web Services</a> is free</strong> and funds are spent when calling smart contracts.</p>
+<p>Remember <strong><a href="https://bws.ninja">Blockchain Web Services</a> is free</strong> and funds are spent when calling smart contracts.</p>

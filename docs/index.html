@@ -142,19 +142,19 @@
         
           <h1 id="welcome">Welcome</h1>
 
-<p><a href="https://bweb.services">Blockchain Web Services</a> is a cloud platform offering services to help build the <strong>Internet of Trust</strong>.</p>
+<p><a href="https://bws.ninja">Blockchain Web Services</a> is a cloud platform offering services to help build the <strong>Internet of Trust</strong>.</p>
 
 <p>&ldquo;<em>A smart contract is a computer program or a transaction protocol which is intended to automatically execute, control or document legally relevant events and actions according to the terms of a contract or an agreement.</em>&rdquo; The <a href="https://en.wikipedia.org/wiki/Smart_contract">Wikipedia</a>.</p>
 
           <h1 id="how-it-works">How It Works</h1>
 
-<p>To start using Blockchain Web Services go to <a href="https://bweb.services">bweb.services</a> and sign-up. It&rsquo;s free.</p>
+<p>To start using Blockchain Web Services go to <a href="https://bws.ninja">bws.ninja</a> and sign-up. It&rsquo;s free.</p>
 
 <aside class="notice">
 You don&rsquo;t need to create any Blockchain account to use Blockchain Web Services.
 </aside>
 
-<p>Once you get your <a href="https://bweb.services">Blockchain Web Services</a> account you can build your solution by calling well-documented <a href="#smart-contracts">smart contracts</a> using regular API calls. Blockchain Web Services generates your private keys and hash them so every call to Blockchain is unique and linked to you.</p>
+<p>Once you get your <a href="https://bws.ninja">Blockchain Web Services</a> account you can build your solution by calling well-documented <a href="#smart-contracts">smart contracts</a> using regular API calls. Blockchain Web Services generates your private keys and hash them so every call to Blockchain is unique and linked to you.</p>
 
 <aside class="warning">
 Every operation call ownership is certified.
@@ -163,15 +163,15 @@ Every operation call ownership is certified.
 <h2 id="api-endpoint">API Endpoint</h2>
 <pre class="highlight javascript"><code><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
     <span class="na">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
-    <span class="na">url</span><span class="p">:</span> <span class="s1">'https://api.bweb.services/v1/call'</span><span class="p">,</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s1">'https://api.bws.ninja/v1/call'</span><span class="p">,</span>
    <span class="p">...</span>
   <span class="p">});</span>
 </code></pre>
-<p>Blockchain Web Services API baseline endpoint is <strong>api.bweb.services</strong> and current version is <strong>v1</strong>.</p>
+<p>Blockchain Web Services API baseline endpoint is <strong>api.bws.ninja</strong> and current version is <strong>v1</strong>.</p>
 
 <p>As an example, API operation <strong>call</strong> will use the following URL:</p>
 
-<p><code class="prettyprint">https://api.bweb.services/v1/call</code></p>
+<p><code class="prettyprint">https://api.bws.ninja/v1/call</code></p>
 
 <h2 id="authentication">Authentication</h2>
 <pre class="highlight javascript"><code><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
@@ -183,7 +183,7 @@ Every operation call ownership is certified.
     <span class="p">...</span>
   <span class="p">});</span>
 </code></pre>
-<p>Calling <a href="https://bweb.services">Blockchain Web Services</a> smart contracts requires a personal <strong>API Key</strong> to authenticate. To get your key, sign in at <a href="https://bweb.services">bweb.services</a> and go to <code class="prettyprint">My Account &gt; API Key</code>.</p>
+<p>Calling <a href="https://bws.ninja">Blockchain Web Services</a> smart contracts requires a personal <strong>API Key</strong> to authenticate. To get your key, sign in at <a href="https://bws.ninja">bws.ninja</a> and go to <code class="prettyprint">My Account &gt; API Key</code>.</p>
 
 <p><br/>
 <img src="images/BlockchainWebServices-API_Key.jpg" alt="BWS Credits" /></p>
@@ -206,7 +206,7 @@ Every operation call ownership is certified.
 
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
   <span class="na">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
-  <span class="na">url</span><span class="p">:</span> <span class="s1">'https://api.bweb.services/v1/call'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="s1">'https://api.bws.ninja/v1/call'</span><span class="p">,</span>
   <span class="na">dataType</span><span class="p">:</span> <span class="s1">'json'</span><span class="p">,</span>
   <span class="na">data</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">parameters</span><span class="p">),</span>
   <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
@@ -233,7 +233,7 @@ Every operation call ownership is certified.
 
 <h3 id="call-api-method">&#39;call&rsquo; API Method</h3>
 
-<p><code class="prettyprint">https://api.bweb.services/v1/call</code> runs a <a href="https://bweb.services">Blockchain Web Services</a> Smart Contract and must contain the following parameters:</p>
+<p><code class="prettyprint">https://api.bws.ninja/v1/call</code> runs a <a href="https://bws.ninja">Blockchain Web Services</a> Smart Contract and must contain the following parameters:</p>
 
 <table><thead>
 <tr>
@@ -305,7 +305,7 @@ Every operation call ownership is certified.
 
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
   <span class="na">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
-  <span class="na">url</span><span class="p">:</span> <span class="s1">'https://api.bweb.services/v1/fetch'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="s1">'https://api.bws.ninja/v1/fetch'</span><span class="p">,</span>
   <span class="na">dataType</span><span class="p">:</span> <span class="s1">'json'</span><span class="p">,</span>
   <span class="na">data</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">parameters</span><span class="p">),</span>
   <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
@@ -338,7 +338,7 @@ Every operation call ownership is certified.
         </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Use <code class="prettyprint">https://api.bweb.services/v1/fetch</code> to get a previously started Smart Contract call, indicating the <code class="prettyprint">jobId</code> you get when running the <a href="#call-operation">‘call’</a>:</p>
+<p>Use <code class="prettyprint">https://api.bws.ninja/v1/fetch</code> to get a previously started Smart Contract call, indicating the <code class="prettyprint">jobId</code> you get when running the <a href="#call-operation">‘call’</a>:</p>
 
 <table><thead>
 <tr>
@@ -518,9 +518,19 @@ Every operation call ownership is certified.
 </tr>
 </tbody></table>
 
+<h2 id="transactions-overview">Transactions Overview</h2>
+
+<pre style="background-color: initial; padding: 0 0 20px 0">
+  <img src="images/megalock-snap-12.png" style="width:95%">
+</pre>
+
+<p>All the transactions your product executes will be displayed on your <a href="https://bws.ninja">Blockchain Web Services</a> Management Console.</p>
+
+<p><img src="images/megalock-snap-11.png" alt="Megalock.ninja" /></p>
+
 <h2 id="required-funds">Required Funds</h2>
 
-<p><a href="https://bweb.services">Blockchain Web Services</a> is free, but calling Smart Contracts requires funds: &ldquo;It is the fuel that allows it to operate&rdquo; (you can check how Gas and Fuel works for Ethereum <a href="https://ethereum.org/en/developers/docs/gas/">here</a>).</p>
+<p><a href="https://bws.ninja">Blockchain Web Services</a> is free, but calling Smart Contracts requires funds: &ldquo;It is the fuel that allows it to operate&rdquo; (you can check how Gas and Fuel works for Ethereum <a href="https://ethereum.org/en/developers/docs/gas/">here</a>).</p>
 
 <aside class="notice">
 We use Stripe as the Payment gateway for buying credits.
@@ -531,51 +541,60 @@ We use Stripe as the Payment gateway for buying credits.
 <p><br/>
 <img src="images/BlockchainWebServices-Credits.jpg" alt="BWS Credits" /></p>
 
-<p>Remember <strong><a href="https://bweb.services">Blockchain Web Services</a> is free</strong> and funds are spent when calling smart contracts.</p>
+<p>Remember <strong><a href="https://bws.ninja">Blockchain Web Services</a> is free</strong> and funds are spent when calling smart contracts.</p>
 
-          <h1 id="smart-contracts">Smart Contracts</h1>
+          <h1 id="product-services">Product Services</h1>
 
-          <h2 id="ethereum-database">Ethereum.Database</h2>
+          <style>
+  .product-header {
+    background-color:#5abaf0;
+    color: white;
+    text-shadow: none !important;
+     margin-top:25px !important;
+  }
 
-<p>A Blockchain is essentially a decentralized database that runs on a peer-to-peer network. You can use <a href="https://bweb.services">Blockchain Web Services</a> <code class="prettyprint">Ethereum.Database.Immutable</code> and <code class="prettyprint">Ethereum.Database.Mutable</code> contracts to save and get data from such database.</p>
+  .product-author {
+    background-color:#EC712B;
+    opacity: .8;
+    color: white;
+    text-shadow: none !important;
+     margin-top:25px !important;
+  }
 
-<table><thead>
-<tr>
-<th>Operation</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>insertBytes32</td>
-<td>Saves up to 32 Bytes of data to Blockchain</td>
-</tr>
-<tr>
-<td>selectBytes32</td>
-<td>Gets from Blockchain previously inserted data</td>
-</tr>
-<tr>
-<td>insertString</td>
-<td>Saves a string to Blockchain</td>
-</tr>
-<tr>
-<td>selectString</td>
-<td>Gets from Blockchain previously inserted data</td>
-</tr>
-</tbody></table>
+  .product-title {
+    background-color:#292929;
+    color :white;
+    text-shadow: none !important;
+    margin-top:25px !important;
+  }
+</style>
 
-<p>The use of <code class="prettyprint">insertBytes32</code> is cheaper than <code class="prettyprint">insertString</code> (check <a href="#required-funds">Required Funds</a>).</p>
+<h2 id="database">Database</h2>
 
-<aside class="warning">
-Same operations are available for Immutable and Mutable behaviour.
-</aside>
+<p>A Blockchain is essentially a distributed database that runs on a peer-to-peer network. You can use <a href="https://bws.ninja">Blockchain Web Services</a> to insert or select data to/from Blockchain(s) using the following services:</p>
+
+<ul>
+<li><a href="#ethereum-database-immutable">Ethereum.Database.Immutable</a></li>
+<li><a href="#ethereum-database-mutable">Ethereum.Database.Mutable</a></li>
+</ul>
 
 <p><a name="ethereum-database-immutable"></a></p>
 
-<h3 id="ethereum-database-immutable">Ethereum.Database.Immutable</h3>
+<p class="product-header">Service</p>
+
+<h3 style="margin-top:0">Ethereum.Database.Immutable</h3>
 
 <p>&ldquo;<em>An immutable object is an object whose state cannot be modified after it is created</em>&rdquo;</p>
 
-<h4 id="contract-address">Contract Address</h4>
+<p class="product-author">Author</p>
+
+<p class="s2">Blockchain Web Services</p>
+
+<p class="product-title">Description</p>
+
+<p>You can use Ethereum.Database.Immutable operation to save immutable data to blockchain and certify written data will never change.</p>
+
+<p class="product-title">Contract</p>
 
 <p>Click on Contract Address to check verified contract at <code class="prettyprint">etherscan.io</code>.</p>
 
@@ -598,7 +617,9 @@ Same operations are available for Immutable and Mutable behaviour.
 </tr>
 </tbody></table>
 
-<h5 id="insertbytes32">insertBytes32</h5>
+<p class="product-title">Operations</p>
+
+<h4 id="insertbytes32">insertBytes32</h4>
 
 <blockquote>
 <p>insertBytes32 operation call example.</p>
@@ -616,7 +637,7 @@ Same operations are available for Immutable and Mutable behaviour.
 
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
   <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
-  <span class="na">url</span><span class="p">:</span> <span class="s2">"https://api.bweb.services/v1/call"</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="s2">"https://api.bws.ninja/v1/call"</span><span class="p">,</span>
   <span class="na">data</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">parameters</span><span class="p">),</span>
   <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -665,7 +686,7 @@ Same operations are available for Immutable and Mutable behaviour.
 
 <p><a name="insertBytes32-operation-parameters"></a></p>
 
-<h6 id="insertbytes32-operation-parameters">insertBytes32 Operation Parameters</h6>
+<h5 id="insertbytes32-parameters">insertBytes32 Parameters</h5>
 
 <p>The following operation parameters can be used to save a string you can later query by using the <code class="prettyprint">key</code>value.</p>
 
@@ -691,13 +712,13 @@ Same operations are available for Immutable and Mutable behaviour.
 </tr>
 </tbody></table>
 
-<h6 id="insertbytes32-response">insertBytes32 Response</h6>
+<h5 id="insertbytes32-response">insertBytes32 Response</h5>
 
 <p>The operation call will return the <code class="prettyprint">jobId</code> of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).</p>
 
 <p><code class="prettyprint">{ &quot;statusCode&quot;: 200, &quot;info&quot;: { &quot;jobId&quot;: &quot;543433243&quot; } }</code></p>
 
-<h5 id="selectbytes32">selectBytes32</h5>
+<h4 id="selectbytes32">selectBytes32</h4>
 
 <blockquote>
 <p>selectBytes32 operation parameters call example.</p>
@@ -737,7 +758,7 @@ Same operations are available for Immutable and Mutable behaviour.
 </tr>
 </tbody></table>
 
-<h6 id="selectbytes32-operation-parameters">selectBytes32 Operation Parameters</h6>
+<h5 id="selectbytes32-parameters">selectBytes32 Parameters</h5>
 
 <p>Set the <code class="prettyprint">key</code> value to get the data you previously saved.</p>
 
@@ -757,7 +778,7 @@ Same operations are available for Immutable and Mutable behaviour.
 </tr>
 </tbody></table>
 
-<h6 id="selectbytes32-response">selectBytes32 Response</h6>
+<h5 id="selectbytes32-response">selectBytes32 Response</h5>
 
 <p>The operation call will return the <code class="prettyprint">jobId</code> of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).</p>
 
@@ -765,7 +786,7 @@ Same operations are available for Immutable and Mutable behaviour.
 
 <p><a name="insertString-operation"></a></p>
 
-<h5 id="insertstring">insertString</h5>
+<h4 id="insertstring">insertString</h4>
 
 <blockquote>
 <p>insertString operation parameters call example.</p>
@@ -808,7 +829,7 @@ Same operations are available for Immutable and Mutable behaviour.
 
 <p>Check <a href="#passing-parameters">Passing Parameters</a> for other required parameters.</p>
 
-<h6 id="insertstring-operation-parameters">insertString Operation Parameters</h6>
+<h5 id="insertstring-parameters">insertString Parameters</h5>
 
 <p>The following operation parameters can be used to save a string you can later query by using the <code class="prettyprint">key</code>value.</p>
 
@@ -831,7 +852,7 @@ Same operations are available for Immutable and Mutable behaviour.
 </tr>
 </tbody></table>
 
-<h6 id="insertstring-response">insertString Response</h6>
+<h5 id="insertstring-response">insertString Response</h5>
 
 <p>The operation call will return the <code class="prettyprint">jobId</code> of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).</p>
 
@@ -839,7 +860,7 @@ Same operations are available for Immutable and Mutable behaviour.
 
 <p><a name="selectString-operation"></a></p>
 
-<h5 id="selectstring">selectString</h5>
+<h4 id="selectstring">selectString</h4>
 
 <blockquote>
 <p>selectString operation parameters call example.</p>
@@ -881,7 +902,7 @@ Same operations are available for Immutable and Mutable behaviour.
 
 <p>Check <a href="#passing-parameters">Passing Parameters</a> for other required parameters.</p>
 
-<h6 id="selectstring-operation-parameters">selectString Operation Parameters</h6>
+<h5 id="selectstring-operation-parameters">selectString Operation Parameters</h5>
 
 <p>Set the <code class="prettyprint">key</code> value to get the data you previously saved.</p>
 
@@ -899,13 +920,17 @@ Same operations are available for Immutable and Mutable behaviour.
 </tr>
 </tbody></table>
 
-<h6 id="selectstring-response">selectString Response</h6>
+<h5 id="selectstring-response">selectString Response</h5>
 
 <p>The operation call will return the <code class="prettyprint">jobId</code> of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).</p>
 
 <p><code class="prettyprint">{ &quot;statusCode&quot;: 200, &quot;info&quot;: { &quot;jobId&quot;: &quot;5423433243&quot; } }</code></p>
 
-<h3 id="ethereum-database-mutable">Ethereum.Database.Mutable</h3>
+<p><a name="ethereum-database-mutable"></a></p>
+
+<p class="product-header">Service</p>
+
+<h3 style="margin-top:0">Ethereum.Database.Mutable</h3>
 
 <blockquote>
 <p>Mutable insertString operation parameters call example.</p>
@@ -921,9 +946,17 @@ Same operations are available for Immutable and Mutable behaviour.
   <span class="p">},</span>
 <span class="p">};</span>
 </code></pre>
+<p class="product-author">Author</p>
+
+<p class="s2">Blockchain Web Services</p>
+
+<p class="product-title">Description</p>
+
 <p>Mutable insert operations can overwrite previously saved data and the same insert/select operations are available for <code class="prettyprint">Ethereum.Database.Mutable</code> contract (you just need to replace <code class="prettyprint">contract</code> and <code class="prettyprint">version</code> parameter to use Mutable or Immutable contract).</p>
 
-<h4 id="contract-address">Contract Address</h4>
+<p class="product-title">Contract</p>
+
+<p>Click on Contract Address to check verified contract at <code class="prettyprint">etherscan.io</code>.</p>
 
 <table><thead>
 <tr>
@@ -1042,7 +1075,7 @@ Saving data in Ethereum is an asynchronous operation and can take a while.
 
 <p>Your data is now secured in Blockchain for ever ;)</p>
 
-<h3 id="get-your-password-from-ethereum">Get Your Password from Ethereum</h3>
+<h3 id="getting-data-from-ethereum">Getting Data from Ethereum</h3>
 <pre class="highlight javascript"><code><span class="nx">async</span> <span class="kd">function</span> <span class="nx">callSelectStringBWSAPI</span><span class="p">(</span><span class="nx">endpoint</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">apiKey</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">body</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">contract</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Mutable"</span><span class="p">,</span>
@@ -1080,16 +1113,6 @@ Saving data in Ethereum is an asynchronous operation and can take a while.
 <p>You will get the password or any saved data, copy it to the clipboard and use it as required.</p>
 
 <p><img src="images/megalock-snap-10.png" alt="Megalock.ninja" /></p>
-
-<h2 id="transactions-overview">Transactions Overview</h2>
-
-<pre style="background-color: initial; padding: 0 0 20px 0">
-  <img src="images/megalock-snap-12.png" style="width:95%">
-</pre>
-
-<p>All the transactions your product executes will be displayed on your <a href="https://bweb.services">Blockchain Web Services</a> Management Console.</p>
-
-<p><img src="images/megalock-snap-11.png" alt="Megalock.ninja" /></p>
 
       </div>
       <div class="dark-box">

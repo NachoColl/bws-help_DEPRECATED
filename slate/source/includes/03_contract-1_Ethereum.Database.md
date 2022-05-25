@@ -1,27 +1,51 @@
-## Ethereum.Database
+<style>
+  .product-header {
+    background-color:#5abaf0;
+    color: white;
+    text-shadow: none !important;
+     margin-top:25px !important;
+  }
 
-A Blockchain is essentially a decentralized database that runs on a peer-to-peer network. You can use [Blockchain Web Services](https://bweb.services) `Ethereum.Database.Immutable` and `Ethereum.Database.Mutable` contracts to save and get data from such database.
+  .product-author {
+    background-color:#EC712B;
+    opacity: .8;
+    color: white;
+    text-shadow: none !important;
+     margin-top:25px !important;
+  }
 
-| Operation     | Description                                   |
-| ------------- | --------------------------------------------- |
-| insertBytes32 | Saves up to 32 Bytes of data to Blockchain    |
-| selectBytes32 | Gets from Blockchain previously inserted data |
-| insertString  | Saves a string to Blockchain                  |
-| selectString  | Gets from Blockchain previously inserted data |
+  .product-title {
+    background-color:#292929;
+    color :white;
+    text-shadow: none !important;
+    margin-top:25px !important;
+  }
+</style>
 
-The use of `insertBytes32` is cheaper than `insertString` (check [Required Funds](#required-funds)).
+## Database
 
-<aside class="warning">
-Same operations are available for Immutable and Mutable behaviour.
-</aside>
+A Blockchain is essentially a distributed database that runs on a peer-to-peer network. You can use [Blockchain Web Services](https://bws.ninja) to insert or select data to/from Blockchain(s) using the following services:
+
+- [Ethereum.Database.Immutable](#ethereum-database-immutable)
+- [Ethereum.Database.Mutable](#ethereum-database-mutable)
 
 <a name="ethereum-database-immutable"></a>
 
-### Ethereum.Database.Immutable
+<p class="product-header">Service</p>
+
+<h3 style="margin-top:0">Ethereum.Database.Immutable</h3>
 
 "_An immutable object is an object whose state cannot be modified after it is created_"
 
-#### Contract Address
+<p class="product-author">Author</p>
+
+<p class="s2">Blockchain Web Services</p>
+
+<p class="product-title">Description</p>
+
+You can use Ethereum.Database.Immutable operation to save immutable data to blockchain and certify written data will never change.
+
+<p class="product-title">Contract</p>
 
 Click on Contract Address to check verified contract at `etherscan.io`.
 
@@ -30,7 +54,9 @@ Click on Contract Address to check verified contract at `etherscan.io`.
 | ethereum   |
 | ropsten    | [0x81D575b53239BcB4332bb1608a21F1A17035deeA](https://ropsten.etherscan.io/address/0x81D575b53239BcB4332bb1608a21F1A17035deeA#code) | 2       |
 
-##### insertBytes32
+<p class="product-title">Operations</p>
+
+#### insertBytes32
 
 > insertBytes32 operation call example.
 
@@ -48,7 +74,7 @@ var parameters = {
 
 $.ajax({
   method: "POST",
-  url: "https://api.bweb.services/v1/call",
+  url: "https://api.bws.ninja/v1/call",
   data: JSON.stringify(parameters),
   headers: {
     "Content-Type": "application/json",
@@ -85,7 +111,7 @@ Saves up to 32 characters string value in Ethereum database (check [Passing Para
 
 <a name="insertBytes32-operation-parameters"></a>
 
-###### insertBytes32 Operation Parameters
+##### insertBytes32 Parameters
 
 The following operation parameters can be used to save a string you can later query by using the `key`value.
 
@@ -94,13 +120,13 @@ The following operation parameters can be used to save a string you can later qu
 | key       | string | 32 characters string | The key for data to save.      |
 | value     | string | 32 characters string | The value to save on database. |
 
-###### insertBytes32 Response
+##### insertBytes32 Response
 
 The operation call will return the `jobId` of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).
 
 `{ "statusCode": 200, "info": { "jobId": "543433243" } }`
 
-##### selectBytes32
+#### selectBytes32
 
 > selectBytes32 operation parameters call example.
 
@@ -127,7 +153,7 @@ Gets a value you previously stored on Ethereum using `insertBytes32` (check [Pas
 | operation  | selectBytes32                                                             |
 | parameters | [selectBytes32 Operation Parameters](#selectBytes32-operation-parameters) |
 
-###### selectBytes32 Operation Parameters
+##### selectBytes32 Parameters
 
 Set the `key` value to get the data you previously saved.
 
@@ -135,7 +161,7 @@ Set the `key` value to get the data you previously saved.
 | --------- | ------ | -------------------- | ------------------------- |
 | key       | string | 32 characters string | The key for data to save. |
 
-###### selectBytes32 Response
+##### selectBytes32 Response
 
 The operation call will return the `jobId` of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).
 
@@ -143,7 +169,7 @@ The operation call will return the `jobId` of the job running on Blochchain Web 
 
 <a name="insertString-operation"></a>
 
-##### insertString
+#### insertString
 
 > insertString operation parameters call example.
 
@@ -173,7 +199,7 @@ Saves a string value in Ethereum database.
 
 Check [Passing Parameters](#passing-parameters) for other required parameters.
 
-###### insertString Operation Parameters
+##### insertString Parameters
 
 The following operation parameters can be used to save a string you can later query by using the `key`value.
 
@@ -182,7 +208,7 @@ The following operation parameters can be used to save a string you can later qu
 | key       | string | The key for data to save.      |
 | value     | string | The value to save on database. |
 
-###### insertString Response
+##### insertString Response
 
 The operation call will return the `jobId` of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).
 
@@ -190,7 +216,7 @@ The operation call will return the `jobId` of the job running on Blochchain Web 
 
 <a name="selectString-operation"></a>
 
-##### selectString
+#### selectString
 
 > selectString operation parameters call example.
 
@@ -219,7 +245,7 @@ Gets a value you previously stored on Ethereum using `insertString`.
 
 Check [Passing Parameters](#passing-parameters) for other required parameters.
 
-###### selectString Operation Parameters
+##### selectString Operation Parameters
 
 Set the `key` value to get the data you previously saved.
 
@@ -227,13 +253,17 @@ Set the `key` value to get the data you previously saved.
 | --------- | ------ | ------------------------- |
 | key       | string | The key for data to save. |
 
-###### selectString Response
+##### selectString Response
 
 The operation call will return the `jobId` of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).
 
 `{ "statusCode": 200, "info": { "jobId": "5423433243" } }`
 
-### Ethereum.Database.Mutable
+<a name="ethereum-database-mutable"></a>
+
+<p class="product-header">Service</p>
+
+<h3 style="margin-top:0">Ethereum.Database.Mutable</h3>
 
 > Mutable insertString operation parameters call example.
 
@@ -250,9 +280,17 @@ var parameters = {
 };
 ```
 
+<p class="product-author">Author</p>
+
+<p class="s2">Blockchain Web Services</p>
+
+<p class="product-title">Description</p>
+
 Mutable insert operations can overwrite previously saved data and the same insert/select operations are available for `Ethereum.Database.Mutable` contract (you just need to replace `contract` and `version` parameter to use Mutable or Immutable contract).
 
-#### Contract Address
+<p class="product-title">Contract</p>
+
+Click on Contract Address to check verified contract at `etherscan.io`.
 
 | Network Id | Contract Address                                                                                                                   | Version |
 | ---------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------- |

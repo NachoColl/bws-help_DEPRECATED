@@ -94,7 +94,7 @@ Saving data in Ethereum is an asynchronous operation and can take a while.
 
 <p>Your data is now secured in Blockchain for ever ;)</p>
 
-<h3 id="get-your-password-from-ethereum">Get Your Password from Ethereum</h3>
+<h3 id="getting-data-from-ethereum">Getting Data from Ethereum</h3>
 <pre class="highlight javascript"><code><span class="nx">async</span> <span class="kd">function</span> <span class="nx">callSelectStringBWSAPI</span><span class="p">(</span><span class="nx">endpoint</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">apiKey</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">body</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">contract</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Mutable"</span><span class="p">,</span>
@@ -132,13 +132,3 @@ Saving data in Ethereum is an asynchronous operation and can take a while.
 <p>You will get the password or any saved data, copy it to the clipboard and use it as required.</p>
 
 <p><img src="/images/megalock-snap-10.png" alt="Megalock.ninja" /></p>
-
-<h2 id="transactions-overview">Transactions Overview</h2>
-
-<pre style="background-color: initial; padding: 0 0 20px 0">
-  <img src="images/megalock-snap-12.png" style="width:95%">
-</pre>
-
-<p>All the transactions your product executes will be displayed on your <a href="https://bweb.services">Blockchain Web Services</a> Management Console.</p>
-
-<p><img src="/images/megalock-snap-11.png" alt="Megalock.ninja" /></p>

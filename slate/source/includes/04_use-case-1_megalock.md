@@ -96,7 +96,7 @@ Once finished, you can check Blockchain transaction on Etherscan (an example for
 
 Your data is now secured in Blockchain for ever ;)
 
-### Get Your Password from Ethereum
+### Getting Data from Ethereum
 
 ```js
 async function callSelectStringBWSAPI(endpoint, key, apiKey) {
@@ -137,13 +137,3 @@ As for saving, fetching data can take a while, but for reading data from Blockch
 You will get the password or any saved data, copy it to the clipboard and use it as required.
 
 ![Megalock.ninja](images/megalock-snap-10.png)
-
-## Transactions Overview
-
-<pre style="background-color: initial; padding: 0 0 20px 0">
-  <img src="images/megalock-snap-12.png" style="width:95%">
-</pre>
-
-All the transactions your product executes will be displayed on your [Blockchain Web Services](https://bweb.services) Management Console.
-
-![Megalock.ninja](images/megalock-snap-11.png)

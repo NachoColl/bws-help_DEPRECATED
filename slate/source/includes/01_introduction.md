@@ -1,12 +1,12 @@
 # How It Works
 
-To start using Blockchain Web Services go to [bweb.services](https://bweb.services) and sign-up. It's free.
+To start using Blockchain Web Services go to [bws.ninja](https://bws.ninja) and sign-up. It's free.
 
 <aside class="notice">
 You don't need to create any Blockchain account to use Blockchain Web Services.
 </aside>
 
-Once you get your [Blockchain Web Services](https://bweb.services) account you can build your solution by calling well-documented [smart contracts](#smart-contracts) using regular API calls. Blockchain Web Services generates your private keys and hash them so every call to Blockchain is unique and linked to you.
+Once you get your [Blockchain Web Services](https://bws.ninja) account you can build your solution by calling well-documented [smart contracts](#smart-contracts) using regular API calls. Blockchain Web Services generates your private keys and hash them so every call to Blockchain is unique and linked to you.
 
 <aside class="warning">
 Every operation call ownership is certified.
@@ -17,16 +17,16 @@ Every operation call ownership is certified.
 ```javascript
 $.ajax({
     method: 'POST',
-    url: 'https://api.bweb.services/v1/call',
+    url: 'https://api.bws.ninja/v1/call',
    ...
   });
 ```
 
-Blockchain Web Services API baseline endpoint is **api.bweb.services** and current version is **v1**.
+Blockchain Web Services API baseline endpoint is **api.bws.ninja** and current version is **v1**.
 
 As an example, API operation **call** will use the following URL:
 
-`https://api.bweb.services/v1/call`
+`https://api.bws.ninja/v1/call`
 
 ## Authentication
 
@@ -41,7 +41,7 @@ $.ajax({
   });
 ```
 
-Calling [Blockchain Web Services](https://bweb.services) smart contracts requires a personal **API Key** to authenticate. To get your key, sign in at [bweb.services](https://bweb.services) and go to `My Account > API Key`.
+Calling [Blockchain Web Services](https://bws.ninja) smart contracts requires a personal **API Key** to authenticate. To get your key, sign in at [bws.ninja](https://bws.ninja) and go to `My Account > API Key`.
 
 <br/>
 ![BWS Credits](images/BlockchainWebServices-API_Key.jpg)
@@ -64,7 +64,7 @@ var parameters = {
 
 $.ajax({
   method: 'POST',
-  url: 'https://api.bweb.services/v1/call',
+  url: 'https://api.bws.ninja/v1/call',
   dataType: 'json',
   data: JSON.stringify(parameters),
   headers: {
@@ -93,7 +93,7 @@ Use [‘call’](#call-operation) to run a Smart Contract operation and ['fetch�
 
 ### 'call' API Method
 
-`https://api.bweb.services/v1/call` runs a [Blockchain Web Services](https://bweb.services) Smart Contract and must contain the following parameters:
+`https://api.bws.ninja/v1/call` runs a [Blockchain Web Services](https://bws.ninja) Smart Contract and must contain the following parameters:
 
 | Parameter  | Type   | Value(s)                                  | Description                        |
 | ---------- | ------ | ----------------------------------------- | ---------------------------------- |
@@ -134,7 +134,7 @@ var parameters = {
 
 $.ajax({
   method: 'POST',
-  url: 'https://api.bweb.services/v1/fetch',
+  url: 'https://api.bws.ninja/v1/fetch',
   dataType: 'json',
   data: JSON.stringify(parameters),
   headers: {
@@ -169,7 +169,7 @@ $.ajax({
 }
 ```
 
-Use `https://api.bweb.services/v1/fetch` to get a previously started Smart Contract call, indicating the `jobId` you get when running the [‘call’](#call-operation):
+Use `https://api.bws.ninja/v1/fetch` to get a previously started Smart Contract call, indicating the `jobId` you get when running the [‘call’](#call-operation):
 
 | Parameter | Type   | Value(s)                                        |
 | --------- | ------ | ----------------------------------------------- |
@@ -248,9 +248,19 @@ The Blockchain Web Services API uses the following error Status Codes:
 | 500         | Internal Server Error -- We had a problem with our server. Try again later.                 |
 | 503         | Service Unavailable -- We're temporarially offline for maintanance. Please try again later. |
 
+## Transactions Overview
+
+<pre style="background-color: initial; padding: 0 0 20px 0">
+  <img src="images/megalock-snap-12.png" style="width:95%">
+</pre>
+
+All the transactions your product executes will be displayed on your [Blockchain Web Services](https://bws.ninja) Management Console.
+
+![Megalock.ninja](images/megalock-snap-11.png)
+
 ## Required Funds
 
-[Blockchain Web Services](https://bweb.services) is free, but calling Smart Contracts requires funds: "It is the fuel that allows it to operate" (you can check how Gas and Fuel works for Ethereum [here](https://ethereum.org/en/developers/docs/gas/)).
+[Blockchain Web Services](https://bws.ninja) is free, but calling Smart Contracts requires funds: "It is the fuel that allows it to operate" (you can check how Gas and Fuel works for Ethereum [here](https://ethereum.org/en/developers/docs/gas/)).
 
 <aside class="notice">
 We use Stripe as the Payment gateway for buying credits.
@@ -261,4 +271,4 @@ To get your account funded go to `My Account > Credits` and complete your credit
 <br/>
 ![BWS Credits](images/BlockchainWebServices-Credits.jpg)
 
-Remember **[Blockchain Web Services](https://bweb.services) is free** and funds are spent when calling smart contracts.
+Remember **[Blockchain Web Services](https://bws.ninja) is free** and funds are spent when calling smart contracts.
