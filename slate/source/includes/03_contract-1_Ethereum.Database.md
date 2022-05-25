@@ -7,7 +7,7 @@
   }
 
   .product-author {
-    background-color:#EC712B;
+    background-color:#159957;
     opacity: .8;
     color: white;
     text-shadow: none !important;
@@ -20,6 +20,14 @@
     text-shadow: none !important;
     margin-top:25px !important;
   }
+
+   .product-operation {
+    background-color:#EC712B;
+    color :white;
+    text-shadow: none !important;
+    width: 200px;
+    margin-top:25px !important;
+  }
 </style>
 
 ## Database
@@ -28,6 +36,12 @@ A Blockchain is essentially a distributed database that runs on a peer-to-peer n
 
 - [Ethereum.Database.Immutable](#ethereum-database-immutable)
 - [Ethereum.Database.Mutable](#ethereum-database-mutable)
+
+Check the documentation provided by the Author to call those services.
+
+<aside class="warning">
+Want to publish your Contract Service? Contact us at hello@bws.ninja
+</aside>
 
 <a name="ethereum-database-immutable"></a>
 
@@ -56,7 +70,7 @@ Click on Contract Address to check verified contract at `etherscan.io`.
 
 <p class="product-title">Operations</p>
 
-#### insertBytes32
+<p class="product-operation ">insertBytes32</p>
 
 > insertBytes32 operation call example.
 
@@ -103,15 +117,15 @@ $.ajax({
 
 Saves up to 32 characters string value in Ethereum database (check [Passing Parameters](#passing-parameters) for other required parameters).
 
-| Parameter  | Value                                                                     |
-| ---------- | ------------------------------------------------------------------------- |
-| contract   | Ethereum.Database.Immutable                                               |
-| operation  | insertBytes32                                                             |
-| parameters | [insertBytes32 Operation Parameters](#insertBytes32-operation-parameters) |
+| Parameter  | Value                                                   |
+| ---------- | ------------------------------------------------------- |
+| contract   | Ethereum.Database.Immutable                             |
+| operation  | insertBytes32                                           |
+| parameters | [check Parameters](#insertBytes32-operation-parameters) |
 
 <a name="insertBytes32-operation-parameters"></a>
 
-##### insertBytes32 Parameters
+##### Parameters
 
 The following operation parameters can be used to save a string you can later query by using the `key`value.
 
@@ -120,13 +134,13 @@ The following operation parameters can be used to save a string you can later qu
 | key       | string | 32 characters string | The key for data to save.      |
 | value     | string | 32 characters string | The value to save on database. |
 
-##### insertBytes32 Response
+###### Response
 
 The operation call will return the `jobId` of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).
 
 `{ "statusCode": 200, "info": { "jobId": "543433243" } }`
 
-#### selectBytes32
+<p class="product-operation ">selectBytes32</p>
 
 > selectBytes32 operation parameters call example.
 
@@ -147,13 +161,13 @@ var parameters = {
 
 Gets a value you previously stored on Ethereum using `insertBytes32` (check [Passing Parameters](#passing-parameters) for other required parameters).
 
-| Parameter  | Value                                                                     |
-| ---------- | ------------------------------------------------------------------------- |
-| contract   | Ethereum.Database.Immutable                                               |
-| operation  | selectBytes32                                                             |
-| parameters | [selectBytes32 Operation Parameters](#selectBytes32-operation-parameters) |
+| Parameter  | Value                                                   |
+| ---------- | ------------------------------------------------------- |
+| contract   | Ethereum.Database.Immutable                             |
+| operation  | selectBytes32                                           |
+| parameters | [check Parameters](#selectBytes32-operation-parameters) |
 
-##### selectBytes32 Parameters
+##### Parameters
 
 Set the `key` value to get the data you previously saved.
 
@@ -161,7 +175,7 @@ Set the `key` value to get the data you previously saved.
 | --------- | ------ | -------------------- | ------------------------- |
 | key       | string | 32 characters string | The key for data to save. |
 
-##### selectBytes32 Response
+###### Response
 
 The operation call will return the `jobId` of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).
 
@@ -169,7 +183,7 @@ The operation call will return the `jobId` of the job running on Blochchain Web 
 
 <a name="insertString-operation"></a>
 
-#### insertString
+<p class="product-operation ">insertString</p>
 
 > insertString operation parameters call example.
 
@@ -191,15 +205,15 @@ var parameters = {
 
 Saves a string value in Ethereum database.
 
-| Parameter  | Value                                                                   |
-| ---------- | ----------------------------------------------------------------------- |
-| contract   | Ethereum.Database.Immutable                                             |
-| operation  | insertBytes32                                                           |
-| parameters | [insertString Operation Parameters](#insertString-operation-parameters) |
+| Parameter  | Value                                                  |
+| ---------- | ------------------------------------------------------ |
+| contract   | Ethereum.Database.Immutable                            |
+| operation  | insertBytes32                                          |
+| parameters | [check Parameters](#insertString-operation-parameters) |
 
 Check [Passing Parameters](#passing-parameters) for other required parameters.
 
-##### insertString Parameters
+##### Parameters
 
 The following operation parameters can be used to save a string you can later query by using the `key`value.
 
@@ -208,7 +222,7 @@ The following operation parameters can be used to save a string you can later qu
 | key       | string | The key for data to save.      |
 | value     | string | The value to save on database. |
 
-##### insertString Response
+###### Response
 
 The operation call will return the `jobId` of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).
 
@@ -216,7 +230,7 @@ The operation call will return the `jobId` of the job running on Blochchain Web 
 
 <a name="selectString-operation"></a>
 
-#### selectString
+<p class="product-operation ">selectString</p>
 
 > selectString operation parameters call example.
 
@@ -237,15 +251,15 @@ var parameters = {
 
 Gets a value you previously stored on Ethereum using `insertString`.
 
-| Parameter  | Value                                                                   |
-| ---------- | ----------------------------------------------------------------------- |
-| contract   | Ethereum.Database.Immutable                                             |
-| operation  | selectString                                                            |
-| parameters | [selectString Operation Parameters](#selectString-operation-parameters) |
+| Parameter  | Value                                                  |
+| ---------- | ------------------------------------------------------ |
+| contract   | Ethereum.Database.Immutable                            |
+| operation  | selectString                                           |
+| parameters | [check Parameters](#selectString-operation-parameters) |
 
 Check [Passing Parameters](#passing-parameters) for other required parameters.
 
-##### selectString Operation Parameters
+##### Parameters
 
 Set the `key` value to get the data you previously saved.
 
@@ -253,7 +267,7 @@ Set the `key` value to get the data you previously saved.
 | --------- | ------ | ------------------------- |
 | key       | string | The key for data to save. |
 
-##### selectString Response
+###### Response
 
 The operation call will return the `jobId` of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).
 
@@ -264,6 +278,8 @@ The operation call will return the `jobId` of the job running on Blochchain Web 
 <p class="product-header">Service</p>
 
 <h3 style="margin-top:0">Ethereum.Database.Mutable</h3>
+
+"_This is in contrast to a mutable object (changeable object), which can be modified after it is created._"
 
 > Mutable insertString operation parameters call example.
 
@@ -296,3 +312,7 @@ Click on Contract Address to check verified contract at `etherscan.io`.
 | ---------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------- |
 | ethereum   |
 | ropsten    | [0x9089Db83F0590EC2eD01A5Eb4F8584Dd6F4bDaC7](https://ropsten.etherscan.io/address/0x9089Db83F0590EC2eD01A5Eb4F8584Dd6F4bDaC7#code) | 1       |
+
+<p class="product-title">Operations</p>
+
+You can use the same operations as for `Ethereum.Database.Immuutable` service, changing the parameter contract to `Ethereum.Database.Mutable`.

@@ -52,6 +52,12 @@ You must include your Key in all of your API calls as a header attribute:
 
 ## Main API Methods
 
+Use [‘call’](#call-operation) to run a Smart Contract operation and ['fetch’](#fetch-operation) to get Smart Contract call status (Smart Contracts execution can take a while to get confirmed from the Blockchain).
+
+<a name="call-operation"></a>
+
+### 'call' API Method
+
 > API call example.
 
 ```javascript
@@ -86,12 +92,6 @@ $.ajax({
   }
 }
 ```
-
-Use [‘call’](#call-operation) to run a Smart Contract operation and ['fetch’](#fetch-operation) to get Smart Contract call status (Smart Contracts execution can take a while to get confirmed from the Blockchain).
-
-<a name="call-operation"></a>
-
-### 'call' API Method
 
 `https://api.bws.ninja/v1/call` runs a [Blockchain Web Services](https://bws.ninja) Smart Contract and must contain the following parameters:
 
@@ -250,13 +250,13 @@ The Blockchain Web Services API uses the following error Status Codes:
 
 ## Transactions Overview
 
-<pre style="background-color: initial; padding: 0 0 20px 0">
-  <img src="images/megalock-snap-12.png" style="width:95%">
-</pre>
-
-All the transactions your product executes will be displayed on your [Blockchain Web Services](https://bws.ninja) Management Console.
+Go to [Blockchain Web Services](https://bws.ninja) Management Console and select `Jobs List` menu option to get the list of executed calls.
 
 ![Megalock.ninja](images/megalock-snap-11.png)
+
+For each of the service API calls you execute, select `actions` menu option to check for the status or the available related information.
+
+![Megalock.ninja](images/megalock-snap-12.png)
 
 ## Required Funds
 

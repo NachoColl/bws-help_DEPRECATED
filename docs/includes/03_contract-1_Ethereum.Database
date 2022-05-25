@@ -7,7 +7,7 @@
   }
 
   .product-author {
-    background-color:#EC712B;
+    background-color:#159957;
     opacity: .8;
     color: white;
     text-shadow: none !important;
@@ -20,6 +20,14 @@
     text-shadow: none !important;
     margin-top:25px !important;
   }
+
+   .product-operation {
+    background-color:#EC712B;
+    color :white;
+    text-shadow: none !important;
+    width: 200px;
+    margin-top:25px !important;
+  }
 </style>
 
 <h2 id="database">Database</h2>
@@ -30,6 +38,12 @@
 <li><a href="#ethereum-database-immutable">Ethereum.Database.Immutable</a></li>
 <li><a href="#ethereum-database-mutable">Ethereum.Database.Mutable</a></li>
 </ul>
+
+<p>Check the documentation provided by the Author to call those services.</p>
+
+<aside class="warning">
+Want to publish your Contract Service? Contact us at hello@bws.ninja
+</aside>
 
 <p><a name="ethereum-database-immutable"></a></p>
 
@@ -72,7 +86,7 @@
 
 <p class="product-title">Operations</p>
 
-<h4 id="insertbytes32">insertBytes32</h4>
+<p class="product-operation ">insertBytes32</p>
 
 <blockquote>
 <p>insertBytes32 operation call example.</p>
@@ -133,13 +147,13 @@
 </tr>
 <tr>
 <td>parameters</td>
-<td><a href="#insertBytes32-operation-parameters">insertBytes32 Operation Parameters</a></td>
+<td><a href="#insertBytes32-operation-parameters">check Parameters</a></td>
 </tr>
 </tbody></table>
 
 <p><a name="insertBytes32-operation-parameters"></a></p>
 
-<h5 id="insertbytes32-parameters">insertBytes32 Parameters</h5>
+<h5 id="parameters">Parameters</h5>
 
 <p>The following operation parameters can be used to save a string you can later query by using the <code class="prettyprint">key</code>value.</p>
 
@@ -165,13 +179,13 @@
 </tr>
 </tbody></table>
 
-<h5 id="insertbytes32-response">insertBytes32 Response</h5>
+<h6 id="response">Response</h6>
 
 <p>The operation call will return the <code class="prettyprint">jobId</code> of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).</p>
 
 <p><code class="prettyprint">{ &quot;statusCode&quot;: 200, &quot;info&quot;: { &quot;jobId&quot;: &quot;543433243&quot; } }</code></p>
 
-<h4 id="selectbytes32">selectBytes32</h4>
+<p class="product-operation ">selectBytes32</p>
 
 <blockquote>
 <p>selectBytes32 operation parameters call example.</p>
@@ -207,11 +221,11 @@
 </tr>
 <tr>
 <td>parameters</td>
-<td><a href="#selectBytes32-operation-parameters">selectBytes32 Operation Parameters</a></td>
+<td><a href="#selectBytes32-operation-parameters">check Parameters</a></td>
 </tr>
 </tbody></table>
 
-<h5 id="selectbytes32-parameters">selectBytes32 Parameters</h5>
+<h5 id="parameters">Parameters</h5>
 
 <p>Set the <code class="prettyprint">key</code> value to get the data you previously saved.</p>
 
@@ -231,7 +245,7 @@
 </tr>
 </tbody></table>
 
-<h5 id="selectbytes32-response">selectBytes32 Response</h5>
+<h6 id="response">Response</h6>
 
 <p>The operation call will return the <code class="prettyprint">jobId</code> of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).</p>
 
@@ -239,7 +253,7 @@
 
 <p><a name="insertString-operation"></a></p>
 
-<h4 id="insertstring">insertString</h4>
+<p class="product-operation ">insertString</p>
 
 <blockquote>
 <p>insertString operation parameters call example.</p>
@@ -276,13 +290,13 @@
 </tr>
 <tr>
 <td>parameters</td>
-<td><a href="#insertString-operation-parameters">insertString Operation Parameters</a></td>
+<td><a href="#insertString-operation-parameters">check Parameters</a></td>
 </tr>
 </tbody></table>
 
 <p>Check <a href="#passing-parameters">Passing Parameters</a> for other required parameters.</p>
 
-<h5 id="insertstring-parameters">insertString Parameters</h5>
+<h5 id="parameters">Parameters</h5>
 
 <p>The following operation parameters can be used to save a string you can later query by using the <code class="prettyprint">key</code>value.</p>
 
@@ -305,7 +319,7 @@
 </tr>
 </tbody></table>
 
-<h5 id="insertstring-response">insertString Response</h5>
+<h6 id="response">Response</h6>
 
 <p>The operation call will return the <code class="prettyprint">jobId</code> of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).</p>
 
@@ -313,7 +327,7 @@
 
 <p><a name="selectString-operation"></a></p>
 
-<h4 id="selectstring">selectString</h4>
+<p class="product-operation ">selectString</p>
 
 <blockquote>
 <p>selectString operation parameters call example.</p>
@@ -349,13 +363,13 @@
 </tr>
 <tr>
 <td>parameters</td>
-<td><a href="#selectString-operation-parameters">selectString Operation Parameters</a></td>
+<td><a href="#selectString-operation-parameters">check Parameters</a></td>
 </tr>
 </tbody></table>
 
 <p>Check <a href="#passing-parameters">Passing Parameters</a> for other required parameters.</p>
 
-<h5 id="selectstring-operation-parameters">selectString Operation Parameters</h5>
+<h5 id="parameters">Parameters</h5>
 
 <p>Set the <code class="prettyprint">key</code> value to get the data you previously saved.</p>
 
@@ -373,7 +387,7 @@
 </tr>
 </tbody></table>
 
-<h5 id="selectstring-response">selectString Response</h5>
+<h6 id="response">Response</h6>
 
 <p>The operation call will return the <code class="prettyprint">jobId</code> of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).</p>
 
@@ -384,6 +398,8 @@
 <p class="product-header">Service</p>
 
 <h3 style="margin-top:0">Ethereum.Database.Mutable</h3>
+
+<p>&ldquo;<em>This is in contrast to a mutable object (changeable object), which can be modified after it is created.</em>&rdquo;</p>
 
 <blockquote>
 <p>Mutable insertString operation parameters call example.</p>
@@ -429,3 +445,7 @@
 <td>1</td>
 </tr>
 </tbody></table>
+
+<p class="product-title">Operations</p>
+
+<p>You can use the same operations as for <code class="prettyprint">Ethereum.Database.Immuutable</code> service, changing the parameter contract to <code class="prettyprint">Ethereum.Database.Mutable</code>.</p>

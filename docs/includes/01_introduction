@@ -46,6 +46,12 @@ Every operation call ownership is certified.
 
 <h2 id="main-api-methods">Main API Methods</h2>
 
+<p>Use <a href="#call-operation">‘call’</a> to run a Smart Contract operation and <a href="#fetch-operation">&lsquo;fetch’</a> to get Smart Contract call status (Smart Contracts execution can take a while to get confirmed from the Blockchain).</p>
+
+<p><a name="call-operation"></a></p>
+
+<h3 id="call-api-method">&#39;call&rsquo; API Method</h3>
+
 <blockquote>
 <p>API call example.</p>
 </blockquote>
@@ -79,12 +85,6 @@ Every operation call ownership is certified.
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Use <a href="#call-operation">‘call’</a> to run a Smart Contract operation and <a href="#fetch-operation">&lsquo;fetch’</a> to get Smart Contract call status (Smart Contracts execution can take a while to get confirmed from the Blockchain).</p>
-
-<p><a name="call-operation"></a></p>
-
-<h3 id="call-api-method">&#39;call&rsquo; API Method</h3>
-
 <p><code class="prettyprint">https://api.bws.ninja/v1/call</code> runs a <a href="https://bws.ninja">Blockchain Web Services</a> Smart Contract and must contain the following parameters:</p>
 
 <table><thead>
@@ -372,13 +372,13 @@ Every operation call ownership is certified.
 
 <h2 id="transactions-overview">Transactions Overview</h2>
 
-<pre style="background-color: initial; padding: 0 0 20px 0">
-  <img src="images/megalock-snap-12.png" style="width:95%">
-</pre>
-
-<p>All the transactions your product executes will be displayed on your <a href="https://bws.ninja">Blockchain Web Services</a> Management Console.</p>
+<p>Go to <a href="https://bws.ninja">Blockchain Web Services</a> Management Console and select <code class="prettyprint">Jobs List</code> menu option to get the list of executed calls.</p>
 
 <p><img src="/images/megalock-snap-11.png" alt="Megalock.ninja" /></p>
+
+<p>For each of the service API calls you execute, select <code class="prettyprint">actions</code> menu option to check for the status or the available related information.</p>
+
+<p><img src="/images/megalock-snap-12.png" alt="Megalock.ninja" /></p>
 
 <h2 id="required-funds">Required Funds</h2>
 
