@@ -39,10 +39,6 @@ A Blockchain is essentially a distributed database that runs on a peer-to-peer n
 
 Check the documentation provided by the Author to call those services.
 
-<aside class="warning">
-Want to publish your Contract Service? Contact us at hello@bws.ninja
-</aside>
-
 <a name="ethereum-database-immutable"></a>
 
 <p class="product-header">Service</p>
