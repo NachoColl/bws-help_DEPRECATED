@@ -1,14 +1,8 @@
 # How It Works
 
+## Registration
+
 To start using Blockchain Web Services go to [bws.ninja](https://bws.ninja) and sign-up. It's free.
-
-<aside class="notice">
-You don't need to create any Blockchain account to use Blockchain Web Services.
-</aside>
-
-Once you get your [Blockchain Web Services](https://bws.ninja) account you can build your solution by calling well-documented [smart contracts](#smart-contracts) using regular API calls. Blockchain Web Services generates your private keys and hash them so every call to Blockchain is unique and linked to you.
-
-"_A smart contract is a computer program or a transaction protocol which is intended to automatically execute, control or document legally relevant events and actions according to the terms of a contract or an agreement._" The [Wikipedia](https://en.wikipedia.org/wiki/Smart_contract).
 
 ## API Endpoint
 
@@ -51,6 +45,8 @@ You must include your Key in all of your API calls as a header attribute:
 ## Main API Methods
 
 Use [‘call’](#call-operation) to run a Smart Contract operation and ['fetch’](#fetch-operation) to get Smart Contract call status (Smart Contracts execution can take a while to get confirmed from the Blockchain).
+
+"_A smart contract is a computer program or a transaction protocol which is intended to automatically execute, control or document legally relevant events and actions according to the terms of a contract or an agreement._" The [Wikipedia](https://en.wikipedia.org/wiki/Smart_contract).
 
 <a name="call-operation"></a>
 
