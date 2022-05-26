@@ -8,9 +8,7 @@ You don't need to create any Blockchain account to use Blockchain Web Services.
 
 Once you get your [Blockchain Web Services](https://bws.ninja) account you can build your solution by calling well-documented [smart contracts](#smart-contracts) using regular API calls. Blockchain Web Services generates your private keys and hash them so every call to Blockchain is unique and linked to you.
 
-<aside class="warning">
-Every operation call ownership is certified.
-</aside>
+"_A smart contract is a computer program or a transaction protocol which is intended to automatically execute, control or document legally relevant events and actions according to the terms of a contract or an agreement._" The [Wikipedia](https://en.wikipedia.org/wiki/Smart_contract).
 
 ## API Endpoint
 
