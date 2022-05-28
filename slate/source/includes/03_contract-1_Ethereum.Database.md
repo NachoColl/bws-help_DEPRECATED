@@ -61,7 +61,7 @@ Click on Contract Address to check verified contract at `etherscan.io`.
 
 | Network Id | Contract Address                                                                                                                   | Version |
 | ---------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| ethereum   |
+| ethereum   | [0x58ca3f44cf5c84c1c29591a483be3288d0a01b7c](https://etherscan.io/address/0x58ca3f44cf5c84c1c29591a483be3288d0a01b7c               |
 | ropsten    | [0x81D575b53239BcB4332bb1608a21F1A17035deeA](https://ropsten.etherscan.io/address/0x81D575b53239BcB4332bb1608a21F1A17035deeA#code) | 2       |
 
 <p class="product-title">Operations</p>
@@ -306,7 +306,7 @@ Click on Contract Address to check verified contract at `etherscan.io`.
 
 | Network Id | Contract Address                                                                                                                   | Version |
 | ---------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| ethereum   |
+| ethereum   | [0x1aFEe6DD9A1D4af90c39CD8B09296FC505beA00d](https://etherscan.io/address/0x1aFEe6DD9A1D4af90c39CD8B09296FC505beA00d)              |
 | ropsten    | [0x9089Db83F0590EC2eD01A5Eb4F8584Dd6F4bDaC7](https://ropsten.etherscan.io/address/0x9089Db83F0590EC2eD01A5Eb4F8584Dd6F4bDaC7#code) | 1       |
 
 <p class="product-title">Operations</p>
