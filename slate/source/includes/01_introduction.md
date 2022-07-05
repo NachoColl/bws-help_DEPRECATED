@@ -254,10 +254,10 @@ For each of the service API calls you execute, select `actions` menu option to c
 
 ## Required Funds
 
-[Blockchain Web Services](https://bws.ninja) is free, but calling Smart Contracts requires funds: "It is the fuel that allows it to operate" (you can check how Gas and Fuel works for Ethereum [here](https://ethereum.org/en/developers/docs/gas/)).
+Calling Smart Contracts requires funds: "It is the fuel that allows it to operate" (you can check how Gas and Fuel works for Ethereum [here](https://ethereum.org/en/developers/docs/gas/)). When using [Blockchain Web Services](https://bws.ninja) you don't have to worry about buying Cryptos as everytime you call a Smart Contract we will convert your USD credits into the required crypto currency.
 
 <aside class="notice">
-We use Stripe as the Payment gateway for buying credits.
+We use Stripe as the Payment gateway for buying USD credits.
 </aside>
 
 To get your account funded go to `My Account > Credits` and complete your credits purchase.
@@ -265,4 +265,4 @@ To get your account funded go to `My Account > Credits` and complete your credit
 <br/>
 ![BWS Credits](images/BlockchainWebServices-Credits.jpg)
 
-Remember **[Blockchain Web Services](https://bws.ninja) is free** and funds are spent when calling smart contracts.
+Remember funds are only spent when calling smart contracts and there is no extra fee for having a Blockchain Web Services account.
