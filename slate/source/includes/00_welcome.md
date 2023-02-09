@@ -20,7 +20,5 @@ make it easy to find, consume and get rewarded for your work.
 </code>
 </pre>
 
-[Blockchain Web Services](https://bws.ninja) (aka BWS) is a new Trademark for blockchain solutions.
-
-We provide an API to call public blockchain(s) smart contracts as easily as any web service you are already used to and a Marketplace to find all the solutions your business or project needs.
+[Blockchain Web Services](https://bws.ninja) (aka BWS) provides an API to call public blockchain(s) smart contracts as easily as any web service you are already used to and a Marketplace to find all the solutions your business or project needs.
 
