@@ -1,10 +1,10 @@
-# bweb.services API Docs
+# BWS Docs
 
-You can browse the docs at [docs.bweb.services](http://docs.bweb.services).
+You can browse the docs at [doc.bws.ninja](https://doc.bws.ninja/).
 
 ## API Issues
 
-If you have any issue when using the API, please add a new issue here.
+If you have any issue when using this documentation, please add a new issue here.
 
 Pull requests are welcome!
 
