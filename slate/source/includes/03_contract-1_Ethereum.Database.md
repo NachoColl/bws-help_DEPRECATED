@@ -61,7 +61,7 @@ Click on Contract Address to check verified contract at `etherscan.io`.
 | Network Id | Contract Address                                                                                                                   | Version |
 | ---------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------- |
 | ethereum   | [0x58ca3f44cf5c84c1c29591a483be3288d0a01b7c](https://etherscan.io/address/0x58ca3f44cf5c84c1c29591a483be3288d0a01b7c)              | 2       |
-| sepolia    | [0xEF28790d1C8ac0833e8c05BB4344e479Da8a4Dd3](https://sepolia.etherscan.io/address/0xEF28790d1C8ac0833e8c05BB4344e479Da8a4Dd3#code) | 2       |
+| sepolia    | [0xEF28790d1C8ac0833e8c05BB4344e479Da8a4Dd3](https://sepolia.etherscan.io/address/0xEF28790d1C8ac0833e8c05BB4344e479Da8a4Dd3) | 2       |
 
 <p class="product-title">Operations</p>
 
@@ -306,7 +306,7 @@ Click on Contract Address to check verified contract at `etherscan.io`.
 | Network Id | Contract Address                                                                                                                   | Version |
 | ---------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------- |
 | ethereum   | [0x1aFEe6DD9A1D4af90c39CD8B09296FC505beA00d](https://etherscan.io/address/0x1aFEe6DD9A1D4af90c39CD8B09296FC505beA00d)              | 1       |
-| sepolia    | [0x58ca3f44cF5c84C1C29591A483be3288D0A01b7C](https://sepolia.etherscan.io/address/0x58ca3f44cF5c84C1C29591A483be3288D0A01b7C#code) | 1       |
+| sepolia    | [0x58ca3f44cF5c84C1C29591A483be3288D0A01b7C](https://sepolia.etherscan.io/address/0x58ca3f44cF5c84C1C29591A483be3288D0A01b7C) | 1       |
 
 <p class="product-title">Operations</p>
 
