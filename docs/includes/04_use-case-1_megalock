@@ -10,7 +10,7 @@
 Data is encrypted and can only be accessed using linked email account.
 </aside>
 
-<p>The website only needs 3 calls to <strong>Blockchain Web Services</strong> API to save data into Ropsten Network with no need to create any Blockchain account:</p>
+<p>The website only needs 3 calls to <strong>Blockchain Web Services</strong> API to save data into Sepolia Network with no need to create any Blockchain account:</p>
 
 <ul>
 <li><a href="#insertString-operation">insertString</a> to save data to Ethereum blockchain,</li>
@@ -31,7 +31,7 @@ User data, even encrypted will never be stored in BWS.
   <span class="kd">var</span> <span class="nx">body</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">contract</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Mutable"</span><span class="p">,</span>
     <span class="na">version</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="na">network</span><span class="p">:</span> <span class="s2">"ropsten"</span><span class="p">,</span>
+    <span class="na">network</span><span class="p">:</span> <span class="s2">"sepolia"</span><span class="p">,</span>
     <span class="na">operation</span><span class="p">:</span> <span class="s2">"insertString"</span><span class="p">,</span>
     <span class="na">parameters</span><span class="p">:</span> <span class="p">{</span>
       <span class="na">key</span><span class="p">:</span> <span class="nx">key</span><span class="p">,</span>

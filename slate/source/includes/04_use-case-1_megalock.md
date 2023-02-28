@@ -10,7 +10,7 @@
 Data is encrypted and can only be accessed using linked email account.
 </aside>
 
-The website only needs 3 calls to **Blockchain Web Services** API to save data into Ropsten Network with no need to create any Blockchain account:
+The website only needs 3 calls to **Blockchain Web Services** API to save data into Sepolia Network with no need to create any Blockchain account:
 
 - [insertString](#insertString-operation) to save data to Ethereum blockchain,
 - [selectString](#selectString-operation) to get encrypted data from the blockchain, and
@@ -31,7 +31,7 @@ async function callInsertStringBWSAPI(endpoint, key, value, apiKey) {
   var body = {
     contract: "Ethereum.Database.Mutable",
     version: 1,
-    network: "ropsten",
+    network: "sepolia",
     operation: "insertString",
     parameters: {
       key: key,

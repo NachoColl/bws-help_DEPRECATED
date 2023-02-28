@@ -90,7 +90,7 @@
 <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">parameters</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">contract</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Immutable"</span><span class="p">,</span>
   <span class="na">version</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-  <span class="na">network</span><span class="p">:</span> <span class="s2">"ropsten"</span><span class="p">,</span>
+  <span class="na">network</span><span class="p">:</span> <span class="s2">"sepolia"</span><span class="p">,</span>
   <span class="na">operation</span><span class="p">:</span> <span class="s2">"insertBytes32"</span><span class="p">,</span>
   <span class="na">parameters</span><span class="p">:</span> <span class="p">{</span>
     <span class="na">key</span><span class="p">:</span> <span class="s2">"a-key"</span><span class="p">,</span>
@@ -189,7 +189,7 @@
 <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">parameters</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">contract</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Immutable"</span><span class="p">,</span>
   <span class="na">version</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-  <span class="na">network</span><span class="p">:</span> <span class="s2">"ropsten"</span><span class="p">,</span>
+  <span class="na">network</span><span class="p">:</span> <span class="s2">"sepolia"</span><span class="p">,</span>
   <span class="na">operation</span><span class="p">:</span> <span class="s2">"selectBytes32"</span><span class="p">,</span>
   <span class="na">parameters</span><span class="p">:</span> <span class="p">{</span>
     <span class="na">key</span><span class="p">:</span> <span class="s2">"a-key"</span><span class="p">,</span>
@@ -257,7 +257,7 @@
 <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">parameters</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">contract</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Immutable"</span><span class="p">,</span>
   <span class="na">version</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-  <span class="na">network</span><span class="p">:</span> <span class="s2">"ropsten"</span><span class="p">,</span>
+  <span class="na">network</span><span class="p">:</span> <span class="s2">"sepolia"</span><span class="p">,</span>
   <span class="na">operation</span><span class="p">:</span> <span class="s2">"insertString"</span><span class="p">,</span>
   <span class="na">parameters</span><span class="p">:</span> <span class="p">{</span>
     <span class="na">key</span><span class="p">:</span> <span class="s2">"a-key"</span><span class="p">,</span>
@@ -331,7 +331,7 @@
 <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">parameters</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">contract</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Immutable"</span><span class="p">,</span>
   <span class="na">version</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-  <span class="na">network</span><span class="p">:</span> <span class="s2">"ropsten"</span><span class="p">,</span>
+  <span class="na">network</span><span class="p">:</span> <span class="s2">"sepolia"</span><span class="p">,</span>
   <span class="na">operation</span><span class="p">:</span> <span class="s2">"selectString"</span><span class="p">,</span>
   <span class="na">parameters</span><span class="p">:</span> <span class="p">{</span>
     <span class="na">key</span><span class="p">:</span> <span class="s2">"a-key"</span><span class="p">,</span>
@@ -403,7 +403,7 @@
 <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">parameters</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">contract</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Mutable"</span><span class="p">,</span>
   <span class="na">version</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="na">network</span><span class="p">:</span> <span class="s2">"ropsten"</span><span class="p">,</span>
+  <span class="na">network</span><span class="p">:</span> <span class="s2">"sepolia"</span><span class="p">,</span>
   <span class="na">operation</span><span class="p">:</span> <span class="s2">"insertString"</span><span class="p">,</span>
   <span class="na">parameters</span><span class="p">:</span> <span class="p">{</span>
     <span class="na">key</span><span class="p">:</span> <span class="s2">"a-key"</span><span class="p">,</span>

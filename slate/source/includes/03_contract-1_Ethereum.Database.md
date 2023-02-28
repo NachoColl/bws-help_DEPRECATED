@@ -73,7 +73,7 @@ Click on Contract Address to check verified contract at `etherscan.io`.
 var parameters = {
   contract: "Ethereum.Database.Immutable",
   version: 2,
-  network: "ropsten",
+  network: "sepolia",
   operation: "insertBytes32",
   parameters: {
     key: "a-key",
@@ -143,7 +143,7 @@ The operation call will return the `jobId` of the job running on Blochchain Web 
 var parameters = {
   contract: "Ethereum.Database.Immutable",
   version: 2,
-  network: "ropsten",
+  network: "sepolia",
   operation: "selectBytes32",
   parameters: {
     key: "a-key",
@@ -186,7 +186,7 @@ The operation call will return the `jobId` of the job running on Blochchain Web 
 var parameters = {
   contract: "Ethereum.Database.Immutable",
   version: 2,
-  network: "ropsten",
+  network: "sepolia",
   operation: "insertString",
   parameters: {
     key: "a-key",
@@ -233,7 +233,7 @@ The operation call will return the `jobId` of the job running on Blochchain Web 
 var parameters = {
   contract: "Ethereum.Database.Immutable",
   version: 2,
-  network: "ropsten",
+  network: "sepolia",
   operation: "selectString",
   parameters: {
     key: "a-key",
@@ -282,7 +282,7 @@ The operation call will return the `jobId` of the job running on Blochchain Web 
 var parameters = {
   contract: "Ethereum.Database.Mutable",
   version: 1,
-  network: "ropsten",
+  network: "sepolia",
   operation: "insertString",
   parameters: {
     key: "a-key",

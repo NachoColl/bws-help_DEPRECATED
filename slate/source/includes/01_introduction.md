@@ -93,7 +93,7 @@ $.ajax({
 | ---------- | ------ | ----------------------------------------- | ---------------------------------- |
 | contract   | string | check [Smart Contracts](#smart-contracts) | The contract id.                   |
 | version    | number | 1,2,3,...                                 | The contract version to use.       |
-| network    | string | ropsten, ethereum                         | The network id to save data to.    |
+| network    | string | sepolia, ethereum                         | The network id to save data to.    |
 | operation  | string | check [Smart Contracts](#smart-contracts) | The operation id to call.          |
 | parameters | json   | check [Smart Contracts](#smart-contracts) | The operation required parameters. |
 
@@ -103,7 +103,7 @@ Please note:
 
 - `version` is used to call a specific Smart Contract implementation.
 
-- `network` is the network you want to use (e.g. `ropsten` network can be used to test without requiring any funds).
+- `network` is the network you want to use (e.g. `sepolia` network can be used to test without requiring any funds).
 
 - Method parameters must be passed in the Body part of the POST request message using [JSON](https://en.wikipedia.org/wiki/JSON) format (`Content-Type` header attribute must be set to `application/json`)
 
@@ -152,7 +152,7 @@ $.ajax({
         "Request": {
             "contract": "Ethereum.Database.Immutable ",
             "version": 1,
-            "network": "ropsten",
+            "network": "sepolia",
             "operation": "insertBytes32",
             "parameters": {
                 "key": "a-key",
