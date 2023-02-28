@@ -74,8 +74,8 @@
 <td>2</td>
 </tr>
 <tr>
-<td>ropsten</td>
-<td><a href="https://ropsten.etherscan.io/address/0x81D575b53239BcB4332bb1608a21F1A17035deeA#code">0x81D575b53239BcB4332bb1608a21F1A17035deeA</a></td>
+<td>sepolia</td>
+<td><a href="https://sepolia.etherscan.io/address/0xEF28790d1C8ac0833e8c05BB4344e479Da8a4Dd3#code">0xEF28790d1C8ac0833e8c05BB4344e479Da8a4Dd3</a></td>
 <td>2</td>
 </tr>
 </tbody></table>
@@ -436,12 +436,12 @@
 <td>1</td>
 </tr>
 <tr>
-<td>ropsten</td>
-<td><a href="https://ropsten.etherscan.io/address/0x9089Db83F0590EC2eD01A5Eb4F8584Dd6F4bDaC7#code">0x9089Db83F0590EC2eD01A5Eb4F8584Dd6F4bDaC7</a></td>
+<td>sepolia</td>
+<td><a href="https://sepolia.etherscan.io/address/0x58ca3f44cF5c84C1C29591A483be3288D0A01b7C#code">0x58ca3f44cF5c84C1C29591A483be3288D0A01b7C</a></td>
 <td>1</td>
 </tr>
 </tbody></table>
 
 <p class="product-title">Operations</p>
 
-<p>You can use the same operations as for <code class="prettyprint">Ethereum.Database.Immuutable</code> service, changing the parameter contract to <code class="prettyprint">Ethereum.Database.Mutable</code>.</p>
+<p>You can use the same operations as for <code class="prettyprint">Ethereum.Database.Immutable</code> service, changing the parameter contract to <code class="prettyprint">Ethereum.Database.Mutable</code>.</p>

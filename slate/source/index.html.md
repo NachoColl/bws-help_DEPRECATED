@@ -6,7 +6,7 @@ language_tabs:
 
 toc_footers:
   - <a href='https://bws.ninja'>Sign Up</a>
-  - <a href='mailto:hello@bws.ninga' target="_blank">Need help? hello@bws.ninja</a>
+  - <a href='mailto:hello@bws.ninja' target="_blank">Need help? hello@bws.ninja</a>
 
 includes:
   - 00_welcome.md
