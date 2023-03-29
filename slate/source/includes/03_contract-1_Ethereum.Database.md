@@ -21,12 +21,24 @@
     margin-top:25px !important;
   }
 
+   .product-network {
+    background-color:#571599;
+    color :white;
+    text-shadow: none !important;
+    width: 140px;
+    margin-top:25px !important;
+    align:center;
+    text-align:center;
+  }
+
    .product-operation {
     background-color:#EC712B;
     color :white;
     text-shadow: none !important;
-    width: 200px;
+    width: 140px;
     margin-top:25px !important;
+    align:center;
+    text-align:center;
   }
 </style>
 ## BWS.Database
@@ -54,7 +66,9 @@ Check the documentation provided by the Author to call those services.
 
 You can use Ethereum.Database.Immutable operation to save immutable data to blockchain and certify written data will never change.
 
-<p class="product-title">Contract</p>
+<p class="product-title">Networks</p>
+
+<p class="product-network">Ethereum</p>
 
 Click on Contract Address to check verified contract at `etherscan.io`.
 
@@ -62,6 +76,17 @@ Click on Contract Address to check verified contract at `etherscan.io`.
 | ---------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------- |
 | ethereum   | [0x58ca3f44cf5c84c1c29591a483be3288d0a01b7c](https://etherscan.io/address/0x58ca3f44cf5c84c1c29591a483be3288d0a01b7c)              | 2       |
 | sepolia    | [0xEF28790d1C8ac0833e8c05BB4344e479Da8a4Dd3](https://sepolia.etherscan.io/address/0xEF28790d1C8ac0833e8c05BB4344e479Da8a4Dd3) | 2       |
+
+
+<p class="product-network">Polygon</p>
+
+Click on Contract Address to check verified contract at `polygonscan.com`.
+
+| Network Id | Contract Address                                                                                                                   | Version |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| polygon   | coming soon              | 2       |
+| mumbai    | [0x58ca3f44cF5c84C1C29591A483be3288D0A01b7C](https://mumbai.polygonscan.com/address/0x58ca3f44cF5c84C1C29591A483be3288D0A01b7C) | 2       |
+
 
 <p class="product-title">Operations</p>
 
@@ -301,12 +326,23 @@ Mutable insert operations can overwrite previously saved data and the same inser
 
 <p class="product-title">Contract</p>
 
+<p class="product-network">Ethereum</p>
+
 Click on Contract Address to check verified contract at `etherscan.io`.
 
 | Network Id | Contract Address                                                                                                                   | Version |
 | ---------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------- |
 | ethereum   | [0x1aFEe6DD9A1D4af90c39CD8B09296FC505beA00d](https://etherscan.io/address/0x1aFEe6DD9A1D4af90c39CD8B09296FC505beA00d)              | 1       |
 | sepolia    | [0x58ca3f44cF5c84C1C29591A483be3288D0A01b7C](https://sepolia.etherscan.io/address/0x58ca3f44cF5c84C1C29591A483be3288D0A01b7C) | 1       |
+
+<p class="product-network">Polygon</p>
+
+Click on Contract Address to check verified contract at `polygonscan.com`.
+
+| Network Id | Contract Address                                                                                                                   | Version |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| polygon   | coming soon              | 2       |
+| mumbai    | [0xEF28790d1C8ac0833e8c05BB4344e479Da8a4Dd3](https://mumbai.polygonscan.com/address/0xEF28790d1C8ac0833e8c05BB4344e479Da8a4Dd3) | 2       |
 
 <p class="product-title">Operations</p>
 
