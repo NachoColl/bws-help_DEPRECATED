@@ -324,7 +324,7 @@ var parameters = {
 
 Mutable insert operations can overwrite previously saved data and the same insert/select operations are available for `Ethereum.Database.Mutable` contract (you just need to replace `contract` and `version` parameter to use Mutable or Immutable contract).
 
-<p class="product-title">Contract</p>
+<p class="product-title">Networks</p>
 
 <p class="product-network">Ethereum</p>
 
@@ -341,8 +341,8 @@ Click on Contract Address to check verified contract at `polygonscan.com`.
 
 | Network Id | Contract Address                                                                                                                   | Version |
 | ---------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| polygon   | coming soon              | 2       |
-| mumbai    | [0xEF28790d1C8ac0833e8c05BB4344e479Da8a4Dd3](https://mumbai.polygonscan.com/address/0xEF28790d1C8ac0833e8c05BB4344e479Da8a4Dd3) | 2       |
+| polygon   | coming soon              | 1       |
+| mumbai    | [0xEF28790d1C8ac0833e8c05BB4344e479Da8a4Dd3](https://mumbai.polygonscan.com/address/0xEF28790d1C8ac0833e8c05BB4344e479Da8a4Dd3) | 1       |
 
 <p class="product-title">Operations</p>
 
