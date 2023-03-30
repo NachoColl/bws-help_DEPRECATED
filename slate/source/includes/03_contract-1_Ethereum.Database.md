@@ -84,7 +84,7 @@ Click on Contract Address to check verified contract at `polygonscan.com`.
 
 | Network Id | Contract Address                                                                                                                   | Version |
 | ---------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| polygon   | coming soon              | 2       |
+| polygon   | [0x58ca3f44cF5c84C1C29591A483be3288D0A01b7C](https://polygonscan.com/address/0x58ca3f44cF5c84C1C29591A483be3288D0A01b7C)              | 2       |
 | mumbai    | [0x58ca3f44cF5c84C1C29591A483be3288D0A01b7C](https://mumbai.polygonscan.com/address/0x58ca3f44cF5c84C1C29591A483be3288D0A01b7C) | 2       |
 
 
@@ -341,7 +341,7 @@ Click on Contract Address to check verified contract at `polygonscan.com`.
 
 | Network Id | Contract Address                                                                                                                   | Version |
 | ---------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| polygon   | coming soon              | 1       |
+| polygon   | [0xEF28790d1C8ac0833e8c05BB4344e479Da8a4Dd3](https://polygonscan.com/address/0xEF28790d1C8ac0833e8c05BB4344e479Da8a4Dd3)               | 1       |
 | mumbai    | [0xEF28790d1C8ac0833e8c05BB4344e479Da8a4Dd3](https://mumbai.polygonscan.com/address/0xEF28790d1C8ac0833e8c05BB4344e479Da8a4Dd3) | 1       |
 
 <p class="product-title">Operations</p>
