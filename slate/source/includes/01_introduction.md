@@ -180,6 +180,8 @@ The **fetch** API method will return the status of your Smart Contract call as p
 | Request           | The original request you did to call the Smart Contract |
 | Result            | When Status is 'completed' the smart contract results   |
 | Receipt           | The outcome of interaction with Ethereum Blockchain     |
+| txnUrl            | Blockchain network scanner website for your transaction    |
+| proofOfRegistryUrl | Blockchain Web Services <a href="#proof-of-registry">Proof of Registry</a> Url     |
 
 ##### 'fetch' Status List
 

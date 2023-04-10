@@ -13,8 +13,9 @@ includes:
   - 01_introduction.md
   - 03_contract-0.md
   - 03_contract-1_Ethereum.Database.md
-  - 04_use-case-0.md
-  - 04_use-case-1_megalock.md
+  - 04_proof-of-registry.md
+  - XX_use-case-0.md
+  - XX_use-case-1_megalock.md
 
 search: false
 ---

@@ -1,0 +1,40 @@
+<h1 id="proof-of-registry">Proof Of Registry</h1>
+
+<blockquote>
+<p>Use proofOfRegistryUrl to access/share Proof of Registry website</p>
+</blockquote>
+<pre class="highlight javascript"><code><span class="p">{</span>
+    <span class="s2">"statusCode"</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="s2">"info"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="p">...</span>
+        <span class="s2">"request"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"contract"</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Immutable"</span><span class="p">,</span>
+            <span class="s2">"version"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="s2">"network"</span><span class="p">:</span> <span class="s2">"mumbai"</span><span class="p">,</span>
+            <span class="s2">"operation"</span><span class="p">:</span> <span class="s2">"insertBytes32"</span><span class="p">,</span>
+            <span class="s2">"parameters"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">"key"</span><span class="p">:</span> <span class="s2">"1681074402939"</span><span class="p">,</span>
+                <span class="s2">"value"</span><span class="p">:</span> <span class="s2">"BWS!"</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="p">...</span>
+        <span class="s2">"receipt"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"blockHash"</span><span class="p">:</span> <span class="s2">"0xf5cc369697dbcef...02953c03be46a505bd0d"</span><span class="p">,</span>
+            <span class="s2">"blockNumber"</span><span class="p">:</span> <span class="mi">34173980</span><span class="p">,</span>
+            <span class="p">...</span>
+            <span class="s2">"transactionHash"</span><span class="p">:</span> <span class="s2">"0x4a36cc0a3b1...1ed92688034"</span><span class="p">,</span>
+            <span class="s2">"transactionIndex"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"0x0"</span>
+        <span class="p">},</span>
+        <span class="s2">"proofOfRegistryUrl"</span><span class="p">:</span> <span class="s2">"https://staging.bws.ninja/tx.html?t=0x4a36cc0a3b11da38d527422a82f2e8648063a12f6c9fd970aa85b1ed92688034"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>Use Blockchain Web Services Proof of Registry to easily and securely validate your Blockchain transactions. A user-friendly interface that allows you to share your transaction as a proof of its inclusion in the Blockchain registry. </p>
+
+<p>This proof can be used to demonstrate the validity and authenticity of your transaction, providing confidence and trust to all parties involved. </p>
+
+<p>Additionally, by including the Identity domain of the caller in the proof, we provide an additional layer of transparency, ensuring that all transactions are legitimate and verifiable. </p>
+
+<p><br/>
+<img src="/images/proof-of-registry-snapshot.png" alt="Proof of Registry" /></p>

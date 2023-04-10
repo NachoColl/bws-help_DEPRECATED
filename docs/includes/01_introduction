@@ -230,6 +230,14 @@
 <td>Receipt</td>
 <td>The outcome of interaction with Ethereum Blockchain</td>
 </tr>
+<tr>
+<td>txnUrl</td>
+<td>Blockchain network scanner website for your transaction</td>
+</tr>
+<tr>
+<td>proofOfRegistryUrl</td>
+<td>Blockchain Web Services <a href="#proof-of-registry">Proof of Registry</a> Url</td>
+</tr>
 </tbody></table>
 
 <h5 id="fetch-status-list">&lsquo;fetch&rsquo; Status List</h5>
