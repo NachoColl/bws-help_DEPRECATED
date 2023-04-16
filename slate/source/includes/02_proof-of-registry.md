@@ -13,8 +13,8 @@
             "network": "mumbai",
             "operation": "insertBytes32",
             "parameters": {
-                "key": "1681074402939",
-                "value": "BWS!"
+                "key": "1681656626141",
+                "value": "Hello BWS!"
             }
         },
         ...
@@ -26,7 +26,7 @@
             "transactionIndex": 0,
             "type": "0x0"
         },
-        "proofOfRegistryUrl": "https://staging.bws.ninja/tx.html?t=0x4a36cc0a3b11da38d527422a82f2e8648063a12f6c9fd970aa85b1ed92688034"
+        "proofOfRegistryUrl": "https://staging.bws.ninja/tx.html?t=0x16b3c7e996c2e650d28fadca3cc74a26e506869234de8754121f013586d11a92"
     }
 }
 ```
@@ -37,5 +37,7 @@ This proof can be used to demonstrate the validity and authenticity of your tran
 
 Additionally, by including the Identity domain of the caller in the proof, we provide an additional layer of transparency, ensuring that all transactions are legitimate and verifiable. 
 
+You can check an example <a href="https://staging.bws.ninja/tx.html?t=0x16b3c7e996c2e650d28fadca3cc74a26e506869234de8754121f013586d11a92" target="_blank">here</a>.
+
 <br/>
-![Proof of Registry](images/proof-of-registry-snapshot.png)
+![Proof of Registry](images/proof-of-registry-snapshot-help.png)
