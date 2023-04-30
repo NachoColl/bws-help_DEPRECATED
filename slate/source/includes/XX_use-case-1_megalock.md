@@ -4,25 +4,16 @@
   <img src="images/megalock-snap-1.png" style="width:95%">
 </pre>
 
-[MegaLock.ninja](https://megalock.ninja/) is a website anyone can use to securely save data in Ethereum Blockchain.
-
-<aside class="notice">
-Data is encrypted and can only be accessed using linked email account.
-</aside>
-
-The website only needs 3 calls to **Blockchain Web Services** API to save data into Sepolia Network with no need to create any Blockchain account:
+[MegaLock.ninja](https://megalock.ninja/) demo website only needs 3 calls to **Blockchain Web Services** API to save data into Sepolia Network:
 
 - [insertString](#insertString-operation) to save data to Ethereum blockchain,
 - [selectString](#selectString-operation) to get encrypted data from the blockchain, and
 - [fetch](#fetch-operation) to fetch API calls status.
 
-Before data is sent to **Blockchain Web Services** [MegaLock.ninja](https://megalock.ninja/) creates RSA key pairs for each user to encrypt and secure data at REST on Ethereum distributed database.
-
-`crypto.generateKeyPairSync("rsa", { modulusLength: 2048, });`
-
 <aside class="warning">
-User data, even encrypted will never be stored in BWS.
+To use BWS you don't need to have a Blockchain account or buy Cryptos!
 </aside>
+
 
 ### Saving Data in Ethereum
 

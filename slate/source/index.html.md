@@ -9,11 +9,16 @@ toc_footers:
   - <a href='mailto:hello@bws.ninja' target="_blank">Need help? hello@bws.ninja</a>
 
 includes:
-  - 00_welcome.md
-  - 01_introduction.md
-  - 02_proof-of-registry.md
-  - 03_contract-0.md
-  - 03_contract-1_Ethereum.Database.md
+  - 000_welcome.md
+  - 010_introduction.md
+  - 020_required-funds.md
+  - 022_proof-of-registry.md
+  - 030_contract-0.md
+  - 031_contract-1_Ethereum.Database.md
+  - 032_contract-1_Ethereum.Certify.md
+  - 033_contract-1_Ethereum.NFT.md
+  - 034_contract-1_Ethereum.SCM.md
+  - 035_contract-1_Ethereum.Identity.md
   - XX_use-case-0.md
   - XX_use-case-1_megalock.md
 

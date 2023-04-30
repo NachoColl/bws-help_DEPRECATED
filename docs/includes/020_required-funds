@@ -1,0 +1,32 @@
+<h1 id="required-funds">Required Funds</h1>
+
+<p>Calling Smart Contracts requires funds: &ldquo;It is the fuel that allows it to operate&rdquo;. <a href="https://bws.ninja">Blockchain Web Services</a> uses Auto Trading to buy - real time - the required Tokens you need. Just fund your account and we convert your USD credits to the required network currency.</p>
+
+<aside class="notice">
+Check how Gas and Fuel works for Ethereum <a href="https://ethereum.org/en/developers/docs/gas/" target="_blank">here</a>.
+</aside>
+
+<h2 id="funding-your-account">Funding Your Account</h2>
+
+<p>To get your account funded go to <code class="prettyprint">My Account &gt; Credits</code> and complete your credits purchase.</p>
+
+<aside class="warning">
+Remember funds are only spent when calling smart contracts and there is no extra fee for having a Blockchain Web Services account.
+</aside>
+
+<p><br/>
+<img src="/images/Credits.png" alt="BWS Credits" /></p>
+
+<h2 id="auto-trading">Auto Trading</h2>
+
+<p>Everytime you call a BWS Solution smart contract, we verify you have enough network tokens and Order some if your token balance is low (for example, we buy <code class="prettyprint">ETH</code> if you decide to use Ethereum network, or we buy <code class="prettyprint">MATIC</code> if you use Polygon).</p>
+
+<p>To check all your exchange orders go to <code class="prettyprint">My Account &gt; Auto Trading</code> and select <code class="prettyprint">Token Order</code> list.</p>
+
+<p><br/>
+<img src="/images/Trading-Orders.png" alt="BWS Orders" /></p>
+
+<p>Please note that to execute Smart Contracts we also need to withdrawal your token funds to the appropiate network account. You can check those withdrawals by selecting the <code class="prettyprint">Withdrawal</code> list.</p>
+
+<p><br/>
+<img src="/images/Trading-Withdrawals.png" alt="BWS Withdrawals" /></p>
