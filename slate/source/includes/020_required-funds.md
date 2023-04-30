@@ -12,7 +12,7 @@ Check how Gas and Fuel works for Ethereum <a href="https://ethereum.org/en/devel
 To get your account funded go to `My Account > Credits` and complete your credits purchase.
 
 <aside class="warning">
-Remember funds are only spent when calling smart contracts and there is no extra fee for having a Blockchain Web Services account.
+Funds are only spent when calling smart contracts and there is no extra fee for having a BWS account.
 </aside>
 
 <br/>
