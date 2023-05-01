@@ -8,6 +8,17 @@
     font-size:13px;
     padding: 1px 3px 1px 2px;
   }
+
+
+.content .center-column+pre {
+    position: static;
+    float: none;
+    clear: none;
+    width: 52%;
+    margin: 0 28px;
+    padding: 10px 20px !important;
+    left: 0;
+}
 </style>
 
 <pre class="highlight javascript" style="display: block;"><code>

@@ -1,22 +1,62 @@
 <h2 id="megalock-ninja">MegaLock.ninja</h2>
 
-<pre style="background-color: initial; padding: 0 0 20px 0">
+<pre style="background-color: initial; padding: 0 0 20px 0; position: absolute; right:0;">
   <img src="images/megalock-snap-1.png" style="width:95%">
 </pre>
 
-<p><a href="https://megalock.ninja/">MegaLock.ninja</a> demo website only needs 3 calls to <strong>Blockchain Web Services</strong> API to save data into Sepolia Network:</p>
+<p><a href="https://megalock.ninja/">MegaLock.ninja</a> demo website only needs 3 calls to <strong>Blockchain Web Services</strong> API to securely save data into Sepolia Network:</p>
 
 <ul>
-<li><a href="#insertString-operation">insertString</a> to save data to Ethereum blockchain,</li>
-<li><a href="#selectString-operation">selectString</a> to get encrypted data from the blockchain, and</li>
+<li><a href="#insertString-operation">insertString</a> to save data to the blockchain,</li>
+<li><a href="#selectString-operation">selectString</a> to get the data from the blockchain, and</li>
 <li><a href="#fetch-operation">fetch</a> to fetch API calls status.</li>
 </ul>
 
-<aside class="warning">
-To use BWS you don&rsquo;t need to have a Blockchain account or buy Cryptos!
+<p>Please note <code class="prettyprint">insertString</code> and <code class="prettyprint">selectString</code> are asynchronous operations and return a <code class="prettyprint">jobId</code> value&hellip;</p>
+
+<div class="center-column"></div>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"statusMessage"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"jobId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a1ac1b69-36cd-44ed-aacb-440b31a57dd7"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><br/>
+&hellip; you can use to track the operation status by calling the <code class="prettyprint">fetch</code> method:</p>
+
+<div class="center-column"></div>
+<pre class="highlight javascript"><code><span class="nx">async</span> <span class="kd">function</span> <span class="nx">callFetchJobBWSAPI</span><span class="p">(</span><span class="nx">endpoint</span><span class="p">,</span> <span class="nx">jobId</span><span class="p">,</span> <span class="nx">apiKey</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">body</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">jobId</span><span class="p">:</span> <span class="nx">jobId</span><span class="p">,</span>
+  <span class="p">};</span>
+
+  <span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="s2">"https://api.bws.ninja/v1/call/fetch"</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
+    <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">body</span><span class="p">),</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span> <span class="s2">"X-Api-Key"</span><span class="p">:</span> <span class="nx">apiKey</span> <span class="p">},</span>
+  <span class="p">});</span>
+  <span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">)</span> <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">statusMessage</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+<h3 id="saving-data-to-ethereum">Saving Data to Ethereum</h3>
+
+<pre style="background-color: initial; padding: 0 0 20px 0; position: absolute; right:0;">
+  <img src="images/megalock-snap-3.png" style="width:95%">
+</pre>
+
+<p>Saving data to the blockchain using <a href="https://bws.ninja">Blockchain Web Services</a> is as easy as calling the <code class="prettyprint">insertString</code> method indicating a pair key/value:</p>
+
+<aside class="notice">
+In this example we use <a href="#ethereum-database-mutable">Ethereum.Database.Mutable</a> to enable data to be changed.
 </aside>
 
-<h3 id="saving-data-in-ethereum">Saving Data in Ethereum</h3>
+<div class="center-column"></div>
 <pre class="highlight javascript"><code><span class="nx">async</span> <span class="kd">function</span> <span class="nx">callInsertStringBWSAPI</span><span class="p">(</span><span class="nx">endpoint</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">apiKey</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">body</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">contract</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Mutable"</span><span class="p">,</span>
@@ -44,47 +84,84 @@ To use BWS you don&rsquo;t need to have a Blockchain account or buy Cryptos!
   <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre>
-<blockquote>
-<p>Fetch API call status and receipt</p>
-</blockquote>
-<pre class="highlight javascript"><code><span class="nx">async</span> <span class="kd">function</span> <span class="nx">callFetchJobBWSAPI</span><span class="p">(</span><span class="nx">endpoint</span><span class="p">,</span> <span class="nx">jobId</span><span class="p">,</span> <span class="nx">apiKey</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">body</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">jobId</span><span class="p">:</span> <span class="nx">jobId</span><span class="p">,</span>
-  <span class="p">};</span>
+<p><br/></p>
 
-  <span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">endpoint</span> <span class="o">+</span> <span class="s2">"/fetch"</span><span class="p">,</span> <span class="p">{</span>
-    <span class="na">method</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
-    <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">body</span><span class="p">),</span>
-    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span> <span class="s2">"X-Api-Key"</span><span class="p">:</span> <span class="nx">apiKey</span> <span class="p">},</span>
-  <span class="p">});</span>
-  <span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<h4 id="getting-blockchain-receipt">Getting Blockchain Receipt</h4>
 
-  <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">)</span> <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">statusMessage</span><span class="p">);</span>
+<pre style="background-color: initial; padding: 0 0 20px 0; position: absolute; right:0;">
+  <img src="images/megalock-snap-4.png" style="width:95%">
+</pre>
 
-  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<p>Once the blockchain operation has finished, <code class="prettyprint">fetch</code> method will return all the data you need to access and validate your transaction:</p>
+
+<div class="center-column"></div>
+<pre class="highlight javascript"><code><span class="p">{</span>
+    <span class="s2">"statusCode"</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="s2">"statusMessage"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="s2">"info"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"status"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"Value"</span><span class="p">:</span> <span class="s2">"completed"</span>
+        <span class="p">},</span>
+        <span class="s2">"statusMessage"</span><span class="p">:</span> <span class="s2">"undefined"</span><span class="p">,</span>
+        <span class="s2">"request"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"contract"</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Immutable"</span><span class="p">,</span>
+            <span class="s2">"version"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="s2">"network"</span><span class="p">:</span> <span class="s2">"polygon"</span><span class="p">,</span>
+            <span class="s2">"operation"</span><span class="p">:</span> <span class="s2">"insertBytes32"</span><span class="p">,</span>
+            <span class="s2">"parameters"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">"key"</span><span class="p">:</span> <span class="s2">"1682957133280"</span><span class="p">,</span>
+                <span class="s2">"value"</span><span class="p">:</span> <span class="s2">"Hello World!"</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="s2">"hash"</span><span class="p">:</span> <span class="s2">"0x59fc917cebc3f4628ede9b7c50e848e4169d83c592554ddbc8761b6bafa8a963"</span><span class="p">,</span>
+        <span class="s2">"txnUrl"</span><span class="p">:</span> <span class="s2">"https://polygonscan.com/tx/0x59fc917cebc3f4628ede9b7c50e848e4169d83c592554ddbc8761b6bafa8a963"</span><span class="p">,</span>
+        <span class="s2">"txnSnapshotUrl"</span><span class="p">:</span> <span class="s2">"https://s3.amazonaws.com/bws-middleware-prod-website/tx/polygon/0x59fc917cebc3f4628ede9b7c50e848e4169d83c592554ddbc8761b6bafa8a963.jpg"</span><span class="p">,</span>
+        <span class="s2">"receipt"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"blockHash"</span><span class="p">:</span> <span class="s2">"0x4a2734767b6fc589f305ead781b305f7d46c6accb6c42b44857e1a367c1d5102"</span><span class="p">,</span>
+            <span class="s2">"blockNumber"</span><span class="p">:</span> <span class="mi">42182068</span><span class="p">,</span>
+            <span class="s2">"contractAddress"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="s2">"cumulativeGasUsed"</span><span class="p">:</span> <span class="mi">132699</span><span class="p">,</span>
+            <span class="s2">"effectiveGasPrice"</span><span class="p">:</span> <span class="mi">400000000000</span><span class="p">,</span>
+            <span class="s2">"from"</span><span class="p">:</span> <span class="s2">"0x9089db83f0590ec2ed01a5eb4f8584dd6f4bdac7"</span><span class="p">,</span>
+            <span class="s2">"gasUsed"</span><span class="p">:</span> <span class="mi">67821</span><span class="p">,</span>
+            <span class="s2">"status"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="s2">"to"</span><span class="p">:</span> <span class="s2">"0x58ca3f44cf5c84c1c29591a483be3288d0a01b7c"</span><span class="p">,</span>
+            <span class="s2">"transactionHash"</span><span class="p">:</span> <span class="s2">"0x59fc917cebc3f4628ede9b7c50e848e4169d83c592554ddbc8761b6bafa8a963"</span><span class="p">,</span>
+            <span class="s2">"transactionIndex"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"0x0"</span>
+        <span class="p">},</span>
+        <span class="s2">"networkCurrency"</span><span class="p">:</span> <span class="s2">"MATIC"</span><span class="p">,</span>
+        <span class="s2">"networkCost"</span><span class="p">:</span> <span class="mf">0.03</span><span class="p">,</span>
+        <span class="s2">"networkFee"</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
+        <span class="s2">"networkTotal"</span><span class="p">:</span> <span class="mf">0.13</span><span class="p">,</span>
+        <span class="s2">"proofOfRegistryUrl"</span><span class="p">:</span> <span class="s2">"https://bws.ninja/tx.html?t=0x59fc917cebc3f4628ede9b7c50e848e4169d83c592554ddbc8761b6bafa8a963"</span><span class="p">,</span>
+        <span class="s2">"guid"</span><span class="p">:</span> <span class="s2">"a1ac1b69-36cd-44ed-aacb-440b31a57dd7"</span><span class="p">,</span>
+        <span class="s2">"type"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"value"</span><span class="p">:</span> <span class="s2">"blockchain-job"</span>
+        <span class="p">},</span>
+        <span class="s2">"timestampInMillis"</span><span class="p">:</span> <span class="mi">1682957142984</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
-<p>Once the website validates your email address,</p>
+<p><br/>
+You can use for example the returned parameter <code class="prettyprint">txnUrl</code> to check at the network scan website a proof of execution (e.g. <a href="https://polygonscan.com/tx/0x59fc917cebc3f4628ede9b7c50e848e4169d83c592554ddbc8761b6bafa8a963">https://polygonscan.com/tx/0x59fc917cebc3f4628ede9b7c50e848e4169d83c592554ddbc8761b6bafa8a963</a>).</p>
 
-<p><img src="/images/megalock-snap-2.png" alt="Megalock.ninja" /></p>
-
-<p>enter the data you want to secure in Ethereum database and just click SAVE button.</p>
-
-<p><img src="/images/megalock-snap-3.png" alt="Megalock.ninja" /></p>
-
-<aside class="warning">
-Saving data in Ethereum is an asynchronous operation and can take a while.
-</aside>
-
-<p><img src="/images/megalock-snap-4.png" alt="Megalock.ninja" /></p>
-
-<p>Once finished, you can check Blockchain transaction on Etherscan (an example for the transaction used for creating those snapshots: <a href="https://ropsten.etherscan.io/tx/0x6a3d336dd1792a786e0070cdd695fbc9526488258bfa5952579a60fde68323ce">https://ropsten.etherscan.io/tx/0x6a3d336dd1..</a>).</p>
-
-<p><img src="/images/megalock-snap-6.png" alt="Megalock.ninja" /></p>
-
-<p>Your data is now secured in Blockchain for ever ;)</p>
+<p><br/>
+<img src="/images/megalock-snap-6.png" alt="Megalock.ninja" /></p>
 
 <h3 id="getting-data-from-ethereum">Getting Data from Ethereum</h3>
+
+<pre style="background-color: initial; padding: 0 0 20px 0; position: absolute; right:0;">
+  <img src="images/megalock-snap-8.png" style="width:95%">
+</pre>
+
+<p>To get data you saved into the blockchain use the same procedure but using <code class="prettyprint">selectString</code> operation passing the &lsquo;key&rsquo; value you used previously:</p>
+
+<aside class="notice">
+Megalock.ninja encrypts the data before sending it to the blockchain.
+</aside>
+
+<div class="center-column"></div>
 <pre class="highlight javascript"><code><span class="nx">async</span> <span class="kd">function</span> <span class="nx">callSelectStringBWSAPI</span><span class="p">(</span><span class="nx">endpoint</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">apiKey</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">body</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">contract</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Mutable"</span><span class="p">,</span>
@@ -111,14 +188,36 @@ Saving data in Ethereum is an asynchronous operation and can take a while.
   <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre>
-<p>Getting you password from Ethereum blockchain is similar to saving. You validate the email you used to save and <a href="https://megalock.ninja/">MegaLock.ninja</a> will call Blockchain Web services to fetch your data.</p>
+<p><br/>
+Check for completation using <code class="prettyprint">fetch</code> method, and when status is <code class="prettyprint">completed</code> the fetch operation will also return the value you ask from the blockchain:</p>
 
-<p><img src="/images/megalock-snap-8.png" alt="Megalock.ninja" /></p>
-
-<p>As for saving, fetching data can take a while, but for reading data from Blockchain it usually goes much faster.</p>
-
-<p><img src="/images/megalock-snap-9.png" alt="Megalock.ninja" /></p>
-
-<p>You will get the password or any saved data, copy it to the clipboard and use it as required.</p>
-
-<p><img src="/images/megalock-snap-10.png" alt="Megalock.ninja" /></p>
+<div class="center-column"></div>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"statusMessage"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"Value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"completed"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"statusMessage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"undefined"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"request"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"contract"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ethereum.Database.Immutable"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"network"</span><span class="p">:</span><span class="w"> </span><span class="s2">"polygon"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"operation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"selectBytes32"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"parameters"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1682957133280"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hello World!"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"networkCost"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"networkFee"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"networkTotal"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4807d50e-1a1c-4248-ae03-9c0a3c99e475"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"blockchain-job"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"timestampInMillis"</span><span class="p">:</span><span class="w"> </span><span class="mi">1682966801153</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>

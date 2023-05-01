@@ -101,7 +101,7 @@ Use [‘call’](#call-operation) to run a Smart Contract operation and ['fetch�
 
 <a name="call-operation"></a>
 
-## 'call' API
+## 'call'
 
 > API call example.
 
@@ -168,7 +168,7 @@ Check the [response](#api-calls-response) object you get when calling Blockchain
 
 <a name="fetch-operation"></a>
 
-## 'fetch' API
+## 'fetch'
 
 > API call example.
 

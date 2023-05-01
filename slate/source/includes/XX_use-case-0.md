@@ -1,3 +1,7 @@
 # Code Snippets
 
-Use the following examples to get inspired or copy code on how to use BWS API to call Blockchain solutions.
+Check the following examples to get inspired on how to start building your own Blockchain solution.
+
+<aside class="warning">
+You can test BWS API for free using Testnets (e.g. sepolia, mumbai)!
+</aside>

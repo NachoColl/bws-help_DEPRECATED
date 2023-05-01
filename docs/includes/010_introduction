@@ -148,7 +148,7 @@
 
 <p><a name="call-operation"></a></p>
 
-<h2 id="call-api">&#39;call&rsquo; API</h2>
+<h2 id="call">&#39;call&rsquo;</h2>
 
 <blockquote>
 <p>API call example.</p>
@@ -244,7 +244,7 @@
 
 <p><a name="fetch-operation"></a></p>
 
-<h2 id="fetch-api">&lsquo;fetch&rsquo; API</h2>
+<h2 id="fetch">&lsquo;fetch&rsquo;</h2>
 
 <blockquote>
 <p>API call example.</p>
