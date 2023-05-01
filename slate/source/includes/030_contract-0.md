@@ -1,4 +1,4 @@
-# Solutions
+# Marketplace Solutions
 
 [Blockchain Web Services](https://bws.ninja) is a Cloud Platform to enable customers consume Smart Contracts easily and ask the community about their needs.
 

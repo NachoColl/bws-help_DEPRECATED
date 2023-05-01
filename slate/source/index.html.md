@@ -12,13 +12,13 @@ includes:
   - 000_welcome.md
   - 010_introduction.md
   - 020_required-funds.md
-  - 022_proof-of-registry.md
   - 030_contract-0.md
   - 031_contract-1_Ethereum.Database.md
   - 032_contract-1_Ethereum.Certify.md
   - 033_contract-1_Ethereum.NFT.md
   - 034_contract-1_Ethereum.SCM.md
   - 035_contract-1_Ethereum.Identity.md
+  - 022_proof-of-registry.md
   - XX_use-case-0.md
   - XX_use-case-1_megalock.md
 
