@@ -42,7 +42,7 @@
   }
 </style>
 
-<h2 id="bws-database">BWS.Database</h2>
+<h2 id="database">Database</h2>
 
 <p>A Blockchain is essentially a distributed database that runs on a peer-to-peer network. You can use <a href="https://bws.ninja">Blockchain Web Services</a> to insert or select data to/from Blockchain(s) using the following services:</p>
 

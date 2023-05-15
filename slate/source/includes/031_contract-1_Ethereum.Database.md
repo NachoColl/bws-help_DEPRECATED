@@ -41,7 +41,7 @@
     text-align:center;
   }
 </style>
-## BWS.Database
+## Database
 
 A Blockchain is essentially a distributed database that runs on a peer-to-peer network. You can use [Blockchain Web Services](https://bws.ninja) to insert or select data to/from Blockchain(s) using the following services:
 
