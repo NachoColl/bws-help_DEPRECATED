@@ -1,0 +1,83 @@
+<h2 id="database-mutable">Database.Mutable</h2>
+
+<blockquote>
+<p>Mutable insertString operation parameters call example.</p>
+</blockquote>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">parameters</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">contract</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Mutable"</span><span class="p">,</span>
+  <span class="na">version</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="na">network</span><span class="p">:</span> <span class="s2">"sepolia"</span><span class="p">,</span>
+  <span class="na">operation</span><span class="p">:</span> <span class="s2">"insertString"</span><span class="p">,</span>
+  <span class="na">parameters</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">key</span><span class="p">:</span> <span class="s2">"a-key"</span><span class="p">,</span>
+    <span class="na">value</span><span class="p">:</span> <span class="s2">"Hello World!"</span><span class="p">,</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+</code></pre>
+<p>This solution simplifies interactions with blockchain networks, providing a seamless way to store data on a blockchain.</p>
+
+<p>It abstracts the complexities of blockchain transactions and network fees, allowing users to focus solely on their data.</p>
+
+<p class="product-header">Solution</p>
+
+<p>&ldquo;<em>This is in contrast to a mutable object (changeable object), which can be modified after it is created.</em>&rdquo;</p>
+
+<p class="product-author">Author</p>
+
+<p class="s2">Blockchain Web Services</p>
+
+<p class="product-title">Description</p>
+
+<p>Mutable insert operations can overwrite previously saved data and the same insert/select operations are available for <code class="prettyprint">Ethereum.Database.Mutable</code> contract (you just need to replace <code class="prettyprint">contract</code> and <code class="prettyprint">version</code> parameter to use Mutable or Immutable contract).</p>
+
+<p class="product-title">Networks</p>
+
+<p class="product-network">Ethereum</p>
+
+<p>Click on Contract Address to check verified contract at <code class="prettyprint">etherscan.io</code>.</p>
+
+<table><thead>
+<tr>
+<th>Network Id</th>
+<th>Contract Address</th>
+<th>Version</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ethereum</td>
+<td><a href="https://etherscan.io/address/0x1aFEe6DD9A1D4af90c39CD8B09296FC505beA00d">0x1aFEe6DD9A1D4af90c39CD8B09296FC505beA00d</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td>sepolia</td>
+<td><a href="https://sepolia.etherscan.io/address/0x58ca3f44cF5c84C1C29591A483be3288D0A01b7C">0x58ca3f44cF5c84C1C29591A483be3288D0A01b7C</a></td>
+<td>1</td>
+</tr>
+</tbody></table>
+
+<p class="product-network">Polygon</p>
+
+<p>Click on Contract Address to check verified contract at <code class="prettyprint">polygonscan.com</code>.</p>
+
+<table><thead>
+<tr>
+<th>Network Id</th>
+<th>Contract Address</th>
+<th>Version</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>polygon</td>
+<td><a href="https://polygonscan.com/address/0xEF28790d1C8ac0833e8c05BB4344e479Da8a4Dd3">0xEF28790d1C8ac0833e8c05BB4344e479Da8a4Dd3</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td>mumbai</td>
+<td><a href="https://mumbai.polygonscan.com/address/0xEF28790d1C8ac0833e8c05BB4344e479Da8a4Dd3">0xEF28790d1C8ac0833e8c05BB4344e479Da8a4Dd3</a></td>
+<td>1</td>
+</tr>
+</tbody></table>
+
+<p class="product-title">Operations</p>
+
+<p>You can use the same operations as for <code class="prettyprint">Ethereum.Database.Immutable</code> service, changing the parameter contract to <code class="prettyprint">Ethereum.Database.Mutable</code>.</p>

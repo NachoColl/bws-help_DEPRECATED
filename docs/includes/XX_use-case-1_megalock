@@ -50,7 +50,7 @@
   <img src="images/megalock-snap-3.png" style="width:95%">
 </pre>
 
-<p>Saving data to the blockchain using <a href="https://bws.ninja">Blockchain Web Services</a> is as easy as calling the <code class="prettyprint">insertString</code> method indicating a pair key/value:</p>
+<p>Saving data to the blockchain using <a href="https://www.bws.ninja">Blockchain Web Services</a> is as easy as calling the <code class="prettyprint">insertString</code> method indicating a pair key/value:</p>
 
 <aside class="notice">
 In this example we use <a href="#ethereum-database-mutable">Ethereum.Database.Mutable</a> to enable data to be changed.
@@ -134,7 +134,7 @@ In this example we use <a href="#ethereum-database-mutable">Ethereum.Database.Mu
         <span class="s2">"networkCost"</span><span class="p">:</span> <span class="mf">0.03</span><span class="p">,</span>
         <span class="s2">"networkFee"</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
         <span class="s2">"networkTotal"</span><span class="p">:</span> <span class="mf">0.13</span><span class="p">,</span>
-        <span class="s2">"proofOfRegistryUrl"</span><span class="p">:</span> <span class="s2">"https://bws.ninja/tx.html?t=0x59fc917cebc3f4628ede9b7c50e848e4169d83c592554ddbc8761b6bafa8a963"</span><span class="p">,</span>
+        <span class="s2">"proofOfRegistryUrl"</span><span class="p">:</span> <span class="s2">"https://www.bws.ninja/tx.html?t=0x59fc917cebc3f4628ede9b7c50e848e4169d83c592554ddbc8761b6bafa8a963"</span><span class="p">,</span>
         <span class="s2">"guid"</span><span class="p">:</span> <span class="s2">"a1ac1b69-36cd-44ed-aacb-440b31a57dd7"</span><span class="p">,</span>
         <span class="s2">"type"</span><span class="p">:</span> <span class="p">{</span>
             <span class="s2">"value"</span><span class="p">:</span> <span class="s2">"blockchain-job"</span>

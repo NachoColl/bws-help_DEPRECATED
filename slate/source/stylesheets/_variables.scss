@@ -28,10 +28,10 @@ $nav-subitem-bg: rgb(250, 252, 252) !default;
 $nav-active-bg: rgb(250, 252, 252) !default;
 $lang-select-border: #000 !default;
 $lang-select-bg: #222 !default;
-$lang-select-active-bg: #5abaf0 !default; // feel free to change this to blue or something
+$lang-select-active-bg: #6699ff !default; // feel free to change this to blue or something
 $lang-select-pressed-bg: #111 !default; // color of language tab bg when mouse is pressed
 $main-bg: #fff !default;
-$aside-notice-bg: #5abaf0 !default;
+$aside-notice-bg: #6699ff !default;
 $aside-warning-bg: #c97a7e !default;
 $aside-success-bg: #6ac174 !default;
 $search-notice-bg: #c97a7e !default;
@@ -39,16 +39,16 @@ $search-notice-bg: #c97a7e !default;
 ////////////////////
 $main-text: #333 !default; // main content text color
 $nav-text: #4c555a !default;
-$nav-active-text: #5abaf0 !default;
+$nav-active-text: #6699ff !default;
 $lang-select-text: #fff !default; // color of unselected language tab text
 $lang-select-active-text: #fff !default; // color of selected language tab text
 $lang-select-pressed-text: #fff !default; // color of language tab text when mouse is pressed
 // SIZES
 ////////////////////
-$nav-width: 200px !default; // width of the navbar
+$nav-width: 180px !default; // width of the navbar
 $examples-width: 45% !default; // portion of the screen taken up by code examples
 $logo-margin: 30px !default; // margin between nav items and logo, ignored if search is active
-$main-padding: 28px !default; // padding to left and right of content & examples
+$main-padding: 15px !default; // padding to left and right of content & examples
 $nav-padding: 10px !default; // padding to left and right of navbar
 $nav-v-padding: 10px !default; // padding used vertically around search boxes and results
 $nav-indent: 5px !default; // extra padding for ToC subitems

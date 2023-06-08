@@ -1,62 +1,14 @@
-<style>
-  .product-header {
-    background-color:#5abaf0;
-    color: white;
-    text-shadow: none !important;
-     margin-top:25px !important;
-  }
+## Database.Immutable
 
-  .product-author {
-    background-color:#159957;
-    opacity: .8;
-    color: white;
-    text-shadow: none !important;
-     margin-top:25px !important;
-  }
+This solution simplifies interactions with blockchain networks, providing a seamless way to store data on a blockchain.
 
-  .product-title {
-    background-color:#292929;
-    color :white;
-    text-shadow: none !important;
-    margin-top:25px !important;
-  }
+It abstracts the complexities of blockchain transactions and network fees, allowing users to focus solely on their data.
 
-   .product-network {
-    background-color:#571599;
-    color :white;
-    text-shadow: none !important;
-    width: 140px;
-    margin-top:25px !important;
-    align:center;
-    text-align:center;
-  }
-
-   .product-operation {
-    background-color:#EC712B;
-    color :white;
-    text-shadow: none !important;
-    width: 140px;
-    margin-top:25px !important;
-    align:center;
-    text-align:center;
-  }
-</style>
-## Database
-
-A Blockchain is essentially a distributed database that runs on a peer-to-peer network. You can use [Blockchain Web Services](https://bws.ninja) to insert or select data to/from Blockchain(s) using the following services:
-
-- [Ethereum.Database.Immutable](#ethereum-database-immutable)
-- [Ethereum.Database.Mutable](#ethereum-database-mutable)
-
-Check the documentation provided by the Author to call those services.
-
-<a name="ethereum-database-immutable"></a>
-
-<p class="product-header">Service</p>
-
-<h3 style="margin-top:0">Ethereum.Database.Immutable</h3>
+<p class="product-header">Solution</p>
 
 "_An immutable object is an object whose state cannot be modified after it is created_"
+
+Data saved using this solution cannot be changed.
 
 <p class="product-author">Author</p>
 
@@ -292,58 +244,3 @@ Set the `key` value to get the data you previously saved.
 The operation call will return the `jobId` of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).
 
 `{ "statusCode": 200, "info": { "jobId": "5423433243" } }`
-
-<a name="ethereum-database-mutable"></a>
-
-<p class="product-header">Service</p>
-
-<h3 style="margin-top:0">Ethereum.Database.Mutable</h3>
-
-"_This is in contrast to a mutable object (changeable object), which can be modified after it is created._"
-
-> Mutable insertString operation parameters call example.
-
-```javascript
-var parameters = {
-  contract: "Ethereum.Database.Mutable",
-  version: 1,
-  network: "sepolia",
-  operation: "insertString",
-  parameters: {
-    key: "a-key",
-    value: "Hello World!",
-  },
-};
-```
-
-<p class="product-author">Author</p>
-
-<p class="s2">Blockchain Web Services</p>
-
-<p class="product-title">Description</p>
-
-Mutable insert operations can overwrite previously saved data and the same insert/select operations are available for `Ethereum.Database.Mutable` contract (you just need to replace `contract` and `version` parameter to use Mutable or Immutable contract).
-
-<p class="product-title">Networks</p>
-
-<p class="product-network">Ethereum</p>
-
-Click on Contract Address to check verified contract at `etherscan.io`.
-
-| Network Id | Contract Address                                                                                                                   | Version |
-| ---------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| ethereum   | [0x1aFEe6DD9A1D4af90c39CD8B09296FC505beA00d](https://etherscan.io/address/0x1aFEe6DD9A1D4af90c39CD8B09296FC505beA00d)              | 1       |
-| sepolia    | [0x58ca3f44cF5c84C1C29591A483be3288D0A01b7C](https://sepolia.etherscan.io/address/0x58ca3f44cF5c84C1C29591A483be3288D0A01b7C) | 1       |
-
-<p class="product-network">Polygon</p>
-
-Click on Contract Address to check verified contract at `polygonscan.com`.
-
-| Network Id | Contract Address                                                                                                                   | Version |
-| ---------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| polygon   | [0xEF28790d1C8ac0833e8c05BB4344e479Da8a4Dd3](https://polygonscan.com/address/0xEF28790d1C8ac0833e8c05BB4344e479Da8a4Dd3)               | 1       |
-| mumbai    | [0xEF28790d1C8ac0833e8c05BB4344e479Da8a4Dd3](https://mumbai.polygonscan.com/address/0xEF28790d1C8ac0833e8c05BB4344e479Da8a4Dd3) | 1       |
-
-<p class="product-title">Operations</p>
-
-You can use the same operations as for `Ethereum.Database.Immutable` service, changing the parameter contract to `Ethereum.Database.Mutable`.

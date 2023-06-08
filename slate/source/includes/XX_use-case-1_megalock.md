@@ -53,7 +53,7 @@ async function callFetchJobBWSAPI(endpoint, jobId, apiKey) {
   <img src="images/megalock-snap-3.png" style="width:95%">
 </pre>
 
-Saving data to the blockchain using [Blockchain Web Services](https://bws.ninja) is as easy as calling the `insertString` method indicating a pair key/value:
+Saving data to the blockchain using [Blockchain Web Services](https://www.bws.ninja) is as easy as calling the `insertString` method indicating a pair key/value:
 
 
 <aside class="notice">
@@ -144,7 +144,7 @@ Once the blockchain operation has finished, `fetch` method will return all the d
         "networkCost": 0.03,
         "networkFee": 0.1,
         "networkTotal": 0.13,
-        "proofOfRegistryUrl": "https://bws.ninja/tx.html?t=0x59fc917cebc3f4628ede9b7c50e848e4169d83c592554ddbc8761b6bafa8a963",
+        "proofOfRegistryUrl": "https://www.bws.ninja/tx.html?t=0x59fc917cebc3f4628ede9b7c50e848e4169d83c592554ddbc8761b6bafa8a963",
         "guid": "a1ac1b69-36cd-44ed-aacb-440b31a57dd7",
         "type": {
             "value": "blockchain-job"

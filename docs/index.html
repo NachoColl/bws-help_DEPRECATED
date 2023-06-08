@@ -132,8 +132,7 @@
       <div id="toc">
       </div>
         <ul class="toc-footer">
-            <li><a href='https://bws.ninja'>Sign Up</a></li>
-            <li><a href='mailto:hello@bws.ninja' target="_blank">Need help? hello@bws.ninja</a></li>
+            <li><a href='https://prod.bws.ninja/front-sign-up.html'>Sign Up</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -169,17 +168,17 @@
 <span class="s1">Publish your blockchain solution at our <span class="na">BWS Marketplace</span> and
 make it easy to find, consume and get rewarded for your work.
 </span>
-<a href="https://bws.ninja/front-marketplace-contact.html" target="_blank">Contact us</a> to start.
+<a href="https://www.bws.ninja/front-marketplace-contact.html" target="_blank">Contact us</a> to start.
 </code>
 </pre>
 
-<p><a href="https://bws.ninja">Blockchain Web Services</a> (aka BWS) provides an API to call public blockchain(s) smart contracts as easily as any web service you are already used to and a Marketplace to find all the solutions your business or project needs.</p>
+<p><a href="https://www.bws.ninja">Blockchain Web Services</a> (aka BWS) provides an API to call public blockchain(s) smart contracts as easily as any web service you are already used to and a Marketplace to find all the solutions your business or project needs.</p>
 
           <h1 id="how-it-works">How It Works</h1>
 
 <h2 id="registration">Registration</h2>
 
-<p>To start using Blockchain Web Services go to <a href="https://bws.ninja">bws.ninja</a> and sign-up. It&rsquo;s free.</p>
+<p>To start using Blockchain Web Services go to <a href="https://www.bws.ninja">bws.ninja</a> and sign-up. It&rsquo;s free.</p>
 
 <h2 id="api-endpoint">API Endpoint</h2>
 <pre class="highlight javascript"><code><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
@@ -204,7 +203,7 @@ make it easy to find, consume and get rewarded for your work.
     <span class="p">...</span>
   <span class="p">});</span>
 </code></pre>
-<p>Calling <a href="https://bws.ninja">Blockchain Web Services</a> smart contracts requires a personal <strong>API Key</strong> to authenticate. To get your key, sign in at <a href="https://bws.ninja">bws.ninja</a> and go to <code class="prettyprint">My Account &gt; API Key</code>. </p>
+<p>Calling <a href="https://www.bws.ninja">Blockchain Web Services</a> smart contracts requires a personal <strong>API Key</strong> to authenticate. To get your key, sign in at <a href="https://www.bws.ninja">bws.ninja</a> and go to <code class="prettyprint">My Account &gt; API Key</code>. </p>
 
 <p>All of your API calls must contain the following header attribute: </p>
 
@@ -350,17 +349,7 @@ make it easy to find, consume and get rewarded for your work.
   <span class="p">});</span>
 
 </code></pre>
-<blockquote>
-<p>API call response example</p>
-</blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"jobId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"543433243"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p><code class="prettyprint">https://api.bws.ninja/v1/call</code> runs a <a href="https://bws.ninja">Blockchain Web Services</a> Smart Contract and must contain the following parameters:</p>
+<p><code class="prettyprint">https://api.bws.ninja/v1/call</code> runs a <a href="https://www.bws.ninja">Blockchain Web Services</a> Smart Contract and must contain the following parameters:</p>
 
 <table><thead>
 <tr>
@@ -413,6 +402,16 @@ make it easy to find, consume and get rewarded for your work.
 
 <h3 id="call-response">&lsquo;call&rsquo; Response</h3>
 
+<blockquote>
+<p>API call response example</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jobId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"543433243"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <p>API call response includes the &lsquo;jobId&rsquo; to use to get Smart Contract results.</p>
 
 <p><code class="prettyprint">{ &quot;jobId&quot;: &quot;aacee908-3a85-4966-945c-ab8f09ebabf9&quot; }</code></p>
@@ -443,6 +442,24 @@ make it easy to find, consume and get rewarded for your work.
   <span class="p">});</span>
 
 </code></pre>
+<p>Use <code class="prettyprint">https://api.bws.ninja/v1/fetch</code> to get a previously started Smart Contract call, indicating the <code class="prettyprint">jobId</code> you get when running the <a href="#call-operation">‘call’</a>:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Value(s)</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>jobId</td>
+<td>string</td>
+<td>The jobId you get when running a Smart Contract</td>
+</tr>
+</tbody></table>
+
+<h3 id="fetch-results">&lsquo;fetch&rsquo; Results</h3>
+
 <blockquote>
 <p>Fetch API call response example</p>
 </blockquote>
@@ -465,24 +482,6 @@ make it easy to find, consume and get rewarded for your work.
         </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Use <code class="prettyprint">https://api.bws.ninja/v1/fetch</code> to get a previously started Smart Contract call, indicating the <code class="prettyprint">jobId</code> you get when running the <a href="#call-operation">‘call’</a>:</p>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Value(s)</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>jobId</td>
-<td>string</td>
-<td>The jobId you get when running a Smart Contract</td>
-</tr>
-</tbody></table>
-
-<h3 id="fetch-results">&lsquo;fetch&rsquo; Results</h3>
-
 <p>The <strong>fetch</strong> API method will return the status of your Smart Contract call as part of the info parameter:</p>
 
 <table><thead>
@@ -551,7 +550,7 @@ make it easy to find, consume and get rewarded for your work.
 
           <h1 id="required-funds">Required Funds</h1>
 
-<p>Calling Smart Contracts requires funds: &ldquo;It is the fuel that allows it to operate&rdquo;. <a href="https://bws.ninja">Blockchain Web Services</a> uses Auto Trading to buy - real time - the required Tokens you need. Just fund your account and we convert your USD credits to the required network currency.</p>
+<p>Calling Smart Contracts requires funds: &ldquo;It is the fuel that allows it to operate&rdquo;. <a href="https://www.bws.ninja">Blockchain Web Services</a> uses Auto Trading to buy - real time - the required Tokens you need. Just fund your account and we convert your USD credits to the required network currency.</p>
 
 <aside class="notice">
 Check how Gas and Fuel works for Ethereum <a href="https://ethereum.org/en/developers/docs/gas/" target="_blank">here</a>.
@@ -584,13 +583,9 @@ Funds are only spent when calling smart contracts and there is no extra fee for 
 
           <h1 id="marketplace-solutions">Marketplace Solutions</h1>
 
-<p><a href="https://bws.ninja">Blockchain Web Services</a> is a Cloud Platform to enable customers consume Smart Contracts easily and ask the community about their needs.</p>
+<p><a href="https://www.bws.ninja">Blockchain Web Services</a> is a Cloud Platform to enable customers consume Smart Contracts easily.</p>
 
-<aside class="warning">
-The following list shows the initial built-in solutions we are currently working on!
-</aside>
-
-          <style>
+<style>
   .product-header {
     background-color:#5abaf0;
     color: white;
@@ -634,24 +629,17 @@ The following list shows the initial built-in solutions we are currently working
   }
 </style>
 
-<h2 id="database">Database</h2>
+          <h2 id="database-immutable">Database.Immutable</h2>
 
-<p>A Blockchain is essentially a distributed database that runs on a peer-to-peer network. You can use <a href="https://bws.ninja">Blockchain Web Services</a> to insert or select data to/from Blockchain(s) using the following services:</p>
+<p>This solution simplifies interactions with blockchain networks, providing a seamless way to store data on a blockchain.</p>
 
-<ul>
-<li><a href="#ethereum-database-immutable">Ethereum.Database.Immutable</a></li>
-<li><a href="#ethereum-database-mutable">Ethereum.Database.Mutable</a></li>
-</ul>
+<p>It abstracts the complexities of blockchain transactions and network fees, allowing users to focus solely on their data.</p>
 
-<p>Check the documentation provided by the Author to call those services.</p>
-
-<p><a name="ethereum-database-immutable"></a></p>
-
-<p class="product-header">Service</p>
-
-<h3 style="margin-top:0">Ethereum.Database.Immutable</h3>
+<p class="product-header">Solution</p>
 
 <p>&ldquo;<em>An immutable object is an object whose state cannot be modified after it is created</em>&rdquo;</p>
+
+<p>Data saved using this solution cannot be changed.</p>
 
 <p class="product-author">Author</p>
 
@@ -1018,13 +1006,7 @@ The following list shows the initial built-in solutions we are currently working
 
 <p><code class="prettyprint">{ &quot;statusCode&quot;: 200, &quot;info&quot;: { &quot;jobId&quot;: &quot;5423433243&quot; } }</code></p>
 
-<p><a name="ethereum-database-mutable"></a></p>
-
-<p class="product-header">Service</p>
-
-<h3 style="margin-top:0">Ethereum.Database.Mutable</h3>
-
-<p>&ldquo;<em>This is in contrast to a mutable object (changeable object), which can be modified after it is created.</em>&rdquo;</p>
+          <h2 id="database-mutable">Database.Mutable</h2>
 
 <blockquote>
 <p>Mutable insertString operation parameters call example.</p>
@@ -1040,6 +1022,14 @@ The following list shows the initial built-in solutions we are currently working
   <span class="p">},</span>
 <span class="p">};</span>
 </code></pre>
+<p>This solution simplifies interactions with blockchain networks, providing a seamless way to store data on a blockchain.</p>
+
+<p>It abstracts the complexities of blockchain transactions and network fees, allowing users to focus solely on their data.</p>
+
+<p class="product-header">Solution</p>
+
+<p>&ldquo;<em>This is in contrast to a mutable object (changeable object), which can be modified after it is created.</em>&rdquo;</p>
+
 <p class="product-author">Author</p>
 
 <p class="s2">Blockchain Web Services</p>
@@ -1099,30 +1089,6 @@ The following list shows the initial built-in solutions we are currently working
 <p class="product-title">Operations</p>
 
 <p>You can use the same operations as for <code class="prettyprint">Ethereum.Database.Immutable</code> service, changing the parameter contract to <code class="prettyprint">Ethereum.Database.Mutable</code>.</p>
-
-          <h2 id="certify">Certify</h2>
-
-<aside class="notice">
-Coming Soon! Want to know more? contact <a href="mailto:hello@bws.ninja">hello@bws.ninja</a>.
-</aside>
-
-          <h2 id="nft">NFT</h2>
-
-<aside class="notice">
-Coming Soon! Want to know more? contact <a href="mailto:hello@bws.ninja">hello@bws.ninja</a>.
-</aside>
-
-          <h2 id="supply-chain-scm">Supply Chain (SCM)</h2>
-
-<aside class="notice">
-Coming Soon! Want to know more? contact <a href="mailto:hello@bws.ninja">hello@bws.ninja</a>.
-</aside>
-
-          <h2 id="identity">Identity</h2>
-
-<aside class="notice">
-Coming Soon! Want to know more? contact <a href="mailto:hello@bws.ninja">hello@bws.ninja</a>.
-</aside>
 
           <h1 id="proof-of-registry">Proof Of Registry</h1>
 
@@ -1227,7 +1193,7 @@ You can test BWS API for free using Testnets (e.g. sepolia, mumbai)!
   <img src="images/megalock-snap-3.png" style="width:95%">
 </pre>
 
-<p>Saving data to the blockchain using <a href="https://bws.ninja">Blockchain Web Services</a> is as easy as calling the <code class="prettyprint">insertString</code> method indicating a pair key/value:</p>
+<p>Saving data to the blockchain using <a href="https://www.bws.ninja">Blockchain Web Services</a> is as easy as calling the <code class="prettyprint">insertString</code> method indicating a pair key/value:</p>
 
 <aside class="notice">
 In this example we use <a href="#ethereum-database-mutable">Ethereum.Database.Mutable</a> to enable data to be changed.
@@ -1311,7 +1277,7 @@ In this example we use <a href="#ethereum-database-mutable">Ethereum.Database.Mu
         <span class="s2">"networkCost"</span><span class="p">:</span> <span class="mf">0.03</span><span class="p">,</span>
         <span class="s2">"networkFee"</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
         <span class="s2">"networkTotal"</span><span class="p">:</span> <span class="mf">0.13</span><span class="p">,</span>
-        <span class="s2">"proofOfRegistryUrl"</span><span class="p">:</span> <span class="s2">"https://bws.ninja/tx.html?t=0x59fc917cebc3f4628ede9b7c50e848e4169d83c592554ddbc8761b6bafa8a963"</span><span class="p">,</span>
+        <span class="s2">"proofOfRegistryUrl"</span><span class="p">:</span> <span class="s2">"https://www.bws.ninja/tx.html?t=0x59fc917cebc3f4628ede9b7c50e848e4169d83c592554ddbc8761b6bafa8a963"</span><span class="p">,</span>
         <span class="s2">"guid"</span><span class="p">:</span> <span class="s2">"a1ac1b69-36cd-44ed-aacb-440b31a57dd7"</span><span class="p">,</span>
         <span class="s2">"type"</span><span class="p">:</span> <span class="p">{</span>
             <span class="s2">"value"</span><span class="p">:</span> <span class="s2">"blockchain-job"</span>

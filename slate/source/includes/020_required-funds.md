@@ -1,7 +1,7 @@
 
 # Required Funds
 
-Calling Smart Contracts requires funds: "It is the fuel that allows it to operate". [Blockchain Web Services](https://bws.ninja) uses Auto Trading to buy - real time - the required Tokens you need. Just fund your account and we convert your USD credits to the required network currency.
+Calling Smart Contracts requires funds: "It is the fuel that allows it to operate". [Blockchain Web Services](https://www.bws.ninja) uses Auto Trading to buy - real time - the required Tokens you need. Just fund your account and we convert your USD credits to the required network currency.
 
 <aside class="notice">
 Check how Gas and Fuel works for Ethereum <a href="https://ethereum.org/en/developers/docs/gas/" target="_blank">here</a>.

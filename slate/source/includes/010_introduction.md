@@ -2,7 +2,7 @@
 
 ## Registration
 
-To start using Blockchain Web Services go to [bws.ninja](https://bws.ninja) and sign-up. It's free.
+To start using Blockchain Web Services go to [bws.ninja](https://www.bws.ninja) and sign-up. It's free.
 
 ## API Endpoint
 
@@ -33,7 +33,7 @@ $.ajax({
   });
 ```
 
-Calling [Blockchain Web Services](https://bws.ninja) smart contracts requires a personal **API Key** to authenticate. To get your key, sign in at [bws.ninja](https://bws.ninja) and go to `My Account > API Key`. 
+Calling [Blockchain Web Services](https://www.bws.ninja) smart contracts requires a personal **API Key** to authenticate. To get your key, sign in at [bws.ninja](https://www.bws.ninja) and go to `My Account > API Key`. 
 
 All of your API calls must contain the following header attribute: 
 
@@ -127,18 +127,7 @@ $.ajax({
 
 ```
 
-> API call response example
-
-```json
-{
-  "statusCode": 200,
-  "info": {
-    "jobId": "543433243"
-  }
-}
-```
-
-`https://api.bws.ninja/v1/call` runs a [Blockchain Web Services](https://bws.ninja) Smart Contract and must contain the following parameters:
+`https://api.bws.ninja/v1/call` runs a [Blockchain Web Services](https://www.bws.ninja) Smart Contract and must contain the following parameters:
 
 | Parameter  | Type   | Value(s)                                  | Description                        |
 | ---------- | ------ | ----------------------------------------- | ---------------------------------- |
@@ -159,6 +148,18 @@ Please note:
 - Method parameters must be passed in the Body part of the POST request message using [JSON](https://en.wikipedia.org/wiki/JSON) format (`Content-Type` header attribute must be set to `application/json`)
 
 ### 'call' Response
+
+
+> API call response example
+
+```json
+{
+  "statusCode": 200,
+  "info": {
+    "jobId": "543433243"
+  }
+}
+```
 
 API call response includes the 'jobId' to use to get Smart Contract results.
 
@@ -191,6 +192,14 @@ $.ajax({
 
 ```
 
+Use `https://api.bws.ninja/v1/fetch` to get a previously started Smart Contract call, indicating the `jobId` you get when running the [‘call’](#call-operation):
+
+| Parameter | Type   | Value(s)                                        |
+| --------- | ------ | ----------------------------------------------- |
+| jobId     | string | The jobId you get when running a Smart Contract |
+
+### 'fetch' Results
+
 > Fetch API call response example
 
 ```json
@@ -213,14 +222,6 @@ $.ajax({
         }
 }
 ```
-
-Use `https://api.bws.ninja/v1/fetch` to get a previously started Smart Contract call, indicating the `jobId` you get when running the [‘call’](#call-operation):
-
-| Parameter | Type   | Value(s)                                        |
-| --------- | ------ | ----------------------------------------------- |
-| jobId     | string | The jobId you get when running a Smart Contract |
-
-### 'fetch' Results
 
 The **fetch** API method will return the status of your Smart Contract call as part of the info parameter:
 

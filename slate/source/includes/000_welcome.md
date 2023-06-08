@@ -27,9 +27,9 @@
 <span class="s1">Publish your blockchain solution at our <span class="na">BWS Marketplace</span> and
 make it easy to find, consume and get rewarded for your work.
 </span>
-<a href="https://bws.ninja/front-marketplace-contact.html" target="_blank">Contact us</a> to start.
+<a href="https://www.bws.ninja/front-marketplace-contact.html" target="_blank">Contact us</a> to start.
 </code>
 </pre>
 
-[Blockchain Web Services](https://bws.ninja) (aka BWS) provides an API to call public blockchain(s) smart contracts as easily as any web service you are already used to and a Marketplace to find all the solutions your business or project needs.
+[Blockchain Web Services](https://www.bws.ninja) (aka BWS) provides an API to call public blockchain(s) smart contracts as easily as any web service you are already used to and a Marketplace to find all the solutions your business or project needs.
 
