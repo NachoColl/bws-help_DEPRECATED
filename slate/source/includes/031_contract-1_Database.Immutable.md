@@ -16,7 +16,7 @@ Data saved using this solution cannot be changed.
 
 <p class="product-title">Description</p>
 
-You can use Ethereum.Database.Immutable operation to save immutable data to blockchain and certify written data will never change.
+You can use Database.Immutable solution to save immutable data to blockchain and certify written data will never change.
 
 <p class="product-title">Networks</p>
 
@@ -48,7 +48,7 @@ Click on Contract Address to check verified contract at `polygonscan.com`.
 
 ```javascript
 var parameters = {
-  contract: "Ethereum.Database.Immutable",
+  solution: "Database.Immutable",
   version: 2,
   network: "sepolia",
   operation: "insertBytes32",
@@ -91,7 +91,7 @@ Saves up to 32 characters string value in Ethereum database (check [Passing Para
 
 | Parameter  | Value                                                   |
 | ---------- | ------------------------------------------------------- |
-| contract   | Ethereum.Database.Immutable                             |
+| solution   | Database.Immutable                                      |
 | operation  | insertBytes32                                           |
 | parameters | [check Parameters](#insertBytes32-operation-parameters) |
 
@@ -118,7 +118,7 @@ The operation call will return the `jobId` of the job running on Blochchain Web 
 
 ```javascript
 var parameters = {
-  contract: "Ethereum.Database.Immutable",
+  solution: "Database.Immutable",
   version: 2,
   network: "sepolia",
   operation: "selectBytes32",
@@ -135,7 +135,7 @@ Gets a value you previously stored on Ethereum using `insertBytes32` (check [Pas
 
 | Parameter  | Value                                                   |
 | ---------- | ------------------------------------------------------- |
-| contract   | Ethereum.Database.Immutable                             |
+| solution   | Database.Immutable                                      |
 | operation  | selectBytes32                                           |
 | parameters | [check Parameters](#selectBytes32-operation-parameters) |
 
@@ -161,7 +161,7 @@ The operation call will return the `jobId` of the job running on Blochchain Web 
 
 ```javascript
 var parameters = {
-  contract: "Ethereum.Database.Immutable",
+  solution: "Database.Immutable",
   version: 2,
   network: "sepolia",
   operation: "insertString",
@@ -179,7 +179,7 @@ Saves a string value in Ethereum database.
 
 | Parameter  | Value                                                  |
 | ---------- | ------------------------------------------------------ |
-| contract   | Ethereum.Database.Immutable                            |
+| solution   | Database.Immutable                                     |
 | operation  | insertBytes32                                          |
 | parameters | [check Parameters](#insertString-operation-parameters) |
 
@@ -208,7 +208,7 @@ The operation call will return the `jobId` of the job running on Blochchain Web 
 
 ```javascript
 var parameters = {
-  contract: "Ethereum.Database.Immutable",
+  solution: "Database.Immutable",
   version: 2,
   network: "sepolia",
   operation: "selectString",
@@ -225,7 +225,7 @@ Gets a value you previously stored on Ethereum using `insertString`.
 
 | Parameter  | Value                                                  |
 | ---------- | ------------------------------------------------------ |
-| contract   | Ethereum.Database.Immutable                            |
+| solution   | Database.Immutable                                     |
 | operation  | selectString                                           |
 | parameters | [check Parameters](#selectString-operation-parameters) |
 
@@ -244,3 +244,10 @@ Set the `key` value to get the data you previously saved.
 The operation call will return the `jobId` of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).
 
 `{ "statusCode": 200, "info": { "jobId": "5423433243" } }`
+
+<br/><br/>
+<span class="login-text">Login to your BWS account and test this solution using Postman.<span>
+<br/><br/>
+<span class="button button-small">
+<a href="https://prod.bws.ninja/front-sign-in.html">Log In</a>
+</span>

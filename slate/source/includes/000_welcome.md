@@ -2,13 +2,36 @@
 
 <style>
 .welcome-highlight {
-    background-color:#5abaf0;
+    background-color:#6699ff;
     color:white;
     text-shadow: none !important;
     font-size:13px;
     padding: 1px 3px 1px 2px;
   }
 
+.button {
+  padding: 10px 20px;
+  background-color:black;
+  width: 100px;
+  align: center;
+  text-align: center;
+  border-radius: 8px;
+  border: 2px solid black;
+  cursor:pointer;
+}
+
+.button a, .button a:visited
+{
+  text-decoration:none;
+  color: white !important;
+}
+.button-small {
+   padding: 5px 10px !important;
+}
+
+.login-text{
+  color:#6699ff;
+}
 
 .content .center-column+pre {
     position: static;
@@ -18,18 +41,25 @@
     margin: 0 28px;
     padding: 10px 20px !important;
     left: 0;
+
 }
 </style>
 
 <pre class="highlight javascript" style="display: block;"><code>
 <span class="welcome-highlight">Are you a Blockchain developer?</span>
 
-<span class="s1">Publish your blockchain solution at our <span class="na">BWS Marketplace</span> and
+<span class="s1">Publish your blockchain solution at our BWS Marketplace and
 make it easy to find, consume and get rewarded for your work.
 </span>
-<a href="https://www.bws.ninja/front-marketplace-contact.html" target="_blank">Contact us</a> to start.
+<a href="https://www.bws.ninja/engage">Contact us</a> to start.
 </code>
 </pre>
 
 [Blockchain Web Services](https://www.bws.ninja) (aka BWS) provides an API to call public blockchain(s) smart contracts as easily as any web service you are already used to and a Marketplace to find all the solutions your business or project needs.
 
+<br/>
+<br/>
+
+<span class="button">
+<a href="https://prod.bws.ninja/front-sign-up.html">Sign Up</a>
+</span>

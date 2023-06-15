@@ -5,7 +5,7 @@ language_tabs:
   - javascript
 
 toc_footers:
-  - <a href='https://prod.bws.ninja/front-sign-up.html'>Sign Up</a>
+  - <a href='https://www.bws.ninja/contact'>Contact Sales</a>
 
 includes:
   - 000_welcome.md

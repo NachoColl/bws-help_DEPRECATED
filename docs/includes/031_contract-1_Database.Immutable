@@ -16,7 +16,7 @@
 
 <p class="product-title">Description</p>
 
-<p>You can use Ethereum.Database.Immutable operation to save immutable data to blockchain and certify written data will never change.</p>
+<p>You can use Database.Immutable solution to save immutable data to blockchain and certify written data will never change.</p>
 
 <p class="product-title">Networks</p>
 
@@ -74,7 +74,7 @@
 <p>insertBytes32 operation call example.</p>
 </blockquote>
 <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">parameters</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">contract</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Immutable"</span><span class="p">,</span>
+  <span class="na">solution</span><span class="p">:</span> <span class="s2">"Database.Immutable"</span><span class="p">,</span>
   <span class="na">version</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
   <span class="na">network</span><span class="p">:</span> <span class="s2">"sepolia"</span><span class="p">,</span>
   <span class="na">operation</span><span class="p">:</span> <span class="s2">"insertBytes32"</span><span class="p">,</span>
@@ -120,8 +120,8 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>contract</td>
-<td>Ethereum.Database.Immutable</td>
+<td>solution</td>
+<td>Database.Immutable</td>
 </tr>
 <tr>
 <td>operation</td>
@@ -173,7 +173,7 @@
 <p>selectBytes32 operation parameters call example.</p>
 </blockquote>
 <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">parameters</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">contract</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Immutable"</span><span class="p">,</span>
+  <span class="na">solution</span><span class="p">:</span> <span class="s2">"Database.Immutable"</span><span class="p">,</span>
   <span class="na">version</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
   <span class="na">network</span><span class="p">:</span> <span class="s2">"sepolia"</span><span class="p">,</span>
   <span class="na">operation</span><span class="p">:</span> <span class="s2">"selectBytes32"</span><span class="p">,</span>
@@ -194,8 +194,8 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>contract</td>
-<td>Ethereum.Database.Immutable</td>
+<td>solution</td>
+<td>Database.Immutable</td>
 </tr>
 <tr>
 <td>operation</td>
@@ -241,7 +241,7 @@
 <p>insertString operation parameters call example.</p>
 </blockquote>
 <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">parameters</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">contract</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Immutable"</span><span class="p">,</span>
+  <span class="na">solution</span><span class="p">:</span> <span class="s2">"Database.Immutable"</span><span class="p">,</span>
   <span class="na">version</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
   <span class="na">network</span><span class="p">:</span> <span class="s2">"sepolia"</span><span class="p">,</span>
   <span class="na">operation</span><span class="p">:</span> <span class="s2">"insertString"</span><span class="p">,</span>
@@ -263,8 +263,8 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>contract</td>
-<td>Ethereum.Database.Immutable</td>
+<td>solution</td>
+<td>Database.Immutable</td>
 </tr>
 <tr>
 <td>operation</td>
@@ -315,7 +315,7 @@
 <p>selectString operation parameters call example.</p>
 </blockquote>
 <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">parameters</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">contract</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Immutable"</span><span class="p">,</span>
+  <span class="na">solution</span><span class="p">:</span> <span class="s2">"Database.Immutable"</span><span class="p">,</span>
   <span class="na">version</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
   <span class="na">network</span><span class="p">:</span> <span class="s2">"sepolia"</span><span class="p">,</span>
   <span class="na">operation</span><span class="p">:</span> <span class="s2">"selectString"</span><span class="p">,</span>
@@ -336,8 +336,8 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>contract</td>
-<td>Ethereum.Database.Immutable</td>
+<td>solution</td>
+<td>Database.Immutable</td>
 </tr>
 <tr>
 <td>operation</td>
@@ -374,3 +374,10 @@
 <p>The operation call will return the <code class="prettyprint">jobId</code> of the job running on Blochchain Web Services to execute your command (remember blockchain operations are asynchronous and can take a while to finish).</p>
 
 <p><code class="prettyprint">{ &quot;statusCode&quot;: 200, &quot;info&quot;: { &quot;jobId&quot;: &quot;5423433243&quot; } }</code></p>
+
+<p><br/><br/>
+<span class="login-text">Login to your BWS account and test this solution using Postman.<span>
+<br/><br/>
+<span class="button button-small">
+<a href="https://prod.bws.ninja/front-sign-in.html">Log In</a>
+</span></p>

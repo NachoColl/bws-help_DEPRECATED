@@ -4,7 +4,7 @@
 
 ```javascript
 var parameters = {
-  contract: "Ethereum.Database.Mutable",
+  solution: "Database.Mutable",
   version: 1,
   network: "sepolia",
   operation: "insertString",
@@ -53,4 +53,11 @@ Click on Contract Address to check verified contract at `polygonscan.com`.
 
 <p class="product-title">Operations</p>
 
-You can use the same operations as for `Ethereum.Database.Immutable` service, changing the parameter contract to `Ethereum.Database.Mutable`.
+You can use the same operations as for `Database.Immutable` service, changing the parameter solution to `Database.Mutable`.
+
+<br/><br/>
+<span class="login-text">Login to your BWS account and test this solution using Postman.<span>
+<br/><br/>
+<span class="button button-small">
+<a href="https://prod.bws.ninja/front-sign-in.html">Log In</a>
+</span>

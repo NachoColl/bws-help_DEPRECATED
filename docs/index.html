@@ -132,7 +132,7 @@
       <div id="toc">
       </div>
         <ul class="toc-footer">
-            <li><a href='https://prod.bws.ninja/front-sign-up.html'>Sign Up</a></li>
+            <li><a href='https://www.bws.ninja/contact'>Contact Sales</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -143,13 +143,36 @@
 
 <style>
 .welcome-highlight {
-    background-color:#5abaf0;
+    background-color:#6699ff;
     color:white;
     text-shadow: none !important;
     font-size:13px;
     padding: 1px 3px 1px 2px;
   }
 
+.button {
+  padding: 10px 20px;
+  background-color:black;
+  width: 100px;
+  align: center;
+  text-align: center;
+  border-radius: 8px;
+  border: 2px solid black;
+  cursor:pointer;
+}
+
+.button a, .button a:visited
+{
+  text-decoration:none;
+  color: white !important;
+}
+.button-small {
+   padding: 5px 10px !important;
+}
+
+.login-text{
+  color:#6699ff;
+}
 
 .content .center-column+pre {
     position: static;
@@ -159,20 +182,28 @@
     margin: 0 28px;
     padding: 10px 20px !important;
     left: 0;
+
 }
 </style>
 
 <pre class="highlight javascript" style="display: block;"><code>
 <span class="welcome-highlight">Are you a Blockchain developer?</span>
 
-<span class="s1">Publish your blockchain solution at our <span class="na">BWS Marketplace</span> and
+<span class="s1">Publish your blockchain solution at our BWS Marketplace and
 make it easy to find, consume and get rewarded for your work.
 </span>
-<a href="https://www.bws.ninja/front-marketplace-contact.html" target="_blank">Contact us</a> to start.
+<a href="https://www.bws.ninja/engage">Contact us</a> to start.
 </code>
 </pre>
 
 <p><a href="https://www.bws.ninja">Blockchain Web Services</a> (aka BWS) provides an API to call public blockchain(s) smart contracts as easily as any web service you are already used to and a Marketplace to find all the solutions your business or project needs.</p>
+
+<p><br/>
+<br/></p>
+
+<p><span class="button">
+<a href="https://prod.bws.ninja/front-sign-up.html">Sign Up</a>
+</span></p>
 
           <h1 id="how-it-works">How It Works</h1>
 
@@ -583,7 +614,7 @@ Funds are only spent when calling smart contracts and there is no extra fee for 
 
           <h1 id="marketplace-solutions">Marketplace Solutions</h1>
 
-<p><a href="https://www.bws.ninja">Blockchain Web Services</a> is a Cloud Platform to enable customers consume Smart Contracts easily.</p>
+<p>Check <a href="https://www.bws.ninja">Blockchain Web Services</a> solutions operations and parameters so you can easily build your Web3 blockchain solution as you&rsquo;re used to build Web2 Apps.</p>
 
 <style>
   .product-header {
@@ -647,7 +678,7 @@ Funds are only spent when calling smart contracts and there is no extra fee for 
 
 <p class="product-title">Description</p>
 
-<p>You can use Ethereum.Database.Immutable operation to save immutable data to blockchain and certify written data will never change.</p>
+<p>You can use Database.Immutable solution to save immutable data to blockchain and certify written data will never change.</p>
 
 <p class="product-title">Networks</p>
 
@@ -705,7 +736,7 @@ Funds are only spent when calling smart contracts and there is no extra fee for 
 <p>insertBytes32 operation call example.</p>
 </blockquote>
 <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">parameters</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">contract</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Immutable"</span><span class="p">,</span>
+  <span class="na">solution</span><span class="p">:</span> <span class="s2">"Database.Immutable"</span><span class="p">,</span>
   <span class="na">version</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
   <span class="na">network</span><span class="p">:</span> <span class="s2">"sepolia"</span><span class="p">,</span>
   <span class="na">operation</span><span class="p">:</span> <span class="s2">"insertBytes32"</span><span class="p">,</span>
@@ -751,8 +782,8 @@ Funds are only spent when calling smart contracts and there is no extra fee for 
 </tr>
 </thead><tbody>
 <tr>
-<td>contract</td>
-<td>Ethereum.Database.Immutable</td>
+<td>solution</td>
+<td>Database.Immutable</td>
 </tr>
 <tr>
 <td>operation</td>
@@ -804,7 +835,7 @@ Funds are only spent when calling smart contracts and there is no extra fee for 
 <p>selectBytes32 operation parameters call example.</p>
 </blockquote>
 <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">parameters</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">contract</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Immutable"</span><span class="p">,</span>
+  <span class="na">solution</span><span class="p">:</span> <span class="s2">"Database.Immutable"</span><span class="p">,</span>
   <span class="na">version</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
   <span class="na">network</span><span class="p">:</span> <span class="s2">"sepolia"</span><span class="p">,</span>
   <span class="na">operation</span><span class="p">:</span> <span class="s2">"selectBytes32"</span><span class="p">,</span>
@@ -825,8 +856,8 @@ Funds are only spent when calling smart contracts and there is no extra fee for 
 </tr>
 </thead><tbody>
 <tr>
-<td>contract</td>
-<td>Ethereum.Database.Immutable</td>
+<td>solution</td>
+<td>Database.Immutable</td>
 </tr>
 <tr>
 <td>operation</td>
@@ -872,7 +903,7 @@ Funds are only spent when calling smart contracts and there is no extra fee for 
 <p>insertString operation parameters call example.</p>
 </blockquote>
 <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">parameters</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">contract</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Immutable"</span><span class="p">,</span>
+  <span class="na">solution</span><span class="p">:</span> <span class="s2">"Database.Immutable"</span><span class="p">,</span>
   <span class="na">version</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
   <span class="na">network</span><span class="p">:</span> <span class="s2">"sepolia"</span><span class="p">,</span>
   <span class="na">operation</span><span class="p">:</span> <span class="s2">"insertString"</span><span class="p">,</span>
@@ -894,8 +925,8 @@ Funds are only spent when calling smart contracts and there is no extra fee for 
 </tr>
 </thead><tbody>
 <tr>
-<td>contract</td>
-<td>Ethereum.Database.Immutable</td>
+<td>solution</td>
+<td>Database.Immutable</td>
 </tr>
 <tr>
 <td>operation</td>
@@ -946,7 +977,7 @@ Funds are only spent when calling smart contracts and there is no extra fee for 
 <p>selectString operation parameters call example.</p>
 </blockquote>
 <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">parameters</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">contract</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Immutable"</span><span class="p">,</span>
+  <span class="na">solution</span><span class="p">:</span> <span class="s2">"Database.Immutable"</span><span class="p">,</span>
   <span class="na">version</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
   <span class="na">network</span><span class="p">:</span> <span class="s2">"sepolia"</span><span class="p">,</span>
   <span class="na">operation</span><span class="p">:</span> <span class="s2">"selectString"</span><span class="p">,</span>
@@ -967,8 +998,8 @@ Funds are only spent when calling smart contracts and there is no extra fee for 
 </tr>
 </thead><tbody>
 <tr>
-<td>contract</td>
-<td>Ethereum.Database.Immutable</td>
+<td>solution</td>
+<td>Database.Immutable</td>
 </tr>
 <tr>
 <td>operation</td>
@@ -1006,13 +1037,20 @@ Funds are only spent when calling smart contracts and there is no extra fee for 
 
 <p><code class="prettyprint">{ &quot;statusCode&quot;: 200, &quot;info&quot;: { &quot;jobId&quot;: &quot;5423433243&quot; } }</code></p>
 
+<p><br/><br/>
+<span class="login-text">Login to your BWS account and test this solution using Postman.<span>
+<br/><br/>
+<span class="button button-small">
+<a href="https://prod.bws.ninja/front-sign-in.html">Log In</a>
+</span></p>
+
           <h2 id="database-mutable">Database.Mutable</h2>
 
 <blockquote>
 <p>Mutable insertString operation parameters call example.</p>
 </blockquote>
 <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">parameters</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">contract</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Mutable"</span><span class="p">,</span>
+  <span class="na">solution</span><span class="p">:</span> <span class="s2">"Database.Mutable"</span><span class="p">,</span>
   <span class="na">version</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
   <span class="na">network</span><span class="p">:</span> <span class="s2">"sepolia"</span><span class="p">,</span>
   <span class="na">operation</span><span class="p">:</span> <span class="s2">"insertString"</span><span class="p">,</span>
@@ -1088,7 +1126,14 @@ Funds are only spent when calling smart contracts and there is no extra fee for 
 
 <p class="product-title">Operations</p>
 
-<p>You can use the same operations as for <code class="prettyprint">Ethereum.Database.Immutable</code> service, changing the parameter contract to <code class="prettyprint">Ethereum.Database.Mutable</code>.</p>
+<p>You can use the same operations as for <code class="prettyprint">Database.Immutable</code> service, changing the parameter solution to <code class="prettyprint">Database.Mutable</code>.</p>
+
+<p><br/><br/>
+<span class="login-text">Login to your BWS account and test this solution using Postman.<span>
+<br/><br/>
+<span class="button button-small">
+<a href="https://prod.bws.ninja/front-sign-in.html">Log In</a>
+</span></p>
 
           <h1 id="proof-of-registry">Proof Of Registry</h1>
 

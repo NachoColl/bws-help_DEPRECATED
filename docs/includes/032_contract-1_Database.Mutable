@@ -4,7 +4,7 @@
 <p>Mutable insertString operation parameters call example.</p>
 </blockquote>
 <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">parameters</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">contract</span><span class="p">:</span> <span class="s2">"Ethereum.Database.Mutable"</span><span class="p">,</span>
+  <span class="na">solution</span><span class="p">:</span> <span class="s2">"Database.Mutable"</span><span class="p">,</span>
   <span class="na">version</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
   <span class="na">network</span><span class="p">:</span> <span class="s2">"sepolia"</span><span class="p">,</span>
   <span class="na">operation</span><span class="p">:</span> <span class="s2">"insertString"</span><span class="p">,</span>
@@ -80,4 +80,11 @@
 
 <p class="product-title">Operations</p>
 
-<p>You can use the same operations as for <code class="prettyprint">Ethereum.Database.Immutable</code> service, changing the parameter contract to <code class="prettyprint">Ethereum.Database.Mutable</code>.</p>
+<p>You can use the same operations as for <code class="prettyprint">Database.Immutable</code> service, changing the parameter solution to <code class="prettyprint">Database.Mutable</code>.</p>
+
+<p><br/><br/>
+<span class="login-text">Login to your BWS account and test this solution using Postman.<span>
+<br/><br/>
+<span class="button button-small">
+<a href="https://prod.bws.ninja/front-sign-in.html">Log In</a>
+</span></p>

@@ -1,6 +1,6 @@
 # Marketplace Solutions
 
-[Blockchain Web Services](https://www.bws.ninja) is a Cloud Platform to enable customers consume Smart Contracts easily.
+Check [Blockchain Web Services](https://www.bws.ninja) solutions operations and parameters so you can easily build your Web3 blockchain solution as you're used to build Web2 Apps.
 
 <style>
   .product-header {
